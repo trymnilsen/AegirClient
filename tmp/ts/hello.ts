@@ -1,7 +1,8 @@
+///<reference path="Config.ts" />
 class Greeter {
     constructor(public greeting: string) { }
     greet() {
-
+    	console.log(App.config['modules']);
         return "<h1>" + this.greeting + "</h1>";
     }
 };

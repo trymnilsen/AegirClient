@@ -96,13 +96,18 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['clean',
                                     'inlinedata',
                                     'typescript:base',
-                                    'less',
-                                    'uglify']);
+                                    'less']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
     grunt.registerTask('nodebug', ['clean',
                                     'inlinedata',
                                     'typescript:nodebug',
                                     'less']);
+    //Runs only typescript
+    grunt.registerTask('min', ['clean',
+                                'inlinedata',
+                                'typescript:base',
+                                'less',
+                                'uglify']);
 
 };
