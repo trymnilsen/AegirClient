@@ -17,9 +17,8 @@
         "./ts/messages/Message.ts",
         "./ts/module/Navigation.ts",
         "./ts/module/PageRender.ts",
+        "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
-        "./ts/views/page/home/HomePage.ts",
-        "./ts/views/page/home/TestPage.ts",
         "./ts/views/panel/PagePanel.ts"
     ]
 }

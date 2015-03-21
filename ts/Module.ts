@@ -1,7 +1,7 @@
 /// <reference path="Context.ts" />
 
 module App {
-    export class class {
+    export class Module {
         private context: App.Context;
 
         domAttachSelector: string;
