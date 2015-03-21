@@ -1,10 +1,25 @@
 {
     "compilerOptions": {
-        "out": "js/out.js", 
-        "sourceMap": true, 
+        "out": "js/out.js",
+        "sourceMap": true,
         "target": "es5"
-    }, 
+    },
+    "filesGlob": [
+        "./ts/**/*.ts"
+    ],
     "files": [
-        "ts/hello.ts"
+        "./ts/AppEntryPoint.ts",
+        "./ts/Config.ts",
+        "./ts/Context.ts",
+        "./ts/Module.ts",
+        "./ts/hello.ts",
+        "./ts/messages/AppMessenger.ts",
+        "./ts/messages/Message.ts",
+        "./ts/module/Navigation.ts",
+        "./ts/module/PageRender.ts",
+        "./ts/views/AppView.ts",
+        "./ts/views/page/home/HomePage.ts",
+        "./ts/views/page/home/TestPage.ts",
+        "./ts/views/panel/PagePanel.ts"
     ]
 }

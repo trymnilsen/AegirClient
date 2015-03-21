@@ -23,6 +23,11 @@ module.exports = function(grunt) {
                     removeComments: false,
                     sourceMap: false
                 }
+            },
+            test : {
+                //Fetch the template inlined version
+                src: ['tmp/ts/**/*.ts'],
+                dest: 'js/app.js'
             }
         },
         tslint: {
@@ -109,5 +114,16 @@ module.exports = function(grunt) {
                                 'typescript:base',
                                 'less',
                                 'uglify']);
+    //Report tasks..
+    grunt.registerTask('report', ['clean',
+                                'inlinedata',
+                                'typescript:base',
+                                'less',
+                                'uglify']);
+    //Run Tests only
+    grunt.registerTask('test', ['clean',
+                                'inlinedata',
+                                'typescript:base',
+                                'typescript:test']);
 
 };
