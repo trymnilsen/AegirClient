@@ -17,6 +17,7 @@
         "./ts/messages/Message.ts",
         "./ts/module/Navigation.ts",
         "./ts/module/PageRender.ts",
+        "./ts/typings/backbone.d.ts",
         "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
         "./ts/views/panel/PagePanel.ts"

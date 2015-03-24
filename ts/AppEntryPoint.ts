@@ -3,7 +3,11 @@ class AppEntryPoint {
 
     }
     bootstrap(): void {
-
+        //run bootstrap on each of the modules
+        var mods : Array<App.Module> = App.config["Modules"];
+        for (var i = 0; i < mods.length; ++i) {
+            mods[i].AppReady();
+        }
     }
 }
 $(() => {

@@ -1,7 +1,7 @@
 module App {
 
 	export var config: {[id:string]: any} = {
-		"modules" : ["Navigation", "PageRender"],
+		"Modules" : ["Navigation", "PageRender"],
 		"Pages"   : [
         {
             "name"      : "Home",
