@@ -7,6 +7,7 @@
     "filesGlob": [
         "./ts/**/*.ts"
     ],
+    
     "files": [
         "./ts/AppEntryPoint.ts",
         "./ts/Config.ts",

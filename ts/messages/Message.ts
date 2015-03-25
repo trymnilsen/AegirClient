@@ -1,14 +1,11 @@
 module App {
     export module Messaging {
-	    export class Message {
-	        private greeting: string;
+        export class Message {
+            private message: string;
 
-	        constructor(public greeting: string) {
-
-	        }
-	        public greet() :string {
-	            return "<h1>" + this.greeting + "</h1>";
-	        }
-	    }
+            constructor(message: string) {
+                this.message = message;
+            }
+        }
     }
 }
