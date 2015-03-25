@@ -25,5 +25,10 @@ build/Release
 node_modules
 bower_components
 tmp
+# Js files built from typescript
+js/build
+
+#documentation
+doc
 # Users Environment Variables
 .lock-wscript

@@ -3,7 +3,7 @@
 module App {
     export class Module {
         private context: App.Context;
-
+        private config : {[id:string]: any};
         domAttachSelector: string;
         constructor() {
 
@@ -11,6 +11,9 @@ module App {
         AppReady():void {
 
         }
-        
+        setConfig(configObj : {[id:string]: any}):void {
+
+        }
+
     }
 }

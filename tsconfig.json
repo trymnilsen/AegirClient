@@ -7,13 +7,13 @@
     "filesGlob": [
         "./ts/**/*.ts"
     ],
-    
     "files": [
         "./ts/AppEntryPoint.ts",
-        "./ts/Config.ts",
-        "./ts/Context.ts",
-        "./ts/Module.ts",
-        "./ts/hello.ts",
+        "./ts/config/Config.ts",
+        "./ts/config/ModuleDefinitions.ts",
+        "./ts/application/Application.ts",
+        "./ts/application/Context.ts",
+        "./ts/application/Module.ts",
         "./ts/messages/AppMessenger.ts",
         "./ts/messages/Message.ts",
         "./ts/module/Navigation.ts",

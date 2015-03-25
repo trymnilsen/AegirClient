@@ -1,4 +1,4 @@
-///<reference path="messages/AppMessenger.ts" />
+///<reference path="../messages/AppMessenger.ts" />
 
 
 module App {
@@ -18,7 +18,6 @@ module App {
 		}
 		/**
 		 * Returns the messenger object for this context
-		 * @return {App.Messaging.AppMessenger}
 		 */
 		getMessengerInstance(): App.Messaging.AppMessenger {
 			return this.messenger;

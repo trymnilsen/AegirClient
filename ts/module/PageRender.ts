@@ -2,13 +2,13 @@
 
 module App {
 	export module Modules {
-	    export class PageRender {
+	    export class PageRender extends App.Module{
 
 	    	private pages: Array<App.AppPage>;
 	    	private activePage: App.AppPage;
 
-	        constructor(allPages: Array<App.AppPage>) {
-
+	        constructor() {
+	        	super();
 	        }
 
 	        
