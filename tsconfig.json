@@ -17,6 +17,7 @@
         "./ts/config/PanelDefinitions.ts",
         "./ts/messages/AppMessenger.ts",
         "./ts/messages/Message.ts",
+        "./ts/module/LoadIndicator.ts",
         "./ts/module/Navigation.ts",
         "./ts/module/PageRender.ts",
         "./ts/typings/backbone.d.ts",

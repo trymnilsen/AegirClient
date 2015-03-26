@@ -15,8 +15,10 @@ module App {
     export class AppPage extends App.AppView {
 
         private panels : Array<App.Panel.PagePanel>;
-
+        private name : string;
         constructor(PageOptions: App.AppPageOptions) {
+            this.panels = PageOptions.panels;
+            this.name = PageOptions.name;
         	super({});
         }
 
@@ -31,9 +33,22 @@ module App {
         suspend(): void {
 
         }
+        /**
+         * Resume the Page
+         * Includes
+         * - Checking that our state is correct
+         * - If not, rebuilding based on state
+         * - rebinding events
+         */
         resume(): void {
             
         }
 
+        private createPanels(): void {
+
+        }
+        private updatePanelState(): void {
+
+        }
     }
 }
