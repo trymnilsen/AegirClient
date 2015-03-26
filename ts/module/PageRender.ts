@@ -20,7 +20,7 @@ module App {
 	        	super();
 	        }
 	        AppReady(): void {
-
+	        	this.generatePages();
 	        }
 	        private generatePages(): void {
 	        	var pages = this.config['pages'];
@@ -38,7 +38,13 @@ module App {
 	        		var page : App.AppPage = new App.AppPage(pageData);
 	        	}
 	        }
-	        
+	        private navigateToPage(page:string):void {
+	        	var targetPage:App.AppPage;
+
+	        	this.activePage.suspend();
+	        	targetPage.resume();
+	        	this.activePage = targetPage;
+	        }
 		}
     }
 }

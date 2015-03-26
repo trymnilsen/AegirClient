@@ -20,5 +20,20 @@ module App {
         	super({});
         }
 
+        /**
+         * Suspend the appPage includes but not limited to
+         * - Unbind events
+         * - Run suspend method on children panes
+         *
+         * Basically we want to make sure this page does not execute in any way
+         * if we are not currently looking at it
+         */
+        suspend(): void {
+
+        }
+        resume(): void {
+            
+        }
+
     }
 }

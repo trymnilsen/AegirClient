@@ -3,6 +3,10 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        constProps: {
+            "typescriptSource" : "ts/**/*.ts",
+            "typescriptInlinedSource" : "tmp/ts/**/*.ts"
+        },
         //Typescript
         typescript: {
             base: {
@@ -82,7 +86,7 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true,
                     sourceMapIncludeSources: true,
-                    sourceMapIn: 'js/app.js.map', // input sourcemap from a previous compilation
+                    sourceMapIn: 'js/build/app.js.map', // input sourcemap from a previous compilation
                 },
                 files: {
                     'js/build/app.min.js': ['js/build/app.js'],
@@ -101,32 +105,38 @@ module.exports = function(grunt) {
 
     // Default task(s).
     //Runs all tasks suitable for development (Use uglify at own will)
-    grunt.registerTask('default', ['clean:temp',
+    grunt.registerTask('default',   ['clean:temp',
                                     'inlinedata',
                                     'typescript:base',
                                     'less',
-                                    'tslint']);
-    grunt.registerTask('buildonly', ['clean:temp',
+                                    'tslint',
+                                    'uglify',
+                                    'clean:doc',
+                                    'typedoc']);
+    //Development tasks - does not lint atm
+    grunt.registerTask('dev',       ['clean:temp',
                                     'inlinedata',
-                                    'typescript:base']);
+                                    'typescript:base',
+                                    'less']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
-    grunt.registerTask('nodebug', ['clean:temp',
+    grunt.registerTask('nodebug',   ['clean:temp',
                                     'inlinedata',
                                     'typescript:nodebug',
                                     'less']);
     //Runs only typescript
-    grunt.registerTask('min', ['clean:temp',
-                                'inlinedata',
-                                'typescript:base',
-                                'less',
-                                'uglify']);
+    grunt.registerTask('min',       ['clean:temp',
+                                    'inlinedata',
+                                    'typescript:base',
+                                    'less',
+                                    'uglify']);
     //Report tasks..
-    grunt.registerTask('report', ['clean:doc', 'typedoc']);
+    grunt.registerTask('report',    ['clean:doc',
+                                    'typedoc']);
     //Run Tests only
-    grunt.registerTask('test', ['clean:temp',
-                                'inlinedata',
-                                'typescript:base',
-                                'typescript:test']);
+    grunt.registerTask('test',      ['clean:temp',
+                                    'inlinedata',
+                                    'typescript:base',
+                                    'typescript:test']);
 
 };
