@@ -1,0 +1,1 @@
+module App.Template.TestPanel.tpl { export var html =  '' } 

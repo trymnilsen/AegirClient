@@ -2,9 +2,10 @@
 
 
 module App {
-  export class Context {
-  		
-  		private messenger: App.Messaging.AppMessenger;
+	'use strict';
+	export class Context {
+
+  		private messenger : App.Messaging.AppMessenger;
 
 		constructor() {
 			console.log('Test');
@@ -13,13 +14,13 @@ module App {
 		 * Sets the messenger object for this context
 		 * @param {App.Messaging.AppMessenger}
 		 */
-		setMessengerInstance(instance: App.Messaging.AppMessenger): void {
+		setMessengerInstance(instance : App.Messaging.AppMessenger) : void {
 			this.messenger = instance;
 		}
 		/**
 		 * Returns the messenger object for this context
 		 */
-		getMessengerInstance(): App.Messaging.AppMessenger {
+		getMessengerInstance() : App.Messaging.AppMessenger {
 			return this.messenger;
 		}
   }

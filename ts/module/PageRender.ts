@@ -1,3 +1,7 @@
+/// <reference path="../application/Module.ts" />
+/// <reference path="../views/AppPage.ts" />
+/// <reference path="../views/panel/PagePanel.ts" />
+
 module App {
 	export module Modules {
 		/**
@@ -8,21 +12,29 @@ module App {
 	    	/**
 	    	 * The pages this PageRender can display
 	    	 */
-	    	private pages: Array<App.AppPage>;
+	    	private pages : Array<App.AppPage>;
 	    	/**
 	    	 * Currently Active AppPage
 	    	 */
-	    	private activePage: App.AppPage;
+	    	private activePage : App.AppPage;
 	    	/**
 	    	 * Creates a new PageRender Module
 	    	 */
 	        constructor() {
 	        	super();
 	        }
-	        AppReady(): void {
+	        AppReady() : void {
 	        	this.generatePages();
+
+	        	if(this.pages.length > 0)
+	        	{
+	        		this.navigateToPage(this.pages[0]);
+	        	}
 	        }
-	        private generatePages(): void {
+	        /**
+	         * Generates the registred pages set in [[App.config]]
+	         */
+	        private generatePages() : void {
 	        	var pages = this.config['pages'];
 	        	for (var i = 0; i < pages.length; ++i) {
 	        		//Create easy access to our page data
@@ -38,10 +50,12 @@ module App {
 	        		var page : App.AppPage = new App.AppPage(pageData);
 	        	}
 	        }
-	        private navigateToPage(page:string):void {
-	        	var targetPage:App.AppPage;
+	        private navigateToPage(page : string|App.AppPage) : void {
 
-	        	this.activePage.suspend();
+	        	var targetPage : App.AppPage;
+	        	if(this.activePage) { //if truthy suspend it
+	        		this.activePage.suspend();
+	        	}
 	        	targetPage.resume();
 	        	this.activePage = targetPage;
 	        }

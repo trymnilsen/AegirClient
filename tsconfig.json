@@ -25,6 +25,7 @@
         "./ts/typings/underscore.d.ts",
         "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
+        "./ts/views/navigation/NavigationMenu.ts",
         "./ts/views/panel/PagePanel.ts"
     ]
 }

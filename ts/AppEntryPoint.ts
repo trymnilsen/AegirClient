@@ -1,8 +1,16 @@
-var mainApp = new App.Application();
-//Timing
-var t0 = performance.now();
-console.log('Boostrap Start at '+t0+'ms');
-mainApp.bootstrap();
-var t1 = performance.now();
-console.log('Boostrap End at '+t1+'ms');
-console.log('Boostrap took '+(t1 - t0)+' milliseconds');
+/// <reference path="application/Application.ts" />
+
+/**
+ * Run on Dom Ready
+ */
+$(() => {
+/**
+ * Holds the reference to our application object
+ */
+var mainApp : App.Application = new App.Application();
+/**
+ * Calls startup methods and dependencies in the Application
+ */
+ console.log('Fooooo');
+//mainApp.bootstrap();
+});

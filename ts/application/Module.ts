@@ -14,12 +14,12 @@ module App {
          * If the module has a section in the config file, it will
          * be found here
          */
-        public config : {[id:string]: any};
+        protected config : {[id:string]: any};
         /**
          * A Css selector for where to append this module.. 
          * If the variable is empty, we assume this module is pure business logic
          */
-        domAttachSelector: string;
+        private domAttachSelector: string|Array<string>;
         /**
          * Construct a new Model instance
          */
@@ -36,7 +36,7 @@ module App {
          * Sets the config hash for this module
          * @param configObj the config subset
          */
-        setConfig(configObj : {[id:string]: any}):void {
+        setConfig(configObj : {[id : string] : any}) : void {
             this.config = configObj;
         }
 

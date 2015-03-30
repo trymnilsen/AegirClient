@@ -8,30 +8,35 @@ module.exports = function(grunt) {
             "typescriptInlinedSource" : "tmp/ts/**/*.ts"
         },
         //Typescript
-        typescript: {
+        ts: {
+            options: {
+                compile: true,                 // perform compilation. [true (default) | false]
+                removeComments: false,
+                target: 'es5',                 // target javascript language. [es3 | es5 (grunt-ts default) | es6]
+                sourceMap: true,               // generate a source map for every output js file. [true (default) | false]
+                htmlModuleTemplate: 'App.Template.<%= filename %>',    // Template for module name for generated ts from html files [(default) '<%= filename %>']
+                noImplicitAny: true,          // set to true to pass --noImplicitAny to the compiler. [true | false (default)]
+                noEmitOnError: false
+            },
             base: {
                 //Fetch the template inlined version
-                src: ['tmp/ts/**/*.ts'],
-                dest: 'js/build/app.js',
-                options: {
-                    removeComments: false,
-                    sourceMap: true,
-                    noEmitOnError: false
-                }
+                src: ["ts/**/*.ts"],
+                html: ["ts/**/*.html"],
+                out: "js/build/app.js"
             },
             nodebug: {
                 //Fetch the template inlined version
                 src: ['tmp/ts/**/*.ts'],
-                dest: 'js/build/app.js',
+                html: ["ts/**/*.html"],
+                out: 'js/build/app.js',
                 options: {
-                    removeComments: false,
                     sourceMap: false
                 }
             },
             test : {
                 //Fetch the template inlined version
                 src: ['tmp/ts/**/*.ts'],
-                dest: 'js/app.js'
+                out: 'js/app.js'
             }
         },
         tslint: {
@@ -44,13 +49,16 @@ module.exports = function(grunt) {
         },
         //Documenting the typescript
         typedoc: {
-            build: {
-                options: {
-                    out: 'doc',
-                    name: 'my-project'
-                },
-                src: ['ts/**/*']
-            }
+            options: {
+                out: 'dist',
+                module: 'commonjs',
+                target: 'es5',
+                out: 'doc/',
+                name: 'App',
+                mode: 'File',
+                hideGenerator: true,
+            },
+            src: ['ts/**/*.ts']
         },
         //Compiling the less styles
         less: {
@@ -60,20 +68,6 @@ module.exports = function(grunt) {
                 },
                 files: {
                     "style/style.css": "style/main.less"
-                }
-            }
-        },
-        //Inline data
-        inlinedata: {
-            ints: {
-                expand: true,
-                src: ['ts/**/*.ts'],
-                dest: 'tmp/',
-                cwd: ".",
-                //ext: '.ts',
-                options :{
-                    relativeTo : false,
-                    escape: true
                 }
             }
         },
@@ -95,10 +89,9 @@ module.exports = function(grunt) {
         },
 
 });
-    grunt.loadNpmTasks('grunt-typedoc');
-    grunt.loadNpmTasks('grunt-typescript');
+    grunt.loadNpmTasks('typedoc');
+    grunt.loadNpmTasks("grunt-ts");
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-inline-data');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-tslint');
@@ -106,28 +99,23 @@ module.exports = function(grunt) {
     // Default task(s).
     //Runs all tasks suitable for development (Use uglify at own will)
     grunt.registerTask('default',   ['clean:temp',
-                                    'inlinedata',
-                                    'typescript:base',
+                                    'ts:base',
                                     'less',
-                                    'tslint',
                                     'uglify',
                                     'clean:doc',
                                     'typedoc']);
     //Development tasks - does not lint atm
     grunt.registerTask('dev',       ['clean:temp',
-                                    'inlinedata',
-                                    'typescript:base',
+                                    'ts:base',
                                     'less']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
     grunt.registerTask('nodebug',   ['clean:temp',
-                                    'inlinedata',
-                                    'typescript:nodebug',
+                                    'ts:nodebug',
                                     'less']);
     //Runs only typescript
     grunt.registerTask('min',       ['clean:temp',
-                                    'inlinedata',
-                                    'typescript:base',
+                                    'ts:base',
                                     'less',
                                     'uglify']);
     //Report tasks..
@@ -135,8 +123,7 @@ module.exports = function(grunt) {
                                     'typedoc']);
     //Run Tests only
     grunt.registerTask('test',      ['clean:temp',
-                                    'inlinedata',
-                                    'typescript:base',
-                                    'typescript:test']);
+                                    'ts:base',
+                                    'ts:test']);
 
 };

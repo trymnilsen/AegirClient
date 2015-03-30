@@ -5,7 +5,7 @@ module App{
         //Disposable
 
         private childViews: Array<AppView> = [];
-        public template: (data)=> string;
+        public template: (data: any)=> string;
 
         //Render
         attachNodeSelector: string;
