@@ -13,5 +13,9 @@ module App{
             super(options);
         }
 
+        setData(data: Object) : void {
+            
+        }
+
     }
 }
