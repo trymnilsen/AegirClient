@@ -29,7 +29,7 @@ module App {
         /**
          * Called when the App is ready and config has been loaded
          */
-        AppReady():void {
+        appReady():void {
 
         }
         /**

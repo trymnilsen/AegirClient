@@ -26,6 +26,8 @@
         "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
         "./ts/views/navigation/NavigationMenu.ts",
-        "./ts/views/panel/PagePanel.ts"
+        "./ts/views/panel/PagePanel.tpl.html.ts",
+        "./ts/views/panel/PagePanel.ts",
+        "./ts/views/panel/test/TestPanel.tpl.html.ts"
     ]
 }

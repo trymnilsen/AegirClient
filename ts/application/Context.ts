@@ -6,7 +6,7 @@ module App {
 	export class Context {
 
   		private messenger : App.Messaging.AppMessenger;
-
+  		private data : {[id:string] : Object};
 		constructor() {
 			console.log('Test');
 		}

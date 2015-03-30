@@ -23,7 +23,7 @@ module App {
 	        constructor() {
 	        	super();
 	        }
-	        AppReady() : void {
+	        appReady() : void {
 	        	this.generatePages();
 
 	        	if(this.pages.length > 0)
