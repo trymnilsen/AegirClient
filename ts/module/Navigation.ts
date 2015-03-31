@@ -1,4 +1,4 @@
-/// <reference path="../application/Module.ts" />
+/// <reference path="../core/Module.ts" />
 /// <reference path="../views/navigation/NavigationMenu.ts"/>
 
 module App {

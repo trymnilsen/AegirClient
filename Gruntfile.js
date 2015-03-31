@@ -15,7 +15,6 @@ module.exports = function(grunt) {
                 target: 'es5',                 // target javascript language. [es3 | es5 (grunt-ts default) | es6]
                 sourceMap: true,               // generate a source map for every output js file. [true (default) | false]
                 htmlModuleTemplate: 'App.Template.<%= filename %>',    // Template for module name for generated ts from html files [(default) '<%= filename %>']
-                noImplicitAny: true,          // set to true to pass --noImplicitAny to the compiler. [true | false (default)]
                 noEmitOnError: false
             },
             base: {
@@ -72,7 +71,7 @@ module.exports = function(grunt) {
             }
         },
         clean : {
-            temp  : ['tmp/'],
+            build       : ['js/build/'],
             doc         : ['doc/']
         },
         uglify: {
@@ -98,23 +97,23 @@ module.exports = function(grunt) {
 
     // Default task(s).
     //Runs all tasks suitable for development (Use uglify at own will)
-    grunt.registerTask('default',   ['clean:temp',
+    grunt.registerTask('default',   ['clean:build',
                                     'ts:base',
                                     'less',
                                     'uglify',
                                     'clean:doc',
                                     'typedoc']);
     //Development tasks - does not lint atm
-    grunt.registerTask('dev',       ['clean:temp',
+    grunt.registerTask('dev',       ['clean:build',
                                     'ts:base',
                                     'less']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
-    grunt.registerTask('nodebug',   ['clean:temp',
+    grunt.registerTask('nodebug',   ['clean:build',
                                     'ts:nodebug',
                                     'less']);
     //Runs only typescript
-    grunt.registerTask('min',       ['clean:temp',
+    grunt.registerTask('min',       ['clean:build',
                                     'ts:base',
                                     'less',
                                     'uglify']);
@@ -122,7 +121,7 @@ module.exports = function(grunt) {
     grunt.registerTask('report',    ['clean:doc',
                                     'typedoc']);
     //Run Tests only
-    grunt.registerTask('test',      ['clean:temp',
+    grunt.registerTask('test',      ['clean:build',
                                     'ts:base',
                                     'ts:test']);
 

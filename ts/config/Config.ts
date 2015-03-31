@@ -6,6 +6,12 @@ module App {
 				"Pages"   : [
 		        	{
 		            	"name"      : "Home",
+		            	"routeName"	: "home",
+		            	"panels"    : ["TestPanel"]
+		        	},
+		        	{
+		            	"name"      : "Location",
+		            	"routeName"	: "location",
 		            	"panels"    : ["TestPanel"]
 		        	}
 	        	]

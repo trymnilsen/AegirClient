@@ -1,7 +1,7 @@
 /// <reference path="../config/Config.ts" />
 /// <reference path="../config/ModuleDefinitions.ts" />
 /// <reference path="Module.ts" />
-
+/// <reference path="../views/AppView.ts" />
 
 module App {
     'use strict';
@@ -21,8 +21,9 @@ module App {
                 //Set it
                 mods[modId].setConfig(modConfig);
                 //Set AppReady
-                mods[modId].AppReady();
+                mods[modId].appReady();
             }
         }
+
     }
 }

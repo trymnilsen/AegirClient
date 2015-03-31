@@ -3,8 +3,7 @@
 	[
 		{
 			"follow_symlinks": true,
-			"path": ".",
-			"folder_exclude_patterns": ["tmp","node_modules","bower_components"]
+			"path": "/home/ts/app"
 		}
 	],
 	"settings":

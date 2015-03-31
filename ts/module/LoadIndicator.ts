@@ -1,4 +1,4 @@
-/// <reference path="../application/Module.ts" />
+/// <reference path="../core/Module.ts" />
 
 module App {
 	export module Modules {

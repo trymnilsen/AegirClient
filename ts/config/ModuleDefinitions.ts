@@ -1,6 +1,6 @@
 /// <reference path="../module/PageRender.ts" />
 /// <reference path="../module/Navigation.ts" />
-/// <reference path="../application/Module.ts" />
+/// <reference path="../core/Module.ts" />
 
 module App {
 

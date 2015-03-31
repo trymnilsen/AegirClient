@@ -8,7 +8,7 @@ module App {
         /**
          * The Context for this module
          */
-        private context: App.Context;
+        private context: App.Core.Context;
         /**
          * A Config hash.
          * If the module has a section in the config file, it will
