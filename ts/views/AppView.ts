@@ -12,15 +12,21 @@ module App{
 
         //Render
         attachNodeSelector: string;
-        constructor(options: Backbone.ViewOptions){
-            //Listen for context changes
+        constructor(options: Backbone.ViewOptions, context?: App.Core.Context){
             super(options);
+            //Check if context is supplied
+            if(!!context) {
+                this.setContext(context);
+            } else {
+                var newContext : App.Core.Context = new App.Core.Context();
+                this.setContext(newContext);
+            }
         }
         public dispose(domEventsOnly : boolean = false): void {
             for(var i = 0; i<this.childViews.length; i++) {
                 this.childViews[i].dispose(domEventsOnly);
             }
-            //Remove dom events
+            //Remove dom eveants
             this.undelegateEvents();
             if(!domEventsOnly) {
                 this.stopListenForContext();
@@ -28,7 +34,9 @@ module App{
         }
         public setContext(newContext:App.Core.Context): void{
             //Remove events for old context
-            this.context.stopListening();
+            if(!!this.context){
+                this.context.stopListening();
+            }
             //Add new and listen
             this.context = newContext;
             this.listenForContextChanges();
@@ -37,9 +45,16 @@ module App{
             //Clear previous content
             this.dispose(true);
             //get context
-            var data = this.context.getAllData();
-            if(!data) {
-                console.warn("Data for view rerender was invalid, was:",data);
+            if(!!this.context) {
+                var data : any = this.context.getAllData();
+                //Data was not thruthy
+                if(!data) {
+                    console.warn("Data for view rerender was invalid, was:",data);
+                }
+                var renderedContent : string = this.template(data);
+                this.$el.html(renderedContent);
+            } else {
+                console.warn("Context was invalid, was:",this.context);
             }
             return this;
         }
