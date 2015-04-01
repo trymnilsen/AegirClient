@@ -27,9 +27,11 @@
         "./ts/typings/underscore.d.ts",
         "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
+        "./ts/views/navigation/NavigationMenu.html.ts",
         "./ts/views/navigation/NavigationMenu.ts",
-        "./ts/views/panel/PagePanel.tpl.html.ts",
+        "./ts/views/panel/PagePanel.html.ts",
         "./ts/views/panel/PagePanel.ts",
-        "./ts/views/panel/test/TestPanel.tpl.html.ts"
+        "./ts/views/panel/panels/news/NewsPanel.html.ts",
+        "./ts/views/panel/panels/news/NewsPanel.ts"
     ]
 }

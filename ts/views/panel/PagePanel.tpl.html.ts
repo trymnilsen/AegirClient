@@ -1,1 +1,0 @@
-module App.Template.PagePanel.tpl { export var html =  '<div>PagePanel<div>' } 

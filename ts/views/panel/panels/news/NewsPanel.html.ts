@@ -1,0 +1,1 @@
+module App.Template.NewsPanel { export var html =  '' } 
