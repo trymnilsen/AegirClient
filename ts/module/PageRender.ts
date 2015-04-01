@@ -13,7 +13,7 @@ module App {
 	    	/**
 	    	 * The pages this PageRender can display
 	    	 */
-	    	private pages : Array<App.AppPage>;
+	    	private pages : {[id:string] : App.AppPage};
 	    	/**
 	    	 * Currently Active AppPage
 	    	 */
@@ -94,6 +94,7 @@ module App {
         	private routeChanged(pageId: string, params: string):void {
         		//The params is delivered on the format /xxx/yyy/zzz, 
         		//I.E just the last part of the url. 
+        		
         	}
 		}
     }

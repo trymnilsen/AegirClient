@@ -1,0 +1,45 @@
+Id of pages in config
+
+# --------------
+# Please enter the commit message for your changes. Everything below
+# this paragraph is ignored, and an empty message aborts the commit.
+# Just close the window to accept your message.
+diff --git a/ts/config/Config.ts b/ts/config/Config.ts
+index bf822d3..d56be2f 100644
+--- a/ts/config/Config.ts
++++ b/ts/config/Config.ts
+@@ -5,11 +5,13 @@ module App {
+            "PageRender" : {
+                "Pages"   : [
+                    {
++                       "id"        : "PGHOME",
+                        "name"      : "Home",
+                        "routeName" : "home",
+                        "panels"    : ["TestPanel"]
+                    },
+                    {
++                       "id"        : "PGLOCATION",
+                        "name"      : "Location",
+                        "routeName" : "location",
+                        "panels"    : ["TestPanel"]
+diff --git a/ts/module/PageRender.ts b/ts/module/PageRender.ts
+index 09e491a..a87a218 100644
+--- a/ts/module/PageRender.ts
++++ b/ts/module/PageRender.ts
+@@ -13,7 +13,7 @@ module App {
+            /**
+             * The pages this PageRender can display
+             */
+-           private pages : Array<App.AppPage>;
++           private pages : {[id:string] : App.AppPage};
+            /**
+             * Currently Active AppPage
+             */
+@@ -94,6 +94,7 @@ module App {
+            private routeChanged(pageId: string, params: string):void {
+                //The params is delivered on the format /xxx/yyy/zzz, 
+                //I.E just the last part of the url. 
++               
+            }
+        }
+     }
