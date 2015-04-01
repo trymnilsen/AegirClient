@@ -10,12 +10,13 @@ module App {
              */
             private navBarView: App.View.NavigationMenu = null;
 			constructor() {
-				super();
+				super();    
 			}
             appReady(): void {
                 this.navBarView = new App.View.NavigationMenu({});
                 this.navBarView.render();
                 //Append it using its attachnode
+                $(this.navBarView.attachNodeSelector).append(this.navBarView.$el);
             }
 		}
 	}

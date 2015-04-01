@@ -25,7 +25,7 @@ module.exports = function(grunt) {
             },
             nodebug: {
                 //Fetch the template inlined version
-                src: ['tmp/ts/**/*.ts'],
+                src: ['ts/**/*.ts'],
                 html: ["ts/**/*.html"],
                 out: 'js/build/app.js',
                 options: {

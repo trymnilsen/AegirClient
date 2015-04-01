@@ -9,6 +9,7 @@ module App {
 		export class NavigationMenu extends App.AppView {
 			
 			constructor(argument: any) {
+				this.attachNodeSelector="#siteContainer";
 				this.setTemplate(App.Template.NavigationMenu.html);
 				super({});
 			}

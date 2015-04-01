@@ -5,7 +5,7 @@
 module App {
 	export module Core {
 		'use strict';
-		export class Context extends Backbone.Events {
+		export class Context extends Backbone.EventsBase {
 
 			/**
 			 * Internal storage of our data
@@ -13,10 +13,6 @@ module App {
 			private data : {[id:string] : Object};
 	  		private messenger : App.Messaging.AppMessenger;
 
-			constructor() {
-				console.log('Test');
-				super();
-			}
 			/**
 			 * Sets the messenger object for this context
 			 * @param {App.Messaging.AppMessenger}
