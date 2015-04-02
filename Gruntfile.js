@@ -56,6 +56,7 @@ module.exports = function(grunt) {
                 name: 'App',
                 mode: 'File',
                 hideGenerator: true,
+                includeDeclarations: true
             },
             src: ['ts/**/*.ts']
         },
@@ -75,7 +76,7 @@ module.exports = function(grunt) {
             doc         : ['doc/']
         },
         uglify: {
-            prod: {
+            build: {
                 options: {
                     sourceMap: true,
                     sourceMapIncludeSources: true,
@@ -85,6 +86,14 @@ module.exports = function(grunt) {
                     'js/build/app.min.js': ['js/build/app.js'],
                 },
             },
+            nodebug: {
+                options: {
+                    sourceMap: false
+                },
+                files: {
+                    'js/build/app.min.js': ['js/build/app.js'],
+                },
+            }
         },
 
 });
@@ -100,7 +109,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default',   ['clean:build',
                                     'ts:base',
                                     'less',
-                                    'uglify',
+                                    'uglify:build',
                                     'clean:doc',
                                     'typedoc']);
     //Development tasks - does not lint atm
@@ -112,13 +121,18 @@ module.exports = function(grunt) {
     grunt.registerTask('nodebug',   ['clean:build',
                                     'ts:nodebug',
                                     'less']);
-    //Runs only typescript
-    grunt.registerTask('min',       ['clean:build',
+    //Minify with sourcemaps
+    grunt.registerTask('min-debug', ['clean:build',
                                     'ts:base',
                                     'less',
-                                    'uglify']);
-    //Report tasks..
-    grunt.registerTask('report',    ['clean:doc',
+                                    'uglify:build']);
+    //minify without sourcemap
+    grunt.registerTask('min',       ['clean:build',
+                                    'ts:nodebug',
+                                    'less',
+                                    'uglify:nodebug']);
+    //Documentation tasks..
+    grunt.registerTask('doc',       ['clean:doc',
                                     'typedoc']);
     //Run Tests only
     grunt.registerTask('test',      ['clean:build',

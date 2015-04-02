@@ -5,9 +5,7 @@
 module App {
 	export module Core {
 		'use strict';
-		export class Context {
-
-	  		public events : Backbone.Events = null;
+		export class Context extends Backbone.Eventable {
 			/**
 			 * Internal storage of our data
 			 */
@@ -15,8 +13,9 @@ module App {
 	  		private messenger : App.Messaging.AppMessenger;
 
 			constructor() {
+				super();
 				console.log('Context Created');
-				this.events = new Backbone.Events();
+
 			}
 			/**
 			 * Sets the messenger object for this context
@@ -35,19 +34,16 @@ module App {
 				return this.data;
 			}
 			public getData(dataKey: string): Object {
-				if(this.data[dataKey] === undefined)
-				{
+				if(this.data[dataKey] === undefined) {
 					console.warn("Tried to get non datakey ",dataKey);
-				}
-				else
-				{
+				} else {
 					return this.data[dataKey];
 				}
 			}
 			public setData(dataKey: string, data: Object): void {
 				this.data[dataKey] = data;
 				//notifyChange
-				this.events.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+				this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
 			}
 	  	}
 	}

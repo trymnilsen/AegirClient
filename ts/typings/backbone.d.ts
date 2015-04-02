@@ -77,9 +77,6 @@ declare module Backbone {
         listenToOnce(object: any, events: string, callback: Function): any;
         stopListening(object?: any, events?: string, callback?: Function): any;
     }
-    class EventsBase extends Events {
-        constructor();
-    }
 
     class ModelBase extends Events {
         url: any;
