@@ -5,14 +5,19 @@
 module App {
 	export module Core {
 		'use strict';
-		export class Context extends Backbone.EventsBase {
+		export class Context {
 
+	  		public events : Backbone.Events = null;
 			/**
 			 * Internal storage of our data
 			 */
 			private data : {[id:string] : Object};
 	  		private messenger : App.Messaging.AppMessenger;
 
+			constructor() {
+				console.log('Context Created');
+				this.events = new Backbone.Events();
+			}
 			/**
 			 * Sets the messenger object for this context
 			 * @param {App.Messaging.AppMessenger}
@@ -42,7 +47,7 @@ module App {
 			public setData(dataKey: string, data: Object): void {
 				this.data[dataKey] = data;
 				//notifyChange
-				this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+				this.events.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
 			}
 	  	}
 	}

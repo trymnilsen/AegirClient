@@ -67,14 +67,14 @@ module App{
         }
         private listenForContextChanges(): void {
             if(!!this.context) {
-                this.context.listenTo(this,
+                this.context.events.listenTo(this,
                     App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED'],
                     this.contextUpdated);
             }
         }
         private stopListenForContext(): void {
             if(!!this.context) {
-                this.context.stopListening(this,
+                this.context.events.stopListening(this,
                     App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
             }
         }
