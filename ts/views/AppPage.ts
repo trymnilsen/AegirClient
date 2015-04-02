@@ -48,7 +48,7 @@ module App {
          * - rebinding events
          */
         resume(): void {
-            
+            this.createPanels();
         }
         render(): App.AppPage {
             return this;
@@ -58,13 +58,37 @@ module App {
             var panelRow : JQuery = this.createNewPanelRow();
             for(var i = 0; i<this.panels.length; i++) {
                 var panel : App.Panel.PagePanel = this.panels[i];
+                //Check if the panel is applicable (E.G it has the data it needs
+                //or other constraints defined in the panel)
+                //maybe we only want to show if its a certain day of the month
+                //special data is included...
+                if(!panel.isApplicable()){
+                    //Nope the panel is not applicable, jump to the next ielement
+                    //in our for loop
+                    continue;
+                }
                 var panelWidth : number = panel.getPanelWidth();
+                if(panelWidth>App.AppPage.MAX_PANEL_WIDTH)  {
+                    console.warn("Panel size invalid (Too high),\
+                        you might experience wierd layout (like one row to many)");
+                }
+                //Check if we have exeeded the max panel width
                 if(currentPanelWidth+panelWidth>App.AppPage.MAX_PANEL_WIDTH) {
+                    //Append the current row
+                    this.$el.append(panelRow);
+                    //Create a new row and reset current width
                     panelRow = this.createNewPanelRow();
                     currentPanelWidth = 0;
                 } else {
+                    //Add to current width
                     currentPanelWidth += panelWidth;
                 }
+                //Append the panel to our row
+                //Add correct class
+                var columnClass : string = " col-md-"+panelWidth+" ";
+                panel.className += columnClass;
+                //Append
+                panelRow.append(panel.$el);
             }
         }
         private updatePanelState(): void {
