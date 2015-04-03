@@ -1,0 +1,1 @@
+module App.Template.TitlePanel { export var html =  '' } 

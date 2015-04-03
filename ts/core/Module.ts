@@ -1,10 +1,11 @@
 /// <reference path="Context.ts" />
+/// <reference path="../config/IConfigurable.ts" />
 
 module App {
     /**
      * Base class For a Module
      */
-    export class Module {
+    export class Module implements App.Config.IConfigurable {
         /**
          * The Context for this module
          */
@@ -31,6 +32,15 @@ module App {
          */
         appReady():void {
 
+        }
+        public hasOwnConfig() :boolean {
+            return (!!this.config);
+        }
+        public getAllConfig(): {[id:string]:Object} {
+            return this.config;
+        }
+        getConfig(configKey :string):any {
+            return this.config[configKey];
         }
         /**
          * Sets the config hash for this module

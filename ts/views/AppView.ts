@@ -2,57 +2,64 @@
 /// <reference path="../typings/jquery.d.ts" />
 /// <reference path="../core/Context.ts"/>
 /// <reference path="../config/Constants.ts" />
-
+/// <reference path="../core/IDisposable.ts" />
 
 module App{
-    export module View {
-        /**
-         * Defines an interface for describing how to attach a child view to
-         * another view. Uses the attach selector (css selector used by jquery)
-         * or the direct jquery element to know where to
-         * append the given childview.
-         *
-         *     Note: If both attachSelector
-         *     and attachSelector are given, jqueryObject will be used
-         *
-         */
-        export interface AppendChildViewOptions {
-            /**
-             * The view that we would like to append
-             */
-            childView : App.AppView;
-            /**
-             * An css selector to use by jquery to find the node to attach to
-             */
-            attachSelector ?: string;
-            /**
-             * jquery object to use as an attach point
-             */
-            jqueryObject ?: JQuery;
-        }
-    }
-    export class AppView extends Backbone.View
+    /**
+     * The AppView is the baseclass for all DOM elements rendered by the application
+     * It handles managing childviews and contains a context which triggers
+     * rerendering if changed.
+     */
+    export class AppView extends Backbone.View implements App.Core.IDisposable
     {
-        //Disposable
-        private context: App.Core.Context = null;
-        private childViews: Array<AppView> = [];
         public template: (data)=> string;
+        public appendOptions: App.View.IAppViewAppendOptions;
 
-        //Render
-        attachNodeSelector: string;
-        constructor(options: Backbone.ViewOptions, context?: App.Core.Context){
-            super(options);
+        protected context: App.Core.Context = null;
+
+        private childViews: {[id:string] : App.AppView} = {};
+
+        constructor(options: App.View.IAppViewOptions){
+            //Set options for backbone view, if its set or not
+            super(options.backboneOptions || {});
             //Check if context is supplied
-            if(!!context) {
-                this.setContext(context);
+            if(!!options.context) {
+                this.setContext(options.context);
             } else {
                 var newContext : App.Core.Context = new App.Core.Context();
                 this.setContext(newContext);
             }
         }
+        /**
+         * Resolves the Append point to a jquery object, abstracting away the implementation
+         * of each view.
+         * @param view the view we want to append
+         */
+        public static resolveViewAppendPoint(view:App.AppView) {
+
+            //If the jquery object is present use it
+            if(!!view.appendOptions.JQueryAttachPoint) {
+                return view.appendOptions.JQueryAttachPoint;
+            //else use the selector
+            } else if(!!view.appendOptions.AttachPointSelector) {
+                var jqueryObj : JQuery = $(view.appendOptions.AttachPointSelector);
+                if(!jqueryObj[0])
+                {
+                    console.warn("No match for selector",view.appendOptions.AttachPointSelector);
+                }
+                return jqueryObj;
+            //Neither? Let us know about it
+            } else {
+                console.warn("No way to append, neither selector or jq object present");
+            }
+        }
+        /**
+         * Dispose any resources this view holds
+         */
         public dispose(domEventsOnly : boolean = false): void {
-            for(var i = 0; i<this.childViews.length; i++) {
-                this.childViews[i].dispose(domEventsOnly);
+            for (var childViewId in this.childViews) {
+                var childView : App.AppView = this.childViews[childViewId];
+                childView.dispose(domEventsOnly);
             }
             //Remove dom eveants
             this.undelegateEvents();
@@ -60,6 +67,17 @@ module App{
                 this.stopListenForContext();
             }
         }
+        public setAppendOptions(options: App.View.IAppViewAppendOptions)
+        {
+            if(!options.AttachPointSelector && !options.JQueryAttachPoint) {
+                this.appendOptions = options;
+            } else {
+                console.log("Append options was not valid, was:", options);
+            }
+        }
+        /**
+         * Set or change to another context for this view
+         */
         public setContext(newContext:App.Core.Context): void{
             //Remove events for old context
             if(!!this.context){
@@ -69,9 +87,14 @@ module App{
             this.context = newContext;
             this.listenForContextChanges();
         }
+        /**
+         * Render the view, and subviews
+         * @return returns self for fluency
+         */
         public render(): App.AppView {
-            //Clear previous content
-            this.dispose(true);
+            //Unlisten any dom events
+            this.undelegateEvents();
+
             //get context
             if(!!this.context) {
                 var data : any = this.context.getAllData();
@@ -85,8 +108,17 @@ module App{
             } else {
                 console.warn("Context was invalid, was:",this.context);
             }
+            //Render childviews
+            for (var childViewId in this.childViews) {
+                var childView : App.AppView = this.childViews[childViewId];
+                childView.render();
+                var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView);
+                appendPoint.append(childView.$el);
+
+            }
             return this;
         }
+
         /**
          * Append a view to this view as a child
          * This gives us the befit of properly disposing the views (removing any
@@ -94,36 +126,36 @@ module App{
          * entire view
          * @param appendOptions options for appending a view to this view
          */
-        protected appendView(appendOptions : App.View.AppendChildViewOptions): void {
-            if(appendOptions.childView) {
+        protected appendView(view : App.AppView): void {
+            if(!View) {
                 console.warn("No childview selected, cannot append.");
                 return;
             }
-            var success : boolean = false;
-            if(!!appendOptions.jqueryObject){ //Jquery was thruthy use it
-                //Append to object
-                appendOptions.jqueryObject.append(appendOptions.childView.$el);
-                //Hey we did it
-                success = true;
-            } else if(!!appendOptions.attachSelector) {
-                //Get element with selector,
-                //we only need to search with this element
-                var result : JQuery = $(appendOptions.attachSelector, this.$el);
-                if(!!result[0]){//Check if we got a match
-                    result.append(appendOptions.childView.$el);
-                    //We did it!
-                    success = true;
-                } else {
-                    console.warn("No element found for childview with selector: ",
-                        appendOptions.attachSelector);
-                }
+            //Moved to rendering
+            // var success : boolean = false;
+            // if(!!appendOptions.jqueryObject){ //Jquery was thruthy use it
+            //     //Append to object
+            //     appendOptions.jqueryObject.append(appendOptions.childView.$el);
+            //     //Hey we did it
+            //     success = true;
+            // } else if(!!appendOptions.attachSelector) {
+            //     //Get element with selector,
+            //     //we only need to search with this element
+            //     var result : JQuery = $(appendOptions.attachSelector, this.$el);
+            //     if(!!result[0]){//Check if we got a match
+            //         result.append(appendOptions.childView.$el);
+            //         //We did it!
+            //         success = true;
+            //     } else {
+            //         console.warn("No element found for childview with selector: ",
+            //             appendOptions.attachSelector);
+            //     }
+            // }
+            //
+            //Check if already appended
+            if(!this.childViews[view.cid]) {
+                this.childViews[view.cid] = view;
             }
-            if(success){
-                this.childViews.push(appendOptions.childView);
-            } else {
-                console.warn("Appending childview was not successful")
-            }
-
         }
         protected setTemplate(templateString :string): void {
             this.template = _.template(templateString);

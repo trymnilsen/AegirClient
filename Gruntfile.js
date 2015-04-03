@@ -64,10 +64,10 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["style"]
+                    paths: ["style","ts"]
                 },
                 files: {
-                    "style/style.css": "style/main.less"
+                    "style/style.css": ["style/*.less", "ts/**/*.less"]
                 }
             }
         },

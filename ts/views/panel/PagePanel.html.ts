@@ -1,1 +1,1 @@
-module App.Template.PagePanel { export var html =  'Page Panel' } 
+module App.Template.PagePanel { export var html =  '<div class="page-panel pad-all"></div>' } 

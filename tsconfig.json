@@ -11,10 +11,13 @@
         "./ts/AppEntryPoint.ts",
         "./ts/config/Config.ts",
         "./ts/config/Constants.ts",
+        "./ts/config/IConfigurable.ts",
         "./ts/config/ModuleDefinitions.ts",
         "./ts/config/PanelDefinitions.ts",
         "./ts/core/Application.ts",
         "./ts/core/Context.ts",
+        "./ts/core/IDisposable.ts",
+        "./ts/core/IFactory.ts",
         "./ts/core/Module.ts",
         "./ts/core/Router.ts",
         "./ts/messages/AppMessenger.ts",
@@ -28,11 +31,16 @@
         "./ts/typings/underscore.d.ts",
         "./ts/views/AppPage.ts",
         "./ts/views/AppView.ts",
+        "./ts/views/IAppViewAppendOptions.ts",
+        "./ts/views/IAppViewOptions.ts",
         "./ts/views/navigation/NavigationMenu.html.ts",
         "./ts/views/navigation/NavigationMenu.ts",
         "./ts/views/panel/PagePanel.html.ts",
         "./ts/views/panel/PagePanel.ts",
-        "./ts/views/panel/panels/news/NewsPanel.html.ts",
-        "./ts/views/panel/panels/news/NewsPanel.ts"
+        "./ts/views/panel/custom_panels/CustomPagePanel.ts",
+        "./ts/views/panel/custom_panels/news/NewsPanel.html.ts",
+        "./ts/views/panel/custom_panels/news/NewsPanel.ts",
+        "./ts/views/panel/title_panel/TitlePanel.html.ts",
+        "./ts/views/panel/title_panel/TitlePanel.ts"
     ]
 }

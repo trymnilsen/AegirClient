@@ -5,19 +5,24 @@ module App {
 			"PageRender" : {
 				"Pages"   : [
 		        	{
-		        		"id"		: "PGHOME",
+		        		"id"		: "PG_HOME",
 		            	"name"      : "Home",
 		            	"routeName"	: "home",
 		            	"panels"    : ["TestPanel"]
 		        	},
 		        	{
-		        		"id"		: "PGLOCATION",
+		        		"id"		: "PG_LOCATION",
 		            	"name"      : "Location",
 		            	"routeName"	: "location",
 		            	"panels"    : ["TestPanel"]
-		        	}
+		        	},
 	        	]
 			}
-		}
+		},
+        "Panels" : {
+            "PL_NEWSPANEL" : {
+                "Configstuffhere":"Todo"
+            }
+        }
 	}
 }

@@ -43,13 +43,24 @@ module App {
 	        	for (var i = 0; i < pages.length; ++i) {
 	        		//Create easy access to our page data
 	        		var pageDefintion 	: App.Page.AppPageDefinitions = pages[i];
-	        		//Create the panels needed
+	        		//Hold the created panels for this page
 	        		var pagePanels 		: Array<App.Panel.PagePanel>;
-	        		//Create the page data
-	        		var pageData 		: App.AppPageOptions = {
-	        			name : pageDefintion.name,
-	        			panels: pagePanels
-	        		}
+                    //The IDs of panels we need
+                    var panelIds        : Array<string> = pageDefintion.panels;
+                    //Make sure we dont share our panels and bring in bad data.
+                    for(var ii = 0; ii<panelIds.length; ii++)
+                    {
+                        var panelID : string = panelIds[i];
+                        var panel : App.Panel.PagePanel =
+                            App.Panel.PagePanel.resolveAndCreatePanel(panelID);
+
+                        pagePanels.push(panel);
+                    }
+                    //Create the page data
+                    var pageData : App.AppPageOptions = {
+                            name     : pageDefintion.name,
+                            panels   : pagePanels
+                    }
 	        		//Instantiate the page
 	        		var page : App.AppPage = new App.AppPage(pageData);
 	        	}
@@ -74,14 +85,20 @@ module App {
 	            //Create router instance
 	            this.router = new App.Core.Router();
 	            //Catch all
-	            this.router.route("*actions","defaultRoute",_.bind(this.defaultRoute, this));
+	            this.router.route("*actions",
+                                  "defaultRoute",
+                                  _.bind(this.defaultRoute, this));
 	            //Store all routes
-	            var pages : Array<Object> = App.config["Modules"]["PageRender"]["Pages"];
+	            var pages : Array<Object> = App.config["Modules"]
+                                                      ["PageRender"]
+                                                      ["Pages"];
+
 	            for(var i = 0; i<pages.length; i++)
 	            { 
 	                var route       : string = pages[i]["routeName"];
 	                var name        : string = pages[i]["name"];
-	                this.router.route(route+"(/*params)",name,_.bind(this.routeChanged, this, route));
+	                this.router.route(route+"(/*params)",
+                        name,_.bind(this.routeChanged, this, route));
 	            }
 
 	            this.router.initialize();
