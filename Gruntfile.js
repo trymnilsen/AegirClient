@@ -32,6 +32,13 @@ module.exports = function(grunt) {
                     sourceMap: false
                 }
             },
+            template: {
+                src: ['ts/**/*.ts'],
+                html: ["ts/**/*.html"],
+                options: {
+                    compile: false
+                }
+            },
             test : {
                 //Fetch the template inlined version
                 src: ['tmp/ts/**/*.ts'],
@@ -116,6 +123,9 @@ module.exports = function(grunt) {
     grunt.registerTask('dev',       ['clean:build',
                                     'ts:base',
                                     'less']);
+
+    //Only run the templating tasks
+    grunt.registerTask('tpl',       ['ts:template']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
     grunt.registerTask('nodebug',   ['clean:build',

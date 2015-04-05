@@ -8,13 +8,13 @@ module App {
 		        		"id"		: "PG_HOME",
 		            	"name"      : "Home",
 		            	"routeName"	: "home",
-		            	"panels"    : ["TestPanel"]
+		            	"panels"    : ["PL_NEWSPANEL"]
 		        	},
 		        	{
 		        		"id"		: "PG_LOCATION",
 		            	"name"      : "Location",
 		            	"routeName"	: "location",
-		            	"panels"    : ["TestPanel"]
+		            	"panels"    : ["PL_NEWSPANEL"]
 		        	},
 	        	]
 			}

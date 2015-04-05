@@ -34,27 +34,31 @@ module App {
 	        	}
 
 	        	this.createRouter();
+                this.navigateToPage(this.pages[Object.keys(this.pages)[0]]);
 			}
 	        /**
 	         * Generates the registred pages set in [[App.config]]
 	         */
 	        private generatePages() : void {
+                var appPages : {[id:string] : App.AppPage} = {};
 	        	var pages = this.config['Pages'];
 	        	for (var i = 0; i < pages.length; ++i) {
 	        		//Create easy access to our page data
 	        		var pageDefintion 	: App.Page.AppPageDefinitions = pages[i];
 	        		//Hold the created panels for this page
-	        		var pagePanels 		: Array<App.Panel.PagePanel>;
+	        		var pagePanels 		: Array<App.Panel.PagePanel> = [];
                     //The IDs of panels we need
                     var panelIds        : Array<string> = pageDefintion.panels;
                     //Make sure we dont share our panels and bring in bad data.
-                    for(var ii = 0; ii<panelIds.length; ii++)
-                    {
-                        var panelID : string = panelIds[i];
+                    for(var ii = 0; ii<panelIds.length; ii++) {
+                        var panelID : string = panelIds[ii];
                         var panel : App.Panel.PagePanel =
                             App.Panel.PagePanel.resolveAndCreatePanel(panelID);
-
-                        pagePanels.push(panel);
+                        if(!!panel) {
+                            pagePanels.push(panel); 
+                        } else {
+                            console.warn("Panel with id: '"+panelID+"' was not added, panel was invalid");
+                        }
                     }
                     //Create the page data
                     var pageData : App.AppPageOptions = {
@@ -63,8 +67,9 @@ module App {
                     }
 	        		//Instantiate the page
 	        		var page : App.AppPage = new App.AppPage(pageData);
+                    appPages[pageDefintion.name] = page;
 	        	}
-	        	this.pages = pages;
+	        	this.pages = appPages;
 	        }
 	        /**
 	         * Navigate to the given page
@@ -74,9 +79,15 @@ module App {
 
 	        	if(this.activePage) { //if truthy suspend it
 	        		this.activePage.suspend();
+                    this.activePage.dispose(true);
+                    console.log("Suspending View '"+this.activePage.cid+"'");
 	        	}
 	        	page.resume();
+                //Rendering New Page
+                console.log("Resuming/Rendering Page '"+page.cid+"'");
 	        	this.activePage = page;
+                this.activePage.render();
+                $('#content').append(this.activePage.$el);
 	        }
 	        /**
 	         * Create the router instance

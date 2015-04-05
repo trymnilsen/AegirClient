@@ -1,3 +1,4 @@
+/// <reference path="NewsPanel.html.ts" />
 /// <reference path="../CustomPagePanel.ts" />
 /// <reference path="../../../IAppViewOptions.ts" />
 
@@ -7,6 +8,7 @@ module App {
             export class NewsPanel extends App.Panel.CustomPagePanel {
                 constructor(options: App.View.IAppViewOptions) {
                     super(options);
+                    this.setTemplate(App.Template.NewsPanel.html);
                 }
             }
         }

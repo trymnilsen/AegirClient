@@ -54,7 +54,7 @@ module App {
             	//First get the instance for this ID
             	var panelInstance = App.panelDefinitions[panel];
             	if(!panelInstance){
-            		console.warn("Panel Instance not valid, was: "+panelInstance);
+            		console.warn("Panel Instance not valid(probs because it did not exist), did you use the propper id? PanelID: '"+panel+"' PanelInstance:", panelInstance);
             		return;
             	}
                 var newPanelClone = panelInstance.createNew();
