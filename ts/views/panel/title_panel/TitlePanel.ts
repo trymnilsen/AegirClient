@@ -1,4 +1,6 @@
 /// <reference path="../PagePanel.ts" />
+/// <reference path="TitlePanel.html.ts" />
+
 module App {
     export module Panel {
         export class TitlePanel extends App.Panel.PagePanel {
@@ -7,7 +9,7 @@ module App {
                 //Set the name in our context, this way we can automate
                 //the process of updating it if the name is later changed
                 this.context.setData("Title", title, false);
-
+                this.setTemplate(App.Template.TitlePanel.html);
             }
         }
     }

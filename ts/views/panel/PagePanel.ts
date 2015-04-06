@@ -33,7 +33,7 @@ module App {
              */
             constructor(PanelID: string, options : App.View.IAppViewOptions) {
                 super(options);
-                this.attachSelector = "#helloo";
+                this.attachSelector = ".title-panel-content";
                 //Get the config for this panel
                 this.setConfig(App.config['Panels'][PanelID]);
                 //Set the attach point for child views
