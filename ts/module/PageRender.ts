@@ -28,7 +28,7 @@ module App {
 	        appReady() : void {
 	        	this.generatePages();
 
-	        	if(Object.keys(this.pages).length > 0)
+	        	if(!!this.pages && Object.keys(this.pages).length > 0)
 	        	{
 	        		//TODO//this.navigateToPage(this.pages[0]);
 	        	}

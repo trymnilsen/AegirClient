@@ -22,6 +22,7 @@ module App{
         constructor(options: App.View.IAppViewOptions){
             //Set options for backbone view, if its set or not
             super(options.backboneOptions || {});
+
             //Check if context is supplied
             if(!!options.context) {
                 this.setContext(options.context);
@@ -29,20 +30,29 @@ module App{
                 var newContext : App.Core.Context = new App.Core.Context();
                 this.setContext(newContext);
             }
+            //Append childviews
+            if(!!options.childViews){
+                this.addMultipleViews(options.childViews);
+            }
         }
         /**
          * Resolves the Append point to a jquery object, abstracting away the implementation
          * of each view.
          * @param view the view we want to append
          */
-        public static resolveViewAppendPoint(view:App.AppView) {
+        public static resolveViewAppendPoint(view:App.AppView, jqueryContext ?:JQuery) {
 
             //If the jquery object is present use it
             if(!!view.appendOptions.JQueryAttachPoint) {
                 return view.appendOptions.JQueryAttachPoint;
             //else use the selector
             } else if(!!view.appendOptions.AttachPointSelector) {
-                var jqueryObj : JQuery = $(view.appendOptions.AttachPointSelector);
+                var jqueryObj : JQuery = null;
+                if(!!jqueryContext) {
+                    jqueryObj = $(view.appendOptions.AttachPointSelector, jqueryContext);
+                } else {
+                    jqueryObj = $(view.appendOptions.AttachPointSelector);
+                }
                 if(!jqueryObj[0])
                 {
                     console.warn("No match for selector",view.appendOptions.AttachPointSelector);
@@ -112,13 +122,12 @@ module App{
             for (var childViewId in this.childViews) {
                 var childView : App.AppView = this.childViews[childViewId];
                 childView.render();
-                var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView);
+                var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView,this.$el);
                 appendPoint.append(childView.$el);
 
             }
             return this;
         }
-
         /**
          * Append a view to this view as a child
          * This gives us the befit of properly disposing the views (removing any
@@ -155,6 +164,14 @@ module App{
             //Check if already appended
             if(!this.childViews[view.cid]) {
                 this.childViews[view.cid] = view;
+            } else {
+                console.log("View :'"+view.cid+"' Already a childview");
+            }
+        }
+        protected addMultipleViews(views: Array<App.AppView>):void {
+            //Add childviews
+            for (var i = 0; i < views.length; ++i) {
+                this.appendView(views[i]);
             }
         }
         protected setTemplate(templateString :string): void {

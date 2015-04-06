@@ -48,14 +48,20 @@ module App {
          * - rebinding events
          */
         resume(): void {
-            this.createPanels();
+            this.AppendPanels();
         }
         render(): App.AppPage {
+            for(var i = 0; i<this.panels.length; i++) {
+                var panel : App.Panel.PagePanel = this.panels[i];
+                panel.render();
+            }
             return this;
         }
-        private createPanels(): void {
+        private AppendPanels(): void {
             var currentPanelWidth : number = 0;
             var panelRow : JQuery = this.createNewPanelRow();
+            //Append the first row
+            this.$el.append(panelRow);
             for(var i = 0; i<this.panels.length; i++) {
                 var panel : App.Panel.PagePanel = this.panels[i];
                 //Check if the panel is applicable (E.G it has the data it needs
@@ -74,11 +80,11 @@ module App {
                 }
                 //Check if we have exeeded the max panel width
                 if(currentPanelWidth+panelWidth>App.AppPage.MAX_PANEL_WIDTH) {
-                    //Append the current row
-                    this.$el.append(panelRow);
                     //Create a new row and reset current width
                     panelRow = this.createNewPanelRow();
                     currentPanelWidth = 0;
+                    //Append new row
+                    this.$el.append(panelRow);
                 } else {
                     //Add to current width
                     currentPanelWidth += panelWidth;
@@ -86,7 +92,7 @@ module App {
                 //Append the panel to our row
                 //Add correct class
                 var columnClass : string = " col-md-"+panelWidth+" ";
-                panel.className += columnClass;
+                panel.$el.addClass(columnClass);
                 //Append
                 panelRow.append(panel.$el);
             }
@@ -95,7 +101,7 @@ module App {
 
         }
         private createNewPanelRow(): JQuery {
-            return $('div').addClass('row');
+            return $('<div></div>').addClass('row');
         }
     }
 }

@@ -16,9 +16,7 @@ module App {
         export class PagePanel extends App.AppView
         						implements App.Core.IFactory<App.Panel.PagePanel>,
         									App.Config.IConfigurable {
-            private attachSelector : string;
-        	private PanelID :string;
-            private configData : {[id:string]:Object};
+            public testVar : string = "fooobar";
             /**
              * Amount of columns this panel takes up.
              * Each row has a total of 12 columns available, meaning 6 will be
@@ -26,13 +24,18 @@ module App {
              * For more info check out http://getbootstrap.com/css/#grid
              * for more info
              */
-            protected panelWidth : number;
+            protected panelWidth : number = 6;
+
+            private attachSelector : string;
+            private PanelID :string;
+            private configData : {[id:string]:Object};
             /**
              * Constructs a new page panel
              * @param options for this view, defaults to no options
              */
             constructor(PanelID: string, options : App.View.IAppViewOptions) {
                 super(options);
+                console.log("Creating Panel with ID: '"+PanelID+"' and Options: ",options);
                 this.attachSelector = ".title-panel-content";
                 //Get the config for this panel
                 this.setConfig(App.config['Panels'][PanelID]);
@@ -46,6 +49,7 @@ module App {
                         }
                     }
                 }
+                this.$el.addClass("page-panel");
             }
             /**
              * Find the panel and get a new one
