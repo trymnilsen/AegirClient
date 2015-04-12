@@ -4,7 +4,9 @@
 
 class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
 
-    private options : App.IAppCollectionOptions; 
+    private options : App.IAppCollectionOptions;
+    private persistance: App.Data.Persistance.IPersistable;
+
     constructor(options: App.IAppCollectionOptions) {
         super();
         this.options = options;
@@ -13,7 +15,7 @@ class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<T
     private bootstrapData():void {
         if( !!this.options.boostrapId
             || this.options.boostrapId!=="") {
-            
+
         }
     }
 }
