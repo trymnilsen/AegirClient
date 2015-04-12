@@ -9,7 +9,6 @@
     ],
     "files": [
         "./ts/AppEntryPoint.ts",
-        "./ts/config/CollectionDefinitions.ts",
         "./ts/config/Config.ts",
         "./ts/config/Constants.ts",
         "./ts/config/IConfigurable.ts",
@@ -22,9 +21,9 @@
         "./ts/core/Module.ts",
         "./ts/core/Router.ts",
         "./ts/data/AppCollection.ts",
-        "./ts/data/AppCollectionResolver.ts",
         "./ts/data/IAppCollectionOptions.ts",
         "./ts/data/persistance/IPersistable.ts",
+        "./ts/data/persistance/IPersistanceProvider.ts",
         "./ts/data/persistance/LocalStoragePersistance.ts",
         "./ts/data/persistance/RESTPersistance.ts",
         "./ts/messages/AppMessenger.ts",

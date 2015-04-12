@@ -1,10 +1,11 @@
-/// <reference path="../../typings/backbone.d.ts" />
+/// <reference path="IPersistanceProvider.ts" />
 
 module App {
     export module Data {
         export module Persistance {
             export interface IPersistable {
-                persist(model: Backbone.Model): void;
+                setPeristanceProvider(provider:App.Data.Persistance.IPersistanceProvider):void;
+                getPersitanceProvider():App.Data.Persistance.IPersistanceProvider;
             }
         }
     }
