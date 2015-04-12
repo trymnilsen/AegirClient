@@ -1,21 +1,25 @@
 /// <reference path="../typings/backbone.d.ts" />
 /// <reference path="IAppCollectionOptions.ts" />
+/// <reference path="persistance/IPersistable.ts" />
 
+module App {
+    export module Data {
+        export class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
 
-class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
+            private options : App.IAppCollectionOptions;
+            private persistance: App.Data.Persistance.IPersistable;
 
-    private options : App.IAppCollectionOptions;
-    private persistance: App.Data.Persistance.IPersistable;
+            constructor(options: App.IAppCollectionOptions) {
+                super();
+                this.options = options;
 
-    constructor(options: App.IAppCollectionOptions) {
-        super();
-        this.options = options;
+            }
+            private bootstrapData():void {
+                if( !!this.options.boostrapId
+                    || this.options.boostrapId!=="") {
 
-    }
-    private bootstrapData():void {
-        if( !!this.options.boostrapId
-            || this.options.boostrapId!=="") {
-
+                }
+            }
         }
     }
 }
