@@ -20,6 +20,8 @@
         "./ts/core/IFactory.ts",
         "./ts/core/Module.ts",
         "./ts/core/Router.ts",
+        "./ts/data/AppCollection.ts",
+        "./ts/data/IAppCollectionOptions.ts",
         "./ts/messages/AppMessenger.ts",
         "./ts/messages/Message.ts",
         "./ts/module/LoadIndicator.ts",
