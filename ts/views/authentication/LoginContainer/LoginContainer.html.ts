@@ -1,0 +1,1 @@
+module App.Template.LoginContainer { export var html =  'ssaas' } 

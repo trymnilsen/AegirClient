@@ -1,0 +1,1 @@
+module App.Template.LoginForm { export var html =  'fdsf' } 

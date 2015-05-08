@@ -15,6 +15,8 @@ $(() => {
          * Holds the reference to our application object
          */
         var mainApp : App.Application = new App.Application();
+        //Attach Application to global
+        window['Application'] = mainApp;
         /**
          * Calls startup methods and dependencies in the Application
          */
@@ -23,7 +25,6 @@ $(() => {
         var t3 = performance.now();
         console.log('Boostrap End at '+t3+'ms');
         console.log('Boostrap took '+(t3 - t2)+' milliseconds');
-
     }, 500);
 
 });

@@ -125,7 +125,7 @@ module.exports = function(grunt) {
                                     'less']);
 
     //Only run the templating tasks
-    grunt.registerTask('tpl',       ['ts:template']);
+    grunt.registerTask('temp',       ['ts:template']);
 
     //Runs all tasks but the uglify and also does not generate sourcemap
     grunt.registerTask('nodebug',   ['clean:build',

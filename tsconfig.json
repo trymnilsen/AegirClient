@@ -20,6 +20,7 @@
         "./ts/core/IFactory.ts",
         "./ts/core/Module.ts",
         "./ts/core/Router.ts",
+        "./ts/context/AuthenticationContext.ts",
         "./ts/data/AppCollection.ts",
         "./ts/data/IAppCollectionOptions.ts",
         "./ts/data/persistance/IPersistable.ts",
