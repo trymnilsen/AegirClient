@@ -57,7 +57,7 @@ module App {
                         if(!!panel) {
                             pagePanels.push(panel); 
                         } else {
-                            console.warn("Panel with id: '"+panelID+"' was not added, panel was invalid");
+                            console.warn("[PAGERENDER:generatePages]Panel with id: '"+panelID+"' was not added, panel was invalid");
                         }
                     }
                     //Create the page data
@@ -80,11 +80,11 @@ module App {
 	        	if(this.activePage) { //if truthy suspend it
 	        		this.activePage.suspend();
                     this.activePage.dispose(true);
-                    console.log("Suspending View '"+this.activePage.cid+"'");
+                    console.log("[PAGERENDER:Navigate]Suspending View '"+this.activePage.cid+"'");
 	        	}
 	        	page.resume();
                 //Rendering New Page
-                console.log("Resuming/Rendering Page '"+page.cid+"'");
+                console.log("[PAGERENDER:Navigate]Resuming/Rendering Page '"+page.cid+"'");
 	        	this.activePage = page;
                 this.activePage.render();
                 $('#content').append(this.activePage.$el);
@@ -117,7 +117,7 @@ module App {
         	}
         	private defaultRoute(attempedRoute: any): void
         	{
-        		console.log("DefaultRoute",attempedRoute);
+        		console.log("[PAGERENDER:routing]DefaultRoute",attempedRoute);
         	}
         	private routeChanged(pageId: string, params: string):void {
         		//The params is delivered on the format /xxx/yyy/zzz, 

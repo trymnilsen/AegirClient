@@ -6,7 +6,7 @@ module App {
         export module Persistance {
             export class LocalStoragePersistance implements App.Data.Persistance.IPersistanceProvider {
                 public persist(model: Backbone.Model): void {
-                    console.log("Saving Model", model);
+                    console.log("[LOCALSTORAGEPERSIST:persist]Saving Model", model);
                 }
             }
         }

@@ -9,7 +9,7 @@ module App {
         /**
          * The Context for this module
          */
-        private context: App.Core.Context;
+        protected context: App.Core.Context;
         /**
          * A Config hash.
          * If the module has a section in the config file, it will
@@ -25,7 +25,7 @@ module App {
          * Construct a new Model instance
          */
         constructor() {
-
+            this.context = new App.Core.Context();
         }
         /**
          * Called when the App is ready and config has been loaded

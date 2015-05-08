@@ -75,7 +75,7 @@ module App {
                 }
                 var panelWidth : number = panel.getPanelWidth();
                 if(panelWidth>App.AppPage.MAX_PANEL_WIDTH)  {
-                    console.warn("Panel size invalid (Too high),\
+                    console.warn("[APPPAGE:Append]Panel size invalid (Too high),\
                         you might experience wierd layout (like one row to many)");
                 }
                 //Check if we have exeeded the max panel width

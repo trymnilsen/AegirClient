@@ -3,7 +3,7 @@
 /// <reference path="../views/panel/title_panel/TitlePanel.ts" />
 
 module App {
-    export var startupState    : String = "AuthState";
+    export var startupState    : string = "AuthState";
     export var stateDefinitions: {[id:string]: Object} = {
         "AuthState" : {
             "Events"  : ["Forbidden"],

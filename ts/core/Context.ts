@@ -25,8 +25,6 @@ module App {
              */
 			constructor() {
 				super();
-				console.log('Context Created');
-
 			}
 			/**
 			 * Sets the messenger object for this context
@@ -54,7 +52,7 @@ module App {
              */
 			public getData(dataKey: string): Object {
 				if(this.data[dataKey] === undefined) {
-					console.warn("Tried to get non datakey ",dataKey);
+					console.warn("[CONTEXT:getData]Tried to get non datakey ",dataKey);
 				} else {
 					return this.data[dataKey];
 				}

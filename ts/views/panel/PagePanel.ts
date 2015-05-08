@@ -35,7 +35,7 @@ module App {
              */
             constructor(PanelID: string, options : App.View.IAppViewOptions) {
                 super(options);
-                console.log("Creating Panel with ID: '"+PanelID+"' and Options: ",options);
+                console.log("[PAGEPANEL:Construct]Creating Panel with ID: '"+PanelID+"' and Options: ",options);
                 this.attachSelector = ".title-panel-content";
                 //Get the config for this panel
                 this.setConfig(App.config['Panels'][PanelID]);
@@ -58,7 +58,7 @@ module App {
             	//First get the instance for this ID
             	var panelInstance = App.panelDefinitions[panel];
             	if(!panelInstance){
-            		console.warn("Panel Instance not valid(probs because it did not exist), did you use the propper id? PanelID: '"+panel+"' PanelInstance:", panelInstance);
+            		console.warn("[PAGEPANEL:Resolve]Panel Instance not valid(probs because it did not exist), did you use the propper id? PanelID: '"+panel+"' PanelInstance:", panelInstance);
             		return;
             	}
                 var newPanelClone = panelInstance.createNew();
@@ -93,7 +93,7 @@ module App {
             }
             public setData(newData :{[id:string]: Object}) : void
             {
-                console.log("Setting Data",newData);
+                console.log("[PAGEPANEL:setData]Setting Data",newData);
             }
             /**
              * Factory Method returning a new instance of this Page Panel

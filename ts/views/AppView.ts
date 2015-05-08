@@ -55,12 +55,12 @@ module App{
                 }
                 if(!jqueryObj[0])
                 {
-                    console.warn("No match for selector",view.appendOptions.AttachPointSelector);
+                    console.warn("[APPVIEW:ResolveAppend]No match for selector",view.appendOptions.AttachPointSelector);
                 }
                 return jqueryObj;
             //Neither? Let us know about it
             } else {
-                console.warn("No way to append, neither selector or jq object present");
+                console.warn("[APPVIEW:ResolveAppend]No way to append, neither selector or jq object present");
             }
         }
         /**
@@ -82,7 +82,7 @@ module App{
             if(!options.AttachPointSelector && !options.JQueryAttachPoint) {
                 this.appendOptions = options;
             } else {
-                console.log("Append options was not valid, was:", options);
+                console.log("[APPVIEW:AppendOptions]Append options was not valid, was:", options);
             }
         }
         /**
@@ -110,13 +110,13 @@ module App{
                 var data : any = this.context.getAllData();
                 //Data was not thruthy
                 if(!data) {
-                    console.warn("Data for view rerender was invalid, was:",data);
+                    console.warn("[APPVIEW:Render]Data for view rerender was invalid, was:",data);
                 }
                 var renderedContent : string = this.template(data);
                 this.$el.html(renderedContent);
 
             } else {
-                console.warn("Context was invalid, was:",this.context);
+                console.warn("[APPVIEW:Render]Context was invalid, was:",this.context);
             }
             //Render childviews
             for (var childViewId in this.childViews) {
@@ -137,7 +137,7 @@ module App{
          */
         protected appendView(view : App.AppView): void {
             if(!View) {
-                console.warn("No childview selected, cannot append.");
+                console.warn("[APPVIEW:Append]No childview selected, cannot append.");
                 return;
             }
             //Moved to rendering
@@ -165,7 +165,7 @@ module App{
             if(!this.childViews[view.cid]) {
                 this.childViews[view.cid] = view;
             } else {
-                console.log("View :'"+view.cid+"' Already a childview");
+                console.log("[APPVIEW:Append]View :'"+view.cid+"' Already a childview");
             }
         }
         protected addMultipleViews(views: Array<App.AppView>):void {

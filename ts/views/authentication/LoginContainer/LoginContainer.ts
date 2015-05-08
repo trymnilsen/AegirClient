@@ -1,4 +1,6 @@
-/// <reference path="../AppView.ts" />
+/// <reference path="../../AppView.ts" />
+/// <reference path="../../../context/AuthenticationContext.ts"/>
+/// <refrence path="LoginContainer.html.ts"/>
 
 module App.View.Authentication {
     /**
@@ -9,7 +11,7 @@ module App.View.Authentication {
 
         constructor(authContext: App.Context.AuthenticationContext) {
             this.appendOptions = {AttachPointSelector: "#navContainer"};
-            this.setTemplate(App.Template.NavigationMenu.html);
+            this.setTemplate(App.Template.LoginContainer.html);
             super({
                 context :authContext
             });

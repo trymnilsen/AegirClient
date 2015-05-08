@@ -4,80 +4,232 @@
 		"selected_items":
 		[
 			[
-				"App",
-				"AppPage"
+				"con",
+				"context	property"
 			],
 			[
-				"act",
-				"activePage"
+				"p",
+				"push	method"
 			],
 			[
-				"dis",
-				"[pub] ○ dispose (method) App.AppView.dispose(domEventsOnly?: boolean): void"
+				"sta",
+				"stateId	local var"
 			],
 			[
-				"templa",
-				" ○ setTemplate (method) App.AppView.setTemplate(templateString: string): void"
-			],
-			[
-				"Messag",
-				" ♦ Message class App.Messaging.Message"
-			],
-			[
-				"h",
-				" ○ html (method) JQuery.html(): string (+2 overloads)"
-			],
-			[
-				"render",
-				"renderedContent"
+				"st",
+				"stateDefinitions	var"
 			],
 			[
 				"set",
-				"[pub] ○ setContext (method) App.AppView.setContext(newContext: Core.Context): void"
+				"setModuleIds	method"
 			],
 			[
-				"append",
+				"modu",
+				"moduleIds	parameter"
+			],
+			[
+				"Co",
+				"Core	module"
+			],
+			[
+				"Module",
+				" ♦ Module class App.Module"
+			],
+			[
+				"Sta",
+				"  stateDefinitions var App.stateDefinitions: {"
+			],
+			[
+				"Collection",
+				" ♦ Collection class Backbone.Collection<TModel extends Backbone.Model>"
+			],
+			[
+				"jqu",
+				"jqueryObj"
+			],
+			[
+				"c",
+				" ● childViews (property) App.View.IAppViewOptions.childViews: AppView[]"
+			],
+			[
+				"appen",
 				" ○ append (method) JQuery.append(content1: JQuery, ...content2: any[]): JQuery (+5 overloads)"
 			],
 			[
-				"atta",
-				" ● attachNodeSelector (property) App.AppView.attachNodeSelector: string"
+				"addC",
+				" ○ addClass (method) JQuery.addClass(className: string): JQuery (+1 overload)"
+			],
+			[
+				"Panel",
+				" ♦ CustomPagePanel class App.Panel.CustomPagePanel"
+			],
+			[
+				"ap",
+				"[pub] ● appendOptions (property) App.AppView.appendOptions: View.IAppViewAppendOptions"
+			],
+			[
+				"App",
+				" ♦ AppView class App.AppView"
+			],
+			[
+				"panelI",
+				"panelInstance"
+			],
+			[
+				"setCon",
+				"[pub] ○ setConfig (method) App.Panel.PagePanel.setConfig(newConfigData: {\n    [id: string]: Object;\n}): void"
+			],
+			[
+				"panelId",
+				"PanelID"
+			],
+			[
+				"confi",
+				"configKey"
+			],
+			[
+				"confiogda",
+				"[priv] ● configData (property) App.Panel.PagePanel.configData: {\n    [id: string]: Object;\n}"
+			],
+			[
+				"I",
+				" ◊ IFactory interface App.Core.IFactory<T>"
+			],
+			[
+				"for",
+				"for	for (…; ++i) {…}"
+			],
+			[
+				"app",
+				" ● appendOptions (property) App.AppView.appendOptions: AppViewAppendOptions"
 			],
 			[
 				"nav",
 				"[priv] ● navBarView (property) App.Modules.Navigation.navBarView: View.NavigationMenu"
 			],
 			[
-				"app",
-				"App"
+				"A",
+				" ♦ AppView class App.AppView"
 			],
 			[
-				"Page",
-				"PageOptions"
+				"Jqu",
+				"JQuery"
+			],
+			[
+				"child",
+				"childView"
+			],
+			[
+				"is",
+				"[priv] ● isBatchUpdating (property) App.Core.Context.isBatchUpdating: boolean"
+			],
+			[
+				"atta",
+				" ● attachNodeSelector (property) App.AppView.attachNodeSelector: string"
+			],
+			[
+				"red",
+				"[pub] ○ render (method) App.AppView.render(): AppView"
+			],
+			[
+				"view",
+				" ◊ ViewOptions interface Backbone.ViewOptions"
 			],
 			[
 				"P",
 				"  Panel module App.Panel"
 			],
 			[
-				"a",
-				"Array"
+				"panel",
+				"pagePanelBgColor"
 			],
 			[
-				"Ap",
-				" ◊ AppPageOptions interface App.AppPageOptions"
+				"backr",
+				"background-color"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"crea",
+				"[priv] ○ createPanels (method) App.AppPage.createPanels(): void"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"appe",
+				" ○ append (method) JQuery.append(content1: JQuery, ...content2: any[]): JQuery (+5 overloads)"
+			],
+			[
+				"append",
+				"appendOptions"
+			],
+			[
+				"curre",
+				"currentPanelWidth"
+			],
+			[
+				"panels",
+				"[priv] ● panels (property) App.AppPage.panels: Panel.PagePanel[]"
+			],
+			[
+				"temp",
+				" ○ template (method) UnderscoreStatic.template(templateString: string, settings?: _.TemplateSettings): (...data: any[]) => string (+1 overload)"
+			],
+			[
+				"stop",
+				"[priv] ○ stopListenForContext (method) App.AppView.stopListenForContext(): void"
+			],
+			[
+				"even",
+				" ○ undelegateEvents (method) Backbone.View.undelegateEvents(): any"
+			],
+			[
+				"bind",
+				" ○ bind (method) UnderscoreStatic.bind(func: Function, context: any, ...arguments: any[]): () => any"
+			],
+			[
+				"rou",
+				"[priv] ○ routeChanged (method) App.Modules.PageRender.routeChanged(...args: any[]): void"
+			],
+			[
+				"ro",
+				" ○ route (method) Backbone.Router.route(route: string, name: string, callback?: Function): Backbone.Router (+1 overload)"
+			],
+			[
+				"s",
+				" ○ start (method) Backbone.History.start(options?: Backbone.HistoryOptions): boolean"
+			],
+			[
+				"his",
+				"  history (var) Backbone.history: Backbone.History"
+			],
+			[
+				"C",
+				"  Core module App.Core"
+			],
+			[
+				"route",
+				"routes"
+			],
+			[
+				"rout",
+				"routes"
 			],
 			[
 				"co",
-				"[priv] ● context (property) App.Module.context: Context"
+				"ctor	constructor …"
 			],
 			[
-				"t",
-				"thr	Throw Exception"
+				"listen",
+				"[priv] ○ listenForContextChanges (method) App.AppView.listenForContextChanges(): void"
 			],
 			[
-				"gr",
-				"greeter"
+				"context",
+				"[priv] ● context (property) App.AppView.context: any"
 			],
 			[
 				"g",
@@ -128,10 +280,6 @@
 				"ModuleOptions"
 			],
 			[
-				"Module",
-				"ModuleOptions"
-			],
-			[
 				"EntityTre",
 				"EntityTreeView"
 			],
@@ -152,154 +300,82 @@
 	"buffers":
 	[
 		{
-			"file": "ts/core/Context.ts",
+			"file": "ts/core/Application.ts",
 			"settings":
 			{
-				"buffer_size": 2350,
+				"buffer_size": 1953,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/views/panel/PagePanel.ts",
+			"file": "ts/module/Authentication.ts",
 			"settings":
 			{
-				"buffer_size": 4166,
+				"buffer_size": 604,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/views/AppPage.ts",
+			"file": "ts/views/authentication/LoginContainer/LoginContainer.ts",
 			"settings":
 			{
-				"buffer_size": 3543,
+				"buffer_size": 643,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/module/PageRender.ts",
+			"file": "ts/views/authentication/LoginForm/LoginForm.ts",
 			"settings":
 			{
-				"buffer_size": 4799,
+				"buffer_size": 689,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/views/panel/title_panel/TitlePanel.html",
+			"file": "ts/views/authentication/LoginContainer/LoginContainer.html.ts",
 			"settings":
 			{
-				"buffer_size": 70,
+				"buffer_size": 66,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "/// <reference path=\"../PagePanel.ts\" />\n/// <reference path=\"TitlePanel.html.ts\" />\n\nmodule App {\n    export module Panel {\n        export class TitlePanel extends App.Panel.PagePanel {\n            constructor(PanelID: string,title: string, options: App.View.IAppViewOptions) {\n                super(PanelID, options);\n                //Set the name in our context, this way we can automate\n                //the process of updating it if the name is later changed\n                this.context.setData(\"Title\", title, false);\n            }\n        }\n    }\n}\n",
-			"file": "ts/views/panel/title_panel/TitlePanel.ts",
-			"file_size": 559,
-			"file_write_time": 130727843932590505,
+			"file": "ts/context/AuthenticationContext.ts",
 			"settings":
 			{
-				"buffer_size": 559,
+				"buffer_size": 195,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html",
+			"file": "ts/core/Module.ts",
 			"settings":
 			{
-				"buffer_size": 987,
+				"buffer_size": 1525,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/messages/AppMessenger.ts",
-			"settings":
-			{
-				"buffer_size": 1025,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ts/messages/Message.ts",
-			"settings":
-			{
-				"buffer_size": 1523,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ts/config/Constants.ts",
-			"settings":
-			{
-				"buffer_size": 327,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Gruntfile.js",
-			"settings":
-			{
-				"buffer_size": 5395,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ts/typings/backbone.d.ts",
-			"settings":
-			{
-				"buffer_size": 14227,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "{\n    \"compilerOptions\": {\n        \"out\": \"js/out.js\",\n        \"sourceMap\": true,\n        \"target\": \"es5\"\n    },\n    \"filesGlob\": [\n        \"./ts/**/*.ts\"\n    ],\n    \"files\": [\n        \"./ts/AppEntryPoint.ts\",\n        \"./ts/config/Config.ts\",\n        \"./ts/config/Constants.ts\",\n        \"./ts/config/IConfigurable.ts\",\n        \"./ts/config/ModuleDefinitions.ts\",\n        \"./ts/config/PanelDefinitions.ts\",\n        \"./ts/core/Application.ts\",\n        \"./ts/core/Context.ts\",\n        \"./ts/core/IDisposable.ts\",\n        \"./ts/core/IFactory.ts\",\n        \"./ts/core/Module.ts\",\n        \"./ts/core/Router.ts\",\n        \"./ts/messages/AppMessenger.ts\",\n        \"./ts/messages/Message.ts\",\n        \"./ts/module/LoadIndicator.ts\",\n        \"./ts/module/Navigation.ts\",\n        \"./ts/module/PageRender.ts\",\n        \"./ts/typings/backbone-eventable.d.ts\",\n        \"./ts/typings/backbone.d.ts\",\n        \"./ts/typings/jquery.d.ts\",\n        \"./ts/typings/underscore.d.ts\",\n        \"./ts/views/AppPage.ts\",\n        \"./ts/views/AppView.ts\",\n        \"./ts/views/IAppViewAppendOptions.ts\",\n        \"./ts/views/IAppViewOptions.ts\",\n        \"./ts/views/navigation/NavigationMenu.html.ts\",\n        \"./ts/views/navigation/NavigationMenu.ts\",\n        \"./ts/views/panel/PagePanel.html.ts\",\n        \"./ts/views/panel/PagePanel.ts\",\n        \"./ts/views/panel/custom_panels/CustomPagePanel.ts\",\n        \"./ts/views/panel/custom_panels/news/NewsPanel.html.ts\",\n        \"./ts/views/panel/custom_panels/news/NewsPanel.ts\",\n        \"./ts/views/panel/title_panel/TitlePanel.html.ts\",\n        \"./ts/views/panel/title_panel/TitlePanel.ts\"\n    ]\n}",
 			"file": "tsconfig.json",
-			"file_size": 1611,
-			"file_write_time": 130727076338636047,
 			"settings":
 			{
-				"buffer_size": 1611,
+				"buffer_size": 2399,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/views/panel/custom_panels/news/NewsPanel.html",
+			"file": "ts/core/AppState.ts",
 			"settings":
 			{
-				"buffer_size": 20,
+				"buffer_size": 1116,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "ts/views/panel/custom_panels/news/NewsPanel.ts",
+			"file": "ts/config/StateDefinitions.ts",
 			"settings":
 			{
-				"buffer_size": 508,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "ts/config/PanelDefinitions.ts",
-			"settings":
-			{
-				"buffer_size": 446,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 60 files for \"TestPanel\"\n\n0 matches across 0 files\n\n\nSearching 46 files for \"TestPanel\"\n\n/home/kaywinnet/app/ts/config/Config.ts:\n    9  		            	\"name\"      : \"Home\",\n   10  		            	\"routeName\"	: \"home\",\n   11: 		            	\"panels\"    : [\"TestPanel\"]\n   12  		        	},\n   13  		        	{\n   ..\n   15  		            	\"name\"      : \"Location\",\n   16  		            	\"routeName\"	: \"location\",\n   17: 		            	\"panels\"    : [\"TestPanel\"]\n   18  		        	},\n   19  	        	]\n\n2 matches in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 532,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "ts/config/Config.ts",
-			"settings":
-			{
-				"buffer_size": 622,
+				"buffer_size": 582,
 				"line_ending": "Unix"
 			}
 		}
@@ -312,128 +388,132 @@
 	"command_palette":
 	{
 		"height": 400.0,
-		"last_filter": "close",
+		"last_filter": "ex",
 		"selected_items":
 		[
 			[
-				"close",
-				"Close Window"
-			],
-			[
-				"menu",
-				"View: Toggle Menu"
-			],
-			[
-				"open",
-				"Project: Open Project…"
-			],
-			[
-				"fulls",
-				"View: Toggle Full Screen"
-			],
-			[
-				"defin",
-				"ArcticTypescript: Go to definition"
-			],
-			[
-				"find",
-				"Find in Files…"
-			],
-			[
-				"quickco",
-				"Git: Quick Commit"
-			],
-			[
-				"preferences",
-				"Preferences: Settings - User"
-			],
-			[
-				"git pull r",
-				"Git: Pull Using Rebase"
-			],
-			[
-				"git qui",
-				"Git: Quick Commit"
-			],
-			[
-				"git commit",
-				"Git: Commit"
-			],
-			[
-				"git add",
-				"Git: Add..."
-			],
-			[
-				"git comm",
-				"Git: Commit history"
-			],
-			[
-				"git status",
-				"Git: Status"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
-				"git pu",
-				"Git: Pull Using Rebase"
-			],
-			[
-				"perf",
-				"Preferences: Settings - User"
-			],
-			[
-				"newf",
-				"ANF: New File"
-			],
-			[
-				"newfi",
-				"ANF: New File"
-			],
-			[
-				"move",
-				"File: Move"
-			],
-			[
-				"sideba",
-				"Side Bar: Enable Syncing"
-			],
-			[
-				"list p",
-				"Package Control: List Packages"
-			],
-			[
-				"men",
-				"View: Toggle Menu"
-			],
-			[
-				"fuls",
-				"View: Toggle Full Screen"
+				"ex",
+				"Exit Sublime Text"
 			],
 			[
 				"exit",
 				"Exit Sublime Text"
 			],
 			[
-				"firs",
-				"ArcticTypescript: Go to first error"
+				"findref",
+				"TypeScript: FindReferences"
 			],
 			[
-				"ar",
-				"ArcticTypescript: Go to first error"
+				"quickin",
+				"TypeScript: QuickInfoDocumentation"
 			],
 			[
-				"NEWFI",
-				"ANF: New File"
+				"grunt",
+				"Grunt"
 			],
 			[
-				"new",
-				"ANF: New File"
+				"format",
+				"TypeScript: FormatDocument"
 			],
 			[
-				"ex",
-				"Exit Sublime Text"
+				"sytype",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"typesc",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"package",
+				"Package Control: Disable Package"
+			],
+			[
+				"fulls",
+				"View: Toggle Full Screen"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"open ",
+				"Project: Open Project…"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"ardef",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"spaces",
+				"Indentation: Use Spaces"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"prefere",
+				"Preferences: Browse Packages"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"prefus",
+				"Preferences: Settings - User"
+			],
+			[
+				"pre",
+				"Preferences: Settings - Default"
+			],
+			[
+				"usespa",
+				"Indentation: Use Spaces"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"defi",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"goto",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"filemov",
+				"Quick File Move: Move Current File"
+			],
+			[
+				"findin",
+				"Find in Files…"
+			],
+			[
+				"fullsc",
+				"View: Toggle Full Screen"
+			],
+			[
+				"preference",
+				"Preferences: Settings - User"
+			],
+			[
+				"open",
+				"Project: Open Project…"
 			],
 			[
 				"pro",
@@ -456,16 +536,28 @@
 				"Grunt"
 			],
 			[
+				"ar",
+				"ArcticTypescript: Reopen Project (after config changes)"
+			],
+			[
+				"new",
+				"ANF: New File"
+			],
+			[
 				"ful",
 				"View: Toggle Full Screen"
 			],
 			[
-				"file",
-				"File: New File"
+				"men",
+				"View: Toggle Menu"
 			],
 			[
-				"grunt",
-				"Grunt"
+				"newf",
+				"ANF: New File"
+			],
+			[
+				"file",
+				"File: New File"
 			],
 			[
 				"git",
@@ -478,10 +570,6 @@
 			[
 				"gru",
 				"Grunt"
-			],
-			[
-				"fullsc",
-				"View: Toggle Full Screen"
 			],
 			[
 				"eix",
@@ -508,8 +596,8 @@
 				"Toggle Comment"
 			],
 			[
-				"comment",
-				"Toggle Comment"
+				"find",
+				"Find in Files…"
 			],
 			[
 				"themr",
@@ -517,6 +605,10 @@
 			],
 			[
 				"newfile",
+				"ANF: New File"
+			],
+			[
+				"newfi",
 				"ANF: New File"
 			],
 			[
@@ -528,10 +620,6 @@
 				"Typescript: Go to definition"
 			],
 			[
-				"goto",
-				"Typescript: Go to definition"
-			],
-			[
 				"less",
 				"Set Syntax: LESS"
 			],
@@ -540,15 +628,11 @@
 				"ANF: New File"
 			],
 			[
-				"package",
-				"Package Control: Install Package"
-			],
-			[
 				"packagers",
 				"Package Control: List Packages"
 			]
 		],
-		"width": 520.0
+		"width": 484.0
 	},
 	"console":
 	{
@@ -569,56 +653,93 @@
 	},
 	"expanded_folders":
 	[
-		"/home/ts/app"
+		"/home/ts/app",
+		"/home/ts/app/bower_components",
+		"/home/ts/app/bower_components/font-awesome",
+		"/home/ts/app/bower_components/font-awesome/css",
+		"/home/ts/app/style",
+		"/home/ts/app/ts",
+		"/home/ts/app/ts/context",
+		"/home/ts/app/ts/core",
+		"/home/ts/app/ts/module",
+		"/home/ts/app/ts/views",
+		"/home/ts/app/ts/views/authentication",
+		"/home/ts/app/ts/views/authentication/LoginContainer",
+		"/home/ts/app/ts/views/authentication/LoginForm"
 	],
 	"file_history":
 	[
-		"/home/kaywinnet/app/ts/views/panel/PagePanel.html",
-		"/home/kaywinnet/app/ts/views/panel/PagePanel.html.ts",
-		"/home/kaywinnet/app/ts/module/PageRender.ts",
-		"/home/kaywinnet/app/ts/views/navigation/NavigationMenu.ts",
-		"/home/kaywinnet/app/index.html",
-		"/home/kaywinnet/app/ts/views/AppPage.ts",
-		"/home/kaywinnet/app/ts/views/AppView.ts",
-		"/home/kaywinnet/app/ts/module/Navigation.ts",
-		"/home/kaywinnet/app/tsconfig.json",
-		"/home/kaywinnet/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
-		"/home/kaywinnet/app/ts/config/Config.ts",
-		"/home/kaywinnet/app/ts/module/COMMIT_EDITMSG.COMMIT_EDITMSG",
-		"/home/kaywinnet/app/ts/application/Module.ts",
-		"/home/kaywinnet/app/ts/application/Context.ts",
-		"/home/kaywinnet/app/Gruntfile.js",
-		"/home/kaywinnet/app/ts/config/ModuleDefinitions.ts",
-		"/home/kaywinnet/app/ts/application/Application.ts",
-		"/home/kaywinnet/app/ts/typings/backbone.d.ts",
+		"/home/ts/app/ts/module/Authentication.ts",
+		"/home/ts/app/ts/config/ModuleDefinitions.ts",
+		"/home/ts/app/ts/module/PageRender.ts",
+		"/home/ts/app/ts/views/AppPage.ts",
+		"/home/ts/app/index.html",
+		"/home/ts/app/ts/views/navigation/NavigationMenu.ts",
+		"/home/ts/app/ts/data/AppCollection.ts",
+		"/home/ts/app/ts/data/persistance/IPersistable.ts",
+		"/home/ts/app/ts/AppEntryPoint.ts",
+		"/home/ts/app/ts/config/Constants.ts",
+		"/home/ts/app/ts/module/Data/CollectionResolver.ts",
+		"/home/ts/app/ts/data/persistance/LocalStoragePersistance.ts",
+		"/home/ts/app/ts/data/persistance/RESTPersistance.ts",
+		"/home/ts/app/ts/data/persistance/IPersistanceProvider.ts",
+		"/home/ts/app/ts/core/AppState.ts",
+		"/home/ts/app/tsconfig.json",
+		"/home/ts/app/ts/data/IAppCollectionOptions.ts",
+		"/home/ts/app/ts/views/panel/PagePanel.less",
+		"/home/ts/app/ts/views/panel/title_panel/TitlePanel.ts",
+		"/home/ts/app/ts/views/AppView.ts",
+		"/home/ts/app/ts/config/CollectionDefinitions.ts",
+		"/home/ts/app/ts/data/AppCollectionResolver.ts",
+		"/home/ts/app/ts/views/panel/PagePanel.ts",
+		"/home/ts/app/ts/views/panel/custom_panels/CustomPagePanel.ts",
+		"/home/ts/app/ts/core/Application.ts",
+		"/home/ts/app/ts/config/IConfigurable.ts",
+		"/home/ts/app/ts/views/panel/custom_panels/news/NewsPanel.ts",
+		"/home/ts/app/ts/core/Module.ts",
+		"/home/ts/app/ts/views/IAppViewAppendOptions.ts",
+		"/home/ts/app/ts/views/IAppViewOptions.ts",
+		"/home/ts/app/ts/config/PanelDefinitions.ts",
+		"/home/ts/app/ts/module/Navigation.ts",
+		"/home/ts/app/ts/core/Context.ts",
+		"/home/ts/app/ts/config/Config.ts",
+		"/home/ts/app/ts/core/IFactory.ts",
+		"/home/ts/app/ts/core/IDisposable.ts",
+		"/home/ts/app/ts/typings/backbone.d.ts",
+		"/home/ts/app/ts/views/panel/title_panel/TitlePanel.html",
+		"/home/ts/app/ts/views/panel/title_panel/TitlePanel.less",
+		"/home/ts/app/style/style.less",
+		"/home/ts/app/style/globalAppStyle.less",
+		"/home/ts/app/ts/views/panel/PagePanel.html",
+		"/home/ts/app/style/constants.less",
+		"/home/ts/app/Gruntfile.js",
+		"/home/ts/app/ts/views/navigation/NavigationMenu.less",
+		"/home/ts/app/ts/views/navigation/NavigationMenu.html.ts",
+		"/home/ts/app/style/style.css",
+		"/home/ts/app/style/colors.less",
+		"/home/ts/.config/sublime-text-3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/home/ts/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/ts/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/ts/app/js/libs/backbone-eventable/backbone-eventable.js",
+		"/home/ts/app/ts/views/navigation/NavigationMenu.html",
+		"/home/ts/app/ts/typings/backbone-eventable.d.ts",
+		"/home/ts/app/ts/views/panel/panels/news/NewsPanel.ts",
+		"/home/ts/app/ts/views/panel/panels/news/NewsPanel.html",
+		"/home/ts/app/ts/module/LoadIndicator.ts",
+		"/home/ts/app/ts/core/Router.ts",
+		"/home/ts/app/ts/context/Context.ts",
+		"/home/ts/app/app.sublime-project",
+		"/home/ts/app/ts/Context.ts",
+		"/home/ts/app/ts/Module.ts",
+		"/home/ts/app/ts/hello.ts",
 		"/home/kaywinnet/app/package.json",
-		"/home/kaywinnet/app/ts/views/panel/PagePanel.tpl.html.ts",
-		"/home/kaywinnet/app/ts/views/panel/PagePanel.ts",
-		"/home/kaywinnet/app/ts/config/PanelDefinitions.ts",
-		"/home/kaywinnet/app/ts/views/panel/test/TestPanel.ts",
-		"/home/kaywinnet/app/ts/views/panel/PagePanelFactory.ts",
-		"/home/kaywinnet/app/ts/config/PageDefinitions.ts",
-		"/home/kaywinnet/app/ts/module/Module.ts",
-		"/home/kaywinnet/app/ts/Config.ts",
-		"/home/kaywinnet/app/ts/Module.ts",
-		"/home/kaywinnet/.config/sublime-text-3/Packages/GitGutter/GitGutter.sublime-settings",
-		"/home/kaywinnet/.config/sublime-text-3/Packages/User/GitGutter.sublime-settings",
-		"/home/kaywinnet/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
-		"/etc/apache2/sites-enabled/app.conf",
-		"/home/kaywinnet/app/ts/components/.gitkeep",
-		"/home/kaywinnet/app/ts/messages/.gitkeep",
-		"/home/kaywinnet/app/ts/model/.gitkeep",
-		"/home/kaywinnet/app/ts/module/.gitkeep",
-		"/home/kaywinnet/app/ts/typings/.gitkeep",
-		"/home/kaywinnet/app/ts/views/page/.gitkeep",
-		"/home/kaywinnet/app/ts/Context.ts",
-		"/home/kaywinnet/app/ts/AppEntryPoint.ts",
-		"/home/kaywinnet/app/ts/hello.ts",
-		"/home/kaywinnet/app/app.sublime-project",
 		"/home/kaywinnet/app/tslint.json",
 		"/home/kaywinnet/.config/sublime-text-3/Packages/ArcticTypescript/README.md",
+		"/home/kaywinnet/app/ts/hello.ts",
+		"/home/kaywinnet/app/Gruntfile.js",
 		"/home/kaywinnet/app/ts/tsconfig.json",
 		"/home/kaywinnet/untitled",
+		"/home/kaywinnet/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
 		"/home/kaywinnet/GameEditor/ts/AppEntryPoint.ts",
 		"/home/kaywinnet/GameEditor/ts/module/Preview2D.ts",
 		"/home/kaywinnet/GameEditor/ts/RenderableModule.ts",
@@ -670,27 +791,12 @@
 		"/home/kaywinnet/GameEditor/ts/module/.sublimets",
 		"/home/kaywinnet/GameEditor/LICENSE",
 		"/home/kaywinnet/GameEditor/ts/module/Navbar.ts",
+		"/home/kaywinnet/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/kaywinnet/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
 		"/home/kaywinnet/GameEditor/node_modules/typedoc/node_modules/highlight.js/styles/monokai_sublime.css",
 		"/home/kaywinnet/GameEditor/node_modules/grunt/internal-tasks/subgrunt.js",
 		"/home/kaywinnet/GameEditor/node_modules/grunt-contrib-less/node_modules/less/node_modules/source-map/build/suffix-utils.jsm",
-		"/home/kaywinnet/GameEditor/style/style.css",
-		"/home/kaywinnet/GameEditor/bower_components/bootstrap/less/wells.less",
-		"/home/kaywinnet/GameEditor/node_modules/typescript/scripts/word2md.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-contrib-less/node_modules/less/.idea/workspace.xml",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-typescript/node_modules/q/test/node-test.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt/node_modules/coffee-script/lib/coffee-script/nodes.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-contrib-less/node_modules/less/test/css/no-output.css",
-		"/home/kaywinnet/GameEditor/editor.sublime-workspace",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-cli/bin/grunt",
-		"/home/kaywinnet/GameEditor/bower_components/bootstrap/Gruntfile.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-cli/Gruntfile.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt-inline-data/Gruntfile.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt/lib/grunt.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt/node_modules/hooker/grunt.js",
-		"/home/kaywinnet/GameEditor/node_modules/grunt/node_modules/exit/Gruntfile.js",
-		"/home/kaywinnet/GameEditor/node_modules/.bin/grunt",
-		"/home/kaywinnet/GameEditor/bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg"
+		"/home/kaywinnet/GameEditor/style/style.css"
 	],
 	"find":
 	{
@@ -701,7 +807,7 @@
 		"height": 119.0,
 		"where_history":
 		[
-			"/home/kaywinnet/app/ts",
+			"/home/ts/app/ts",
 			"/home/kaywinnet/GameEditor/ts"
 		]
 	},
@@ -710,12 +816,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"TestPanel",
-			"PL_NEWSPANEL",
-			"base",
-			"PageRender",
-			"default",
-			"argument",
+			"String",
+			"string",
+			"String",
+			"string",
+			"CollectionFetchOptions",
+			"createPanels",
+			"PanelInstance",
+			"childView",
+			"attachNodeSelector",
+			"}",
+			"listento",
+			".Events",
+			"Events",
+			"routes",
+			"event",
+			"getData",
 			"true",
 			"WebGLRenderingContext",
 			"TEXTURE17",
@@ -740,127 +856,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "ts/core/Context.ts",
+					"file": "ts/core/Application.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2350,
+						"buffer_size": 1953,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								605,
-								605
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "ts/views/panel/PagePanel.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4166,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1539,
-								1539
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 459.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "ts/views/AppPage.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3543,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 612.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "ts/module/PageRender.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4799,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2520,
-								2520
+								736,
+								736
 							]
 						],
 						"settings":
@@ -871,99 +884,6 @@
 								"ts"
 							],
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 228.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "ts/views/panel/title_panel/TitlePanel.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 70,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								70,
-								70
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "ts/views/panel/title_panel/TitlePanel.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 559,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								465,
-								465
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 987,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								969,
-								969
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -973,30 +893,206 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "ts/messages/AppMessenger.ts",
+					"buffer": 1,
+					"file": "ts/module/Authentication.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1025,
+						"buffer_size": 604,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								300,
-								300
+								197,
+								197
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ts/views/authentication/LoginContainer/LoginContainer.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 643,
+						"regions":
+						{
+						},
+						"selection":
+						[
 							[
-								"ts"
-							],
+								461,
+								461
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ts/views/authentication/LoginForm/LoginForm.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								606,
+								606
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ts/views/authentication/LoginContainer/LoginContainer.html.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 66,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "ts/context/AuthenticationContext.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								195,
+								195
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ts/core/Module.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1525,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								460,
+								460
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tsconfig.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								729,
+								729
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tsconfig-lints":
+							[
+							]
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1007,19 +1103,19 @@
 				},
 				{
 					"buffer": 8,
-					"file": "ts/messages/Message.ts",
+					"file": "ts/core/AppState.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1523,
+						"buffer_size": 1116,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1389,
-								1389
+								770,
+								770
 							]
 						],
 						"settings":
@@ -1040,19 +1136,19 @@
 				},
 				{
 					"buffer": 9,
-					"file": "ts/config/Constants.ts",
+					"file": "ts/config/StateDefinitions.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 327,
+						"buffer_size": 582,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								144,
-								144
+								259,
+								259
 							]
 						],
 						"settings":
@@ -1062,286 +1158,15 @@
 							[
 								"ts"
 							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "Gruntfile.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5395,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1643,
-								1643
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Seti_UI/Langs/Gruntfile JS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 221.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "ts/typings/backbone.d.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14227,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13688,
-								13688
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5485.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "tsconfig.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1611,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1167,
-								1167
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true,
-							"tsconfig-lints":
-							[
-							]
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "ts/views/panel/custom_panels/news/NewsPanel.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 20,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20,
-								20
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "ts/views/panel/custom_panels/news/NewsPanel.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 508,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								38,
-								38
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "ts/config/PanelDefinitions.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 446,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								188,
-								188
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 532,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										266,
-										275
-									],
-									[
-										459,
-										468
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								270,
-								270
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 2,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 68.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "ts/config/Config.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 622,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								288,
-								288
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
 					"type": "text"
 				}
 			]
@@ -1378,6 +1203,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
 	"output.exec":
 	{
 		"height": 279.0
@@ -1385,10 +1214,6 @@
 	"output.find_results":
 	{
 		"height": 0.0
-	},
-	"output.git":
-	{
-		"height": 110.0
 	},
 	"pinned_build_system": "",
 	"project": "app.sublime-project",
@@ -1404,72 +1229,44 @@
 		"selected_items":
 		[
 			[
-				"pagepanel",
-				"ts/views/panel/PagePanel.ts"
+				"appsta",
+				"ts/core/AppState.ts"
 			],
 			[
-				"pagerend",
-				"ts/module/PageRender.ts"
+				"state",
+				"ts/config/StateDefinitions.ts"
 			],
 			[
-				"apppa",
-				"ts/views/AppPage.ts"
-			],
-			[
-				"backbo",
+				"back",
 				"ts/typings/backbone.d.ts"
-			],
-			[
-				"pager",
-				"ts/module/PageRender.ts"
-			],
-			[
-				"backb",
-				"ts/typings/backbone.d.ts"
-			],
-			[
-				"module",
-				"ts/application/Module.ts"
-			],
-			[
-				"naviga",
-				"ts/views/navigation/NavigationMenu.ts"
-			],
-			[
-				"ts",
-				"tsconfig.json"
-			],
-			[
-				"appl",
-				"ts/application/Application.ts"
-			],
-			[
-				"config",
-				"ts/Config.ts"
-			],
-			[
-				"appv",
-				"ts/views/AppView.ts"
-			],
-			[
-				"modu",
-				"ts/module/Module.ts"
-			],
-			[
-				"appvie",
-				"ts/views/AppView.ts"
-			],
-			[
-				"render",
-				"ts/module/PageRender.ts"
-			],
-			[
-				"tsco",
-				"tsconfig.json"
 			],
 			[
 				"appview",
 				"ts/views/AppView.ts"
+			],
+			[
+				"context",
+				"ts/core/Context.ts"
+			],
+			[
+				"bakc",
+				"ts/typings/backbone.d.ts"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"rou",
+				"ts/core/Router.ts"
+			],
+			[
+				"tsconf",
+				"tsconfig.json"
+			],
+			[
+				"backbo",
+				"ts/typings/backbone.d.ts"
 			],
 			[
 				"2d",
@@ -1502,10 +1299,6 @@
 			[
 				"entit",
 				"ts/views/entitytree/EntityTreeView.less"
-			],
-			[
-				"grunt",
-				"Gruntfile.js"
 			],
 			[
 				"mainle",
