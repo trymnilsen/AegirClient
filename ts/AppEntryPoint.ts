@@ -8,7 +8,7 @@ $(() => {
  	var t1 = performance.now();
     console.log('[APPENTRY:DOMLOAD]Dom Start at '+t1+'ms');
     console.log('[APPENTRY:DOMLOAD]DomReady took '+(t1 - t0)+' milliseconds');
-    setTimeout(function() {
+    //setTimeout(function() {
         var t2 = performance.now();
         console.log('[APPENTRY:DOMLOAD+500ms]timeout at '+t2+'ms');
         /**
@@ -25,6 +25,6 @@ $(() => {
         var t3 = performance.now();
         console.log('[APPENTRY:DOMLOAD+500ms]Boostrap End at '+t3+'ms');
         console.log('[APPENTRY:DOMLOAD+500ms]Boostrap took '+(t3 - t2)+' milliseconds');
-    }, 500);
+   // }, 500);
 
 });

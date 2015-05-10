@@ -8,13 +8,16 @@ module App.Core {
     export class AppState {
         private triggerEvents: Array<string>;
         private moduleIds: Array<string>;
-
+        private classNames: Array<string>;
         constructor() {
 
         }
 
         public setEvents(events: Array<string>): void {
             this.triggerEvents = events;
+        }
+        public setClassNames(classes: Array<string>): void {
+            this.classNames = classes;
         }
         public setModuleIds(modules: Array<string>): void {
             this.moduleIds = modules;
@@ -25,7 +28,10 @@ module App.Core {
         public getModuleIds(): Array<string> {
             return this.moduleIds;
         }
-        public Resume(): void {
+        public getClassNames(): Array<string> {
+            return this.classNames;
+        }
+        public resume(): void {
             //For each module run ready
             for (var i = 0; i < this.moduleIds.length; i++) {
                 //Get the mod instance
@@ -39,6 +45,9 @@ module App.Core {
                 //Ready set go!
                 mod.appReady();
             }
+        }
+        public suspend(): void {
+            
         }
     }
 }

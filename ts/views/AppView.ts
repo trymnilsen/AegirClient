@@ -112,8 +112,11 @@ module App{
                 if(!data) {
                     console.warn("[APPVIEW:Render]Data for view rerender was invalid, was:",data);
                 }
-                var renderedContent : string = this.template(data);
-                this.$el.html(renderedContent);
+                if(!!this.template)
+                {
+                    var renderedContent : string = this.template(data);
+                    this.$el.html(renderedContent);
+                }
 
             } else {
                 console.warn("[APPVIEW:Render]Context was invalid, was:",this.context);
@@ -126,6 +129,7 @@ module App{
                 appendPoint.append(childView.$el);
 
             }
+            this.delegateEvents();
             return this;
         }
         /**

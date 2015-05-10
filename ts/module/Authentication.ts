@@ -1,6 +1,5 @@
 /// <reference path="../core/Module.ts" />
-/// <reference path="../views/authentication/LoginContainer/LoginContainer.ts"/>
-
+/// <reference path="../context/AuthenticationContext.ts" />
 module App.Modules {
     export class Authentication extends App.Module {
 
@@ -16,19 +15,27 @@ module App.Modules {
 
         constructor() {
             super();
+            //Create our own context
+            this.context = new App.Context.AuthenticationContext();
         }
         appReady() {
+            var app: App.Application = window['Application'];
+            this.context.setMessengerInstance(app.getMessenger());
+
             this.buildViews();
         }
         private buildViews():void {
-            this.loginContainer = new App.View.Authentication.LoginContainer(this.context);
-            this.loginForm = new App.View.Authentication.LoginForm(this.context);
+            //this.loginContainer = new App.View.Authentication.LoginContainer(this.context);
+            this.loginForm = new App.View.Authentication.LoginForm(<App.Context.AuthenticationContext>this.context);
 
-            this.loginContainer.render();
+            //this.loginContainer.render();
             this.loginForm.render();
 
-            $('.container').append(this.loginContainer.$el);
-            this.loginContainer.$el.append(this.loginForm.$el);
+            var attachPoint: JQuery = App.Application.layoutElement;
+            //attachPoint.append(this.loginContainer.$el);
+            attachPoint.append(this.loginForm.$el);
+
+            //Set our nice nebula background
         }
     }
 }

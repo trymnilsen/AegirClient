@@ -1,1 +1,1 @@
-module App.Template.LoginForm { export var html =  'fdsf' } 
+module App.Template.LoginForm { export var html =  '<div class="signin-header">Sign In</div><div class="fields-wrapper"><form>    <input type="text" placeholder="Username"/>    <input type="password" placeholder="Password"/>    <input type="button" value="Log In"/><form></div>' } 

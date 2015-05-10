@@ -10,8 +10,9 @@ module App.View.Authentication {
     export class LoginContainer extends App.AppView {
 
         constructor(authContext: App.Context.AuthenticationContext) {
-            this.appendOptions = {AttachPointSelector: "#navContainer"};
-            this.setTemplate(App.Template.LoginContainer.html);
+            //Set container style
+            $('.app-container').addClass('full-size-container');
+
             super({
                 context :authContext
             });

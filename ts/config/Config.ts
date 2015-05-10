@@ -1,6 +1,9 @@
 module App {
 
 	export var config: {[id:string]: any} = {
+        "UI"      : {
+            "layoutContainer" : ".app-container"
+        },
 		"Modules" : {
 			"PageRender" : {
 				"Pages"   : [
@@ -22,6 +25,21 @@ module App {
         "Panels" : {
             "PL_NEWSPANEL" : {
                 "Configstuffhere":"Todo"
+            }
+        },
+        "AppStates" : {
+            "StartupState" : "AuthState",
+            "States": {
+                "AuthState": {
+                    "ContainerClasses" : ["full-size-container"],
+                    "Events": ["Forbidden"],
+                    "Modules": ["Authentication"]
+                },
+                "AppReady": {
+                    "ContainerClasses" : ["container"],
+                    "Events": ["AuthSuccess", "AppBoot"],
+                    "Modules": ["PageRender", "Navigation"]
+                }
             }
         }
 	}

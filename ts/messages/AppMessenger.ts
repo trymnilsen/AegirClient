@@ -24,6 +24,14 @@ module App {
             SendMessage(message:App.Messaging.Message):void {
                 this.trigger(message.getName(),message);
             }
+            /**
+             * Helper method for listen on this object
+             * @param events   events to listen for
+             * @param callback callback
+             */
+            subscribe(events: string, callback: Function): void {
+                super.listenTo(this, events, callback);
+            }
 	    }
 	}
 }
