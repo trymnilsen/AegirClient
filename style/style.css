@@ -45,7 +45,7 @@ body {
 .login-form-container .authentication-await {
   background-color: #5cbaf1 !important;
 }
-.login-form-container div {
+.login-form-container .login-form-padd {
   padding: 15px;
 }
 .login-form-container input {

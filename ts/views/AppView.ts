@@ -133,6 +133,19 @@ module App{
             return this;
         }
         /**
+         * We are not guaranteed to have a real dom node ref on render
+         * So functions like focus will not work. On post render all dom operations
+         * should have been complete, enabling us to use these functions
+         * @return {App.AppView} [description]
+         */
+        public postRender(): App.AppView {
+            for (var childViewId in this.childViews) {
+                var childView: App.AppView = this.childViews[childViewId];
+                childView.postRender();
+            }
+            return this;
+        }
+        /**
          * Append a view to this view as a child
          * This gives us the befit of properly disposing the views (removing any
          * events etc) if we destroy the view/remove it, or want to re-render the

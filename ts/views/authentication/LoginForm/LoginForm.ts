@@ -1,6 +1,6 @@
 /// <reference path="../../AppView.ts" />
 /// <reference path="../../../context/AuthenticationContext.ts"/>
-///
+/// <reference path="../../../typings/bootstrap.d.ts"/>
 module App {
     export module View {
         export module Authentication {
@@ -24,37 +24,75 @@ module App {
                         }
                     });
                     //Set up append options
-                    this.appendOptions = {AttachPointSelector: "#navContainer"};
+                    this.appendOptions = { AttachPointSelector: "#navContainer" };
                     this.setTemplate(App.Template.LoginForm.html);
 
                     //Lets attach some events
                     this.events = <any>{
-                        "click input[type='button']": "beginAuth"
+                        "click input[type='button']": "beginAuth",
+                        "keypress input[type='password'],input[type='text']": "enterPressed"
                     };
                     this.context = authContext;
                 }
-                public render(): App.View.Authentication.LoginForm {
-                    super.render();
-                    //Focus first field
-                    $("input[type='text']:first-of-type", this.$el).focus();
+
+                public beginAuth(clickEvent?): boolean {
+                    //if (!!clickEvent) { clickEvent.stopPropagation();}
+                    if (this.getPassword() == "" || this.getUsername() == "") {
+                        console.log('info empty, showing popup');
+                        this.showPopup();
+                        return false; //Swallow event
+                    } else {
+                        console.info("[LOGINFORM:auth] Starting Authentication");
+                        this.disableLoginButton();
+                        this.context.authenticateUser(this.getUsername(),
+                            this.getPassword());
+                    }
+                    return true;
+                }
+                public postRender(): App.AppView {
+                    super.postRender();
+                    $("input[type='text']", this.$el).focus();
                     return this;
                 }
-                public beginAuth():void {
-                    console.info("[LOGINFORM:auth] Starting Authentication");
-                    this.disableLoginButton();
-                    this.context.authenticateUser(this.getUsername(),
-                                                  this.getPassword());
+                private enterPressed(event): void {
+                    if (event.keyCode == 13) {
+                        if (event.currentTarget.value != "") {
+                            switch (event.currentTarget.type) {
+                                case "text":
+                                    $("input[type='password']", this.$el).focus();
+                                    break;
+                                case "password":
+                                    this.beginAuth();
+                                    break;
+                            }
+                        }
+                    }
                 }
-                private getUsername():string {
+                private getUsername(): string {
                     return $("input[type='text']", this.$el).prop("value");
                 }
-                private getPassword():string {
+                private getPassword(): string {
                     return $("input[type='password']", this.$el).prop("value");
                 }
-                private disableLoginButton():void {
+                private showPopup(): void {
+                    $("input[type='button']",this.$el).tooltip({
+                        placement: 'top',
+                        title: 'Enter both username and password',
+                        trigger: 'manual'
+                    });
+
+                    $("input[type='button']", this.$el).tooltip('show');
+                    //Make it go away
+                    $('body').one("click", function() {
+                        console.log('Hiding tooltip');
+                        $("input[type='button']", this.$el).tooltip('hide');
+                    });
+
+                }
+                private disableLoginButton(): void {
                     var button: JQuery = $("input[type='button']", this.$el);
                     button.addClass("authentication-await");
-                    button.prop("value","Loggin In ...");
+                    button.prop("value", "Loggin In ...");
                     $("input", this.$el).prop('disabled', "true");
                     //disable all input
                 }

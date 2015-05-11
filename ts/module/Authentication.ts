@@ -30,11 +30,10 @@ module App.Modules {
 
             //this.loginContainer.render();
             this.loginForm.render();
-
             var attachPoint: JQuery = App.Application.layoutElement;
             //attachPoint.append(this.loginContainer.$el);
             attachPoint.append(this.loginForm.$el);
-
+            this.loginForm.postRender();
             //Set our nice nebula background
         }
     }

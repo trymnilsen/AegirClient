@@ -71,10 +71,10 @@ module App {
          */
         private createMessenger(): void {
             this.messenger = new App.Messaging.AppMessenger();
-            this.messenger.subscribe("AuthSuccess", _.bind(this.receivedMessage,this));
+            this.messenger.subscribe("*", _.bind(this.receivedMessage,this));
         }
         private receivedMessage(message): void {
-            console.log('ReceivedMessage');
+            console.log('ReceivedMessage',message);
         }
         /**
          * Init all the givens states and sets state given by
