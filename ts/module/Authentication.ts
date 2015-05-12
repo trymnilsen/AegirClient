@@ -17,17 +17,18 @@ module App.Modules {
             super();
             //Create our own context
             this.context = new App.Context.AuthenticationContext();
-       
-        appReady() {
+        }
+        appReady(): void {
             var app: App.Application = window['Application'];
             this.context.setMessengerInstance(app.getMessenger());
 
             this.buildViews();
         }
-        suspend():void {
+        suspend(): void {
             this.loginForm.dispose();
+            this.loginForm.$el.remove();
         }
-        private buildViews():void {
+        private buildViews(): void {
             //this.loginContainer = new App.View.Authentication.LoginContainer(this.context);
             this.loginForm = new App.View.Authentication.LoginForm(<App.Context.AuthenticationContext>this.context);
 

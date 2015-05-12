@@ -111,6 +111,7 @@ module App {
          * Set a given state as the active one, suspending any current states
          */
         private setState(state: App.Core.AppState): void {
+            var t0 = performance.now();
             //If we have a currently active one, suspend it
             if(!!this.activeState) {
                 this.activeState.suspend();
@@ -126,6 +127,8 @@ module App {
             state.resume();
             //Set to current
             this.activeState = state;
+            var t1 = performance.now();
+            console.log('[APPLICATION:setstate]SetState took '+(t1 - t0)+' milliseconds');
         }
         /**
          * Initialize all modules

@@ -87,7 +87,7 @@ module App {
                 console.log("[PAGERENDER:Navigate]Resuming/Rendering Page '"+page.cid+"'");
 	        	this.activePage = page;
                 this.activePage.render();
-                $('#content').append(this.activePage.$el);
+                $('.container').append(this.activePage.$el);
 	        }
 	        /**
 	         * Create the router instance
