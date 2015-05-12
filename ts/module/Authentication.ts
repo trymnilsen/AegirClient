@@ -17,7 +17,7 @@ module App.Modules {
             super();
             //Create our own context
             this.context = new App.Context.AuthenticationContext();
-        }
+       
         appReady() {
             var app: App.Application = window['Application'];
             this.context.setMessengerInstance(app.getMessenger());
