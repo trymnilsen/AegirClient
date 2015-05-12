@@ -24,6 +24,9 @@ module App.Modules {
 
             this.buildViews();
         }
+        suspend():void {
+            this.loginForm.dispose();
+        }
         private buildViews():void {
             //this.loginContainer = new App.View.Authentication.LoginContainer(this.context);
             this.loginForm = new App.View.Authentication.LoginForm(<App.Context.AuthenticationContext>this.context);

@@ -76,9 +76,9 @@ module App {
         }
         private receivedMessage(message): void {
             console.log('ReceivedMessage',message);
-            if(!!this.statesEventsMapping[eventName])
+            if(!!this.statesEventsMapping[message])
             {
-                this.setState(this.statesEventsMapping);
+                this.setState(this.statesEventsMapping[message]);
             }
         }
         /**
@@ -95,7 +95,7 @@ module App {
                 var state: App.Core.AppState = new App.Core.AppState();
                 state.setEvents(statesConfig["Events"]);
 
-                for (var i = 0; i < statesConfig["Events"]; i++) {
+                for (var i = 0; i < statesConfig["Events"].length; i++) {
                     var eventName = statesConfig["Events"][i];
                     this.statesEventsMapping[eventName] = state;
                 }
