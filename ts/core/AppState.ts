@@ -32,22 +32,31 @@ module App.Core {
             return this.classNames;
         }
         public resume(): void {
-            //For each module run ready
+            //Suspend each module
+            this.runOnAllModules(function(mod: App.Module) {
+                mod.appReady();
+            });
+        }
+        public suspend(): void {
+            //Suspend each module
+            this.runOnAllModules(function(mod: App.Module) {
+                mod.suspend();
+            });
+        }
+        private runOnAllModules(callback:(mod: App.Module) => void) {
+                        //Pass each module to the supplied function
             for (var i = 0; i < this.moduleIds.length; i++) {
                 //Get the mod instance
                 var mod: App.Module = App.modDefinitions[this.moduleIds[i]];
-                if(mod === undefined) {
-                    console.warn("[APPSTATE:Resume]Module "+this.moduleIds[i]+" not defined in:",
+                    if(mod === undefined) {
+                    console.warn("[APPSTATE:runOnAllMods]Module "+this.moduleIds[i]+" not defined in:",
                                                             App.modDefinitions);
                     //Jump top next
                     continue;
                 }
-                //Ready set go!
-                mod.appReady();
+                //Module is valid, call our method
+                callback(mod);
             }
-        }
-        public suspend(): void {
-            
         }
     }
 }

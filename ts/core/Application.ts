@@ -71,10 +71,15 @@ module App {
          */
         private createMessenger(): void {
             this.messenger = new App.Messaging.AppMessenger();
-            this.messenger.subscribe("*", _.bind(this.receivedMessage,this));
+            //All is a magic word for jquery/backbone
+            this.messenger.subscribe("all", _.bind(this.receivedMessage,this));
         }
         private receivedMessage(message): void {
             console.log('ReceivedMessage',message);
+            if(!!this.statesEventsMapping[eventName])
+            {
+                this.setState(this.statesEventsMapping);
+            }
         }
         /**
          * Init all the givens states and sets state given by
