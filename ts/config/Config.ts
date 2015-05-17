@@ -11,13 +11,33 @@ module App {
 		        		"id"		: "PG_HOME",
 		            	"name"      : "Home",
 		            	"routeName"	: "home",
-		            	"panels"    : ["PL_NEWSPANEL"]
+		            	"panels"    : [
+                             {
+                                    "type" : "TITLE_PANEL",
+                                    "name" : "News",
+                                    "columnsize" : "12",
+                                    "opts": {
+                                        "refresh":true,
+                                        "dismissable":false,
+                                        "dissmiss_time":"session",
+                                        "padd":true,
+                                    },
+                                    "components" : [
+                                        {
+                                            "id":"PL_NEWSPANEL",
+                                            "localConfig" : {
+
+                                            }
+                                        }
+                                    ]
+                             }
+                        ]
 		        	},
 		        	{
 		        		"id"		: "PG_LOCATION",
 		            	"name"      : "Location",
 		            	"routeName"	: "location",
-		            	"panels"    : ["PL_NEWSPANEL"]
+		            	"panels"    : {}
 		        	},
 	        	]
 			}
