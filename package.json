@@ -17,16 +17,17 @@
   },
   "dependencies": {
     "grunt": "~0.4.5",
-    "typescript": "~1.4.1",
+    "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-less": "~1.0.0",
+    "grunt-contrib-uglify": "~0.7.0",
     "grunt-inline-data": "git://github.com/trymnilsen/grunt-inline-data.git#master",
     "grunt-minify-html": "~2.0.0",
-    "grunt-contrib-clean": "~0.6.0",
-    "time-grunt": "~1.0.0",
-    "grunt-contrib-uglify": "~0.7.0",
-    "tslint": "~2.1.1",
-    "grunt-tslint": "~2.0.0",
+    "grunt-serve": "^0.1.6",
     "grunt-ts": "~4.0.1",
-    "typedoc": "~0.3.2"
+    "grunt-tslint": "~2.0.0",
+    "time-grunt": "~1.0.0",
+    "tslint": "~2.1.1",
+    "typedoc": "~0.3.2",
+    "typescript": "~1.4.1"
   }
 }

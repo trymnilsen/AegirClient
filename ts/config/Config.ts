@@ -48,7 +48,7 @@ module App {
             }
         },
         "AppStates" : {
-            "StartupState" : "AuthState",
+            "StartupState" : "AppReady",
             "States": {
                 "AuthState": {
                     "ContainerClasses" : ["full-size-container"],
