@@ -102,6 +102,11 @@ module.exports = function(grunt) {
                 },
             }
         },
+        serve: {
+            options: {
+                port: 8282
+            }
+        }
 
 });
     grunt.loadNpmTasks('typedoc');
@@ -110,7 +115,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-tslint');
-
+    grunt.loadNpmTasks('grunt-serve');
     // Default task(s).
     //Runs all tasks suitable for development (Use uglify at own will)
     grunt.registerTask('default',   ['clean:build',
