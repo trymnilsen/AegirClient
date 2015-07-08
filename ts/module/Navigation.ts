@@ -1,5 +1,4 @@
 /// <reference path="../core/Module.ts" />
-/// <reference path="../views/navigation/NavigationMenu.ts"/>
 
 module App {
 	export module Modules {
@@ -8,7 +7,7 @@ module App {
              * The navbar view that is rendered and providing user ability to
              * navigate the app
              */
-            private navBarView: App.View.NavigationMenu = null;
+            //private navBarView: App.View.NavigationMenu = null;
 			constructor() {
 				super();
 			}
