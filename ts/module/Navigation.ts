@@ -13,11 +13,11 @@ module App {
 				super();
 			}
             appReady(): void {
-                this.navBarView = new App.View.NavigationMenu({});
-                this.navBarView.render();
-                //Append it using its attachnode
-                App.AppView.resolveViewAppendPoint(this.navBarView)
-                                        .append(this.navBarView.$el);
+                // this.navBarView = new App.View.NavigationMenu({});
+                // this.navBarView.render();
+                // //Append it using its attachnode
+                // App.AppView.resolveViewAppendPoint(this.navBarView)
+                //                         .append(this.navBarView.$el);
             }
 		}
 	}
