@@ -8,19 +8,54 @@ module App {
             "PageRender" : {
                 "Pages"   : [
                     {
-                        "id"        : "PG_HOME",
-                        "name"      : "Home",
-                        "routeName" : "home",
+                        "id"        : "PG_SIM",
+                        "name"      : "Show Simulation",
+                        "routeName" : "Simulate",
                         "panels"    : ["PL_NEWSPANEL"],
                         "icon"      : "cube"
                     },
                     {
-                        "id"        : "PG_LOCATION",
-                        "name"      : "Location",
-                        "routeName" : "location",
+                        "id"        : "PG_REPLAY",
+                        "name"      : "Replay",
+                        "routeName" : "replay",
                         "panels"    : ["PL_NEWSPANEL"],
                         "icon"      : "history"
                     },
+                    {
+                        "id"        : "PG_OUTPUT",
+                        "name"      : "Outputs",
+                        "routeName" : "output",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "plug"
+                    },
+                    {
+                        "id"        : "PG_VESSEL",
+                        "name"      : "Vessel Configurations",
+                        "routeName" : "vessel",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "anchor"
+                    },
+                    {
+                        "id"        : "PG_LOG",
+                        "name"      : "Logging",
+                        "routeName" : "log",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "terminal"
+                    },
+                    {
+                        "id"        : "PG_STATS",
+                        "name"      : "Statistics",
+                        "routeName" : "stats",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "area-chart"
+                    },
+                    {
+                        "id"        : "PG_SETTINGS",
+                        "name"      : "Settings",
+                        "routeName" : "settings",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "cog"
+                    }
                 ]
             }
         },
