@@ -10,14 +10,16 @@ module App {
                     {
                         "id"        : "PG_HOME",
                         "name"      : "Home",
-                        "routeName"    : "home",
-                        "panels"    : ["PL_NEWSPANEL"]
+                        "routeName" : "home",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "cube"
                     },
                     {
                         "id"        : "PG_LOCATION",
                         "name"      : "Location",
-                        "routeName"    : "location",
-                        "panels"    : ["PL_NEWSPANEL"]
+                        "routeName" : "location",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "history"
                     },
                 ]
             }

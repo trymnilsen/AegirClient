@@ -7,12 +7,13 @@ module App.View.Navigation {
      */
     export class NavigationContainer extends App.AppView {
 
-        constructor() {
+        constructor(buttons: Array<App.View.Navigation.NavigationButton>) {
             //Init parent
             super({
                 backboneOptions: {
                     className: 'navigation-container'
-                }
+                },
+                childViews: buttons
             });
             //Set up append options
             this.appendOptions = { AttachPointSelector: ".nav" };

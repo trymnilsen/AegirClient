@@ -15,6 +15,7 @@ module App{
         public template: (data)=> string;
         public appendOptions: App.View.IAppViewAppendOptions;
 
+        protected childApppendOptions: App.View.IAppViewAppendOptions;
         protected context: App.Core.Context = null;
 
         private childViews: {[id:string] : App.AppView} = {};
@@ -125,7 +126,13 @@ module App{
             for (var childViewId in this.childViews) {
                 var childView : App.AppView = this.childViews[childViewId];
                 childView.render();
-                var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView,this.$el);
+                //If childview does not have an append point, append it directly to us
+                if(!!childView.appendOptions) {
+                    var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView,this.$el);
+                } else {
+                    var appendPoint : JQuery = this.$el;
+                }
+
                 appendPoint.append(childView.$el);
 
             }

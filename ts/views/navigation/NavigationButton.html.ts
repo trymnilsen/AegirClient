@@ -1,0 +1,1 @@
+module App.Template.NavigationButton { export var html =  '<i class="fa"></i>' } 
