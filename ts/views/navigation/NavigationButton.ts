@@ -42,11 +42,16 @@ module App.View.Navigation {
         }
         public render(): App.AppView {
             super.render();
-            $('.fa',this.$el).addClass(this.buttonIcon);
+            $('.fa',this.$el).addClass("fa-"+this.buttonIcon);
             $('.fa',this.$el).tooltip({
                     placement: "right",
                     title: this.buttonTitle,
-                    trigger: "hover"
+                    trigger: "hover",
+                    container: "body",
+                    delay: {
+                        "show": 500,
+                        "hide": 100
+                    }
                 });
             return this;
         }
