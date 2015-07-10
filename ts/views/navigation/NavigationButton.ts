@@ -50,7 +50,7 @@ module App.View.Navigation {
                     container: "body",
                     delay: {
                         "show": 500,
-                        "hide": 100
+                        "hide": 101
                     }
                 });
             return this;
