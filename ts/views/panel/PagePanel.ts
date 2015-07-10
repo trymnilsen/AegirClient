@@ -49,6 +49,7 @@ module App {
                         }
                     }
                 }
+
                 this.$el.addClass("page-panel");
             }
             /**

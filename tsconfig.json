@@ -47,8 +47,6 @@
         "./ts/views/authentication/LoginAnimation/LoginAnimation.ts",
         "./ts/views/authentication/LoginForm/LoginForm.html.ts",
         "./ts/views/authentication/LoginForm/LoginForm.ts",
-        "./ts/views/navigation/NavigationMenu.html.ts",
-        "./ts/views/navigation/NavigationMenu.ts",
         "./ts/views/panel/PagePanel.html.ts",
         "./ts/views/panel/PagePanel.ts",
         "./ts/views/panel/custom_panels/CustomPagePanel.ts",

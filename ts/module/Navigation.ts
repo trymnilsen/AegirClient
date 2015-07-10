@@ -1,4 +1,5 @@
 /// <reference path="../core/Module.ts" />
+/// <reference path="../views/navigation/NavigationContainer.ts" />
 
 module App {
 	export module Modules {
@@ -7,16 +8,16 @@ module App {
              * The navbar view that is rendered and providing user ability to
              * navigate the app
              */
-            //private navBarView: App.View.NavigationMenu = null;
+            private navBarView: App.View.Navigation.NavigationContainer = null;
 			constructor() {
 				super();
 			}
             appReady(): void {
-                // this.navBarView = new App.View.NavigationMenu({});
-                // this.navBarView.render();
-                // //Append it using its attachnode
-                // App.AppView.resolveViewAppendPoint(this.navBarView)
-                //                         .append(this.navBarView.$el);
+                this.navBarView = new App.View.Navigation.NavigationContainer();
+                this.navBarView.render();
+                //Append it using its attachnode
+                App.AppView.resolveViewAppendPoint(this.navBarView)
+                                        .append(this.navBarView.$el);
             }
 		}
 	}
