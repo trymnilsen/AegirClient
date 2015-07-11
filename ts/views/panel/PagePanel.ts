@@ -51,6 +51,7 @@ module App {
                 }
 
                 this.$el.addClass("page-panel");
+                this.$el.addClass("debug-cid-"+this.cid);
             }
             /**
              * Find the panel and get a new one
@@ -101,7 +102,9 @@ module App {
              */
             public createNew():App.Panel.PagePanel {
             	//Todo actually implement
-                return this;
+                return new App.Panel.TitlePanel("PL_NEWSPANEL","News",{
+                    childViews: [new App.Panel.CustomPanels.NewsPanel({})]
+                });
             }
         }
     }

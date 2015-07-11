@@ -2,7 +2,6 @@
 /// <reference path="../AppView.ts" />
 /// <reference path="../../typings/jquery.d.ts" />
 /// <reference path="AppPageDefinitions.ts" />
-/// <reference path="PanelPageOptions.ts" />
 
 
 
@@ -17,10 +16,9 @@ module App.Page {
 
         private panels : Array<App.Panel.PagePanel>;
         private name : string;
-        constructor(PageOptions: App.Page.AppPageOptions) {
-            super();
-            this.panels = PageOptions.panels;
-            this.name = PageOptions.name;
+        constructor(panels: Array<App.Panel.PagePanel>) {
+            super({});
+            this.panels = panels;
         }
 
         /**
@@ -42,17 +40,21 @@ module App.Page {
          * - rebinding events
          */
         resume(): void {
-            this.AppendPanels();
+            //his.AppendPanels();
         }
         render(): App.Page.PanelPage {
+            this.dispose();
+            this.$el.empty();
             for(var i = 0; i<this.panels.length; i++) {
                 var panel : App.Panel.PagePanel = this.panels[i];
                 panel.render();
             }
+            this.AppendPanels();
             return this;
         }
         private AppendPanels(): void {
             var currentPanelWidth : number = 0;
+            var currentPanelsMade = 0;
             var panelRow : JQuery = this.createNewPanelRow();
             //Append the first row
             this.$el.append(panelRow);
@@ -79,16 +81,16 @@ module App.Page {
                     currentPanelWidth = 0;
                     //Append new row
                     this.$el.append(panelRow);
-                } else {
-                    //Add to current width
-                    currentPanelWidth += panelWidth;
                 }
+                //Add to current width
+                currentPanelWidth += panelWidth;
                 //Append the panel to our row
                 //Add correct class
                 var columnClass : string = " col-md-"+panelWidth+" ";
                 panel.$el.addClass(columnClass);
                 //Append
                 panelRow.append(panel.$el);
+                currentPanelsMade++;
             }
         }
         private updatePanelState(): void {

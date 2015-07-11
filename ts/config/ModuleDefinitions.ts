@@ -7,7 +7,6 @@ module App {
 
 	export var modDefinitions: {[id:string]: App.Module} = {
 		"PageRender" : new App.Modules.PageRender(),
-        "Navigation" : new App.Modules.Navigation(),
-        "Authentication" : new App.Modules.Authentication()
+        "Navigation" : new App.Modules.Navigation()
 	};
 }

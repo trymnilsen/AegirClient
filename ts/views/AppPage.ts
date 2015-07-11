@@ -7,10 +7,24 @@ module App.Page {
 
     export class AppPage extends App.AppView {
 
-        constructor() {
-            super({});
-        }
+        public PageName: string;
+        public PageId: string;
+        public PageIcon: string;
+        public PageRoute: string;
 
+        constructor(viewOptions: App.View.IAppViewOptions) {
+            super(viewOptions || {});
+        }
+        public setPageData(pageData: App.Page.AppPageDefinitions)
+        {
+            this.PageName = pageData.name;
+            this.PageId = pageData.id;
+            this.PageIcon = pageData.icon;
+            this.PageRoute = pageData.routeName;
+
+            //Add pageid to class
+            this.$el.addClass("page-"+this.PageId);
+        }
         /**
          * Suspend the appPage includes but not limited to
          * - Unbind events
