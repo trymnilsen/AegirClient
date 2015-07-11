@@ -5,7 +5,8 @@ module App {
     /**
      * Base class For a Module
      */
-    export class Module implements App.Config.IConfigurable {
+    export class Module implements App.Config.IConfigurable,
+                                   App.Messaging.IMessageable {
         /**
          * The Context for this module
          */
@@ -32,6 +33,12 @@ module App {
          */
         appReady(): void {
 
+        }
+        public setMessenger(messenger: App.Messaging.AppMessenger) {
+            this.context.setMessengerInstance(messenger);
+        }
+        public getMessenger():App.Messaging.AppMessenger {
+            return this.context.getMessengerInstance();
         }
         public suspend(): void {
 
