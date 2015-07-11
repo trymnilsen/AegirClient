@@ -3,6 +3,8 @@
 /// <reference path="../views/page/PanelPage.ts" />
 /// <reference path="../views/panel/PagePanel.ts" />
 /// <reference path="../core/Router.ts" />
+/// <reference path="../messages/Message.ts" />
+
 
 module App {
 	export module Modules {
@@ -14,7 +16,7 @@ module App {
 	    	/**
 	    	 * The pages this PageRender can display
 	    	 */
-	    	private pages : {[id:string] : App.Page.AppPage};
+	    	private pages : Array<App.Page.AppPage>;
 	    	/**
 	    	 * Currently Active AppPage
 	    	 */
@@ -31,13 +33,20 @@ module App {
 	        		//TODO//this.navigateToPage(this.pages[0]);
 	        	}
 
-                this.navigateToPage(this.pages[Object.keys(this.pages)[0]]);
+                //this.navigateToPage(this.pages[Object.keys(this.pages)[0]]);
+                this.context.getMessengerInstance().subscribe("all",_.bind(this.onRouteChanged,this));
+                //
 			}
+            private onRouteChanged(messageName: string, message: App.Messaging.Message) {
+                console.log("[PAGERENDER:onRouteChanged] "+messageName,message);
+                var pageToChangeTo: App.Page.AppPage = this.resolvePageByRoute(<string>message.getData()["page"]);
+                this.navigateToPage(pageToChangeTo);
+            }
 	        /**
 	         * Generates the registred pages set in [[App.config]]
 	         */
 	        private generatePages() : void {
-                var appPages : {[id:string] : App.Page.AppPage} = {};
+                var appPages : Array<App.Page.AppPage> = [];
 	        	var pages = this.config['Pages'];
 	        	for (var i = 0; i < pages.length; ++i) {
 	        		//Create easy access to our page data
@@ -50,16 +59,17 @@ module App {
                     } else if(!!pageDefintion.fullView) {
                         page = this.createFullViewPage(pageDefintion);
                     } else {
-                        console.error("[PAGERENDER:generatePages] Pagedefinition for "+pageDefintion.id+" not valid, neither fullView or panels present");
+                        console.error("[PAGERENDER:generatePages] Pagedefinition for: '"+pageDefintion.id+"' not valid, neither fullView or panels present");
                     }
-                    appPages[pageDefintion.id] = page;
+                    page.setPageData(pageDefintion);
+                    appPages.push(page);
 	        	}
 	        	this.pages = appPages;
 	        }
             private createPanelPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.PanelPage {
+                console.log("[PAGERENDER:createPanelPage] Creating PanelPage for id: '"+pageDefintion.id+"'");
                 //Hold the created panels for this page
                 var pagePanels         : Array<App.Panel.PagePanel> = [];
-
                 var panelIds        : Array<string> = pageDefintion.panels;
                 //Make sure we dont share our panels and bring in bad data.
                 for(var ii = 0; ii<panelIds.length; ii++) {
@@ -73,34 +83,42 @@ module App {
                     }
                 }
                 //Create the page data
-                var pageData : App.Page.PanelPageOptions = {
-                        name     : pageDefintion.name,
-                        panels   : pagePanels
-                }
                 //Instantiate the page
-                var page : App.Page.PanelPage = new App.Page.PanelPage(pageData);
+                var page : App.Page.PanelPage = new App.Page.PanelPage(pagePanels);
                 return page;
             }
             private createFullViewPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.FullViewPage {
-               var fullViewPage = 
+                console.log("[PAGERENDER:createFullViewPage] Creating FullView Page for: '"+pageDefintion.id+"'");
+
+               return new App.Page.FullViewPage();
+            }
+            private resolvePageByRoute(route: string): App.Page.AppPage
+            {
+                for (var i = 0; i < this.pages.length; ++i) {
+                    if(this.pages[i].PageRoute === route) {
+                        return this.pages[i];
+                    }
+                }
+                return null;
             }
 	        /**
 	         * Navigate to the given page
 	         * @param page the page to change to
 	         */
 	        private navigateToPage(page : App.Page.AppPage) : void {
-
+                var appContainer: JQuery = $('.app-container');
 	        	if(this.activePage) { //if truthy suspend it
 	        		this.activePage.suspend();
                     this.activePage.dispose(true);
-                    console.log("[PAGERENDER:Navigate]Suspending View '"+this.activePage.cid+"'");
+                    console.log("[PAGERENDER:Navigate]Suspending Page '"+this.activePage.PageId+"' with backbone cid:'"+this.activePage.cid+"'");
+                    appContainer.empty();
 	        	}
 	        	page.resume();
                 //Rendering New Page
-                console.log("[PAGERENDER:Navigate]Resuming/Rendering Page '"+page.cid+"'");
-	        	this.activePage = page;
+                this.activePage = page;
                 this.activePage.render();
-                $('.container').append(this.activePage.$el);
+                console.log("[PAGERENDER:Navigate]Resuming/Rendering Page '"+this.activePage.PageId+"' with backbone cid:'"+this.activePage.cid+"'");
+                appContainer.append(this.activePage.$el);
 	        }
 		}
     }

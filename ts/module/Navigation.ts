@@ -73,6 +73,14 @@ module App {
                 //The params is delivered on the format /xxx/yyy/zzz,
                 //I.E just the last part of the url.
                 console.log(pageId,params);
+                var message: App.Messaging.Message = new App.Messaging.Message(
+                        App.constants["MESSAGES"]["ROUTECHANGED"],
+                        {
+                            page: pageId,
+                            extra: params
+                        }
+                    );
+                this.context.getMessengerInstance().SendMessage(message);
 
             }
 		}
