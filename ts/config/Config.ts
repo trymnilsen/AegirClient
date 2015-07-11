@@ -11,7 +11,7 @@ module App {
                         "id"        : "PG_SIM",
                         "name"      : "Show Simulation",
                         "routeName" : "Simulate",
-                        "panels"    : ["PL_NEWSPANEL"],
+                        "fullView"  : "FW_EDITOR",
                         "icon"      : "cube"
                     },
                     {

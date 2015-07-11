@@ -1,5 +1,6 @@
 /// <reference path="../core/Module.ts" />
 /// <reference path="../views/AppPage.ts" />
+/// <reference path="../views/page/PanelPage.ts" />
 /// <reference path="../views/panel/PagePanel.ts" />
 /// <reference path="../core/Router.ts" />
 
@@ -13,15 +14,12 @@ module App {
 	    	/**
 	    	 * The pages this PageRender can display
 	    	 */
-	    	private pages : {[id:string] : App.AppPage};
+	    	private pages : {[id:string] : App.Page.AppPage};
 	    	/**
 	    	 * Currently Active AppPage
 	    	 */
-	    	private activePage : App.AppPage;
-	    	/**
-	    	 * Creates a new PageRender Module
-	    	 */
-	    	private router : App.Core.Router;
+	    	private activePage : App.Page.AppPage;
+
 	        constructor() {
 	        	super();
 	        }
@@ -33,49 +31,64 @@ module App {
 	        		//TODO//this.navigateToPage(this.pages[0]);
 	        	}
 
-	        	this.createRouter();
                 this.navigateToPage(this.pages[Object.keys(this.pages)[0]]);
 			}
 	        /**
 	         * Generates the registred pages set in [[App.config]]
 	         */
 	        private generatePages() : void {
-                var appPages : {[id:string] : App.AppPage} = {};
+                var appPages : {[id:string] : App.Page.AppPage} = {};
 	        	var pages = this.config['Pages'];
 	        	for (var i = 0; i < pages.length; ++i) {
 	        		//Create easy access to our page data
 	        		var pageDefintion 	: App.Page.AppPageDefinitions = pages[i];
-	        		//Hold the created panels for this page
-	        		var pagePanels 		: Array<App.Panel.PagePanel> = [];
-                    //The IDs of panels we need
-                    var panelIds        : Array<string> = pageDefintion.panels;
-                    //Make sure we dont share our panels and bring in bad data.
-                    for(var ii = 0; ii<panelIds.length; ii++) {
-                        var panelID : string = panelIds[ii];
-                        var panel : App.Panel.PagePanel =
-                            App.Panel.PagePanel.resolveAndCreatePanel(panelID);
-                        if(!!panel) {
-                            pagePanels.push(panel); 
-                        } else {
-                            console.warn("[PAGERENDER:generatePages]Panel with id: '"+panelID+"' was not added, panel was invalid");
-                        }
+                    var page : App.Page.AppPage = null;
+                    //Create page
+                    //If panels are defined, it will take presidence
+                    if(!!pageDefintion.panels) {
+                        page = this.createPanelPage(pageDefintion);
+                    } else if(!!pageDefintion.fullView) {
+                        page = this.createFullViewPage(pageDefintion);
+                    } else {
+                        console.error("[PAGERENDER:generatePages] Pagedefinition for "+pageDefintion.id+" not valid, neither fullView or panels present");
                     }
-                    //Create the page data
-                    var pageData : App.AppPageOptions = {
-                            name     : pageDefintion.name,
-                            panels   : pagePanels
-                    }
-	        		//Instantiate the page
-	        		var page : App.AppPage = new App.AppPage(pageData);
-                    appPages[pageDefintion.name] = page;
+                    appPages[pageDefintion.id] = page;
 	        	}
 	        	this.pages = appPages;
 	        }
+            private createPanelPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.PanelPage {
+                //Hold the created panels for this page
+                var pagePanels         : Array<App.Panel.PagePanel> = [];
+
+                var panelIds        : Array<string> = pageDefintion.panels;
+                //Make sure we dont share our panels and bring in bad data.
+                for(var ii = 0; ii<panelIds.length; ii++) {
+                    var panelID : string = panelIds[ii];
+                    var panel : App.Panel.PagePanel =
+                        App.Panel.PagePanel.resolveAndCreatePanel(panelID);
+                    if(!!panel) {
+                        pagePanels.push(panel);
+                    } else {
+                        console.warn("[PAGERENDER:createPanelPage]Panel with id: '"+panelID+"' was not added, panel was invalid");
+                    }
+                }
+                //Create the page data
+                var pageData : App.Page.PanelPageOptions = {
+                        name     : pageDefintion.name,
+                        panels   : pagePanels
+                }
+                //Instantiate the page
+                var page : App.Page.PanelPage = new App.Page.PanelPage(pageData);
+                return page;
+            }
+            private createFullViewPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.FullViewPage {
+               var fullViewPage = 
+            }
 	        /**
 	         * Navigate to the given page
 	         * @param page the page to change to
 	         */
-	        private navigateToPage(page : App.AppPage) : void {
+	        private navigateToPage(page : App.Page.AppPage) : void {
 
 	        	if(this.activePage) { //if truthy suspend it
 	        		this.activePage.suspend();
@@ -89,41 +102,6 @@ module App {
                 this.activePage.render();
                 $('.container').append(this.activePage.$el);
 	        }
-	        /**
-	         * Create the router instance
-	         */
-            private createRouter(): void {
-	            //Create router instance
-	            this.router = new App.Core.Router();
-	            //Catch all
-	            this.router.route("*actions",
-                                  "defaultRoute",
-                                  _.bind(this.defaultRoute, this));
-	            //Store all routes
-	            var pages : Array<Object> = App.config["Modules"]
-                                                      ["PageRender"]
-                                                      ["Pages"];
-
-	            for(var i = 0; i<pages.length; i++)
-	            { 
-	                var route       : string = pages[i]["routeName"];
-	                var name        : string = pages[i]["name"];
-	                this.router.route(route+"(/*params)",
-                        name,_.bind(this.routeChanged, this, route));
-	            }
-
-	            this.router.initialize();
-	            Backbone.history.start();
-        	}
-        	private defaultRoute(attempedRoute: any): void
-        	{
-        		console.log("[PAGERENDER:routing]DefaultRoute",attempedRoute);
-        	}
-        	private routeChanged(pageId: string, params: string):void {
-        		//The params is delivered on the format /xxx/yyy/zzz, 
-        		//I.E just the last part of the url. 
-        		
-        	}
 		}
     }
 }
