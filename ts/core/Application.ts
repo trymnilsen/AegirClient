@@ -72,10 +72,12 @@ module App {
         private createMessenger(): void {
             this.messenger = new App.Messaging.AppMessenger();
             //All is a magic word for jquery/backbone
-            this.messenger.subscribe("all", _.bind(this.receivedMessage,this));
+            if(App.config["Messaging"]["DebugDumpAllMessages"]) {
+                this.messenger.subscribe("all", _.bind(this.receivedMessage,this));
+            }
         }
-        private receivedMessage(message): void {
-            console.log('ReceivedMessage',message);
+        private receivedMessage(message, data): void {
+            console.debug('[APPLICATION:OnMessage] ReceivedMessage: ',message, data);
             if(!!this.statesEventsMapping[message])
             {
                 this.setState(this.statesEventsMapping[message]);

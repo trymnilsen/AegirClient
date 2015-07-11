@@ -1,6 +1,7 @@
 ///<reference path="Message.ts" />
 /// <reference path="../typings/backbone-eventable.d.ts" />
 /// <reference path="../typings/backbone.d.ts" />
+/// <reference path="../config/Config.ts" />
 
 module App {
     /**
@@ -22,6 +23,9 @@ module App {
                 super();
 	        }
             SendMessage(message:App.Messaging.Message):void {
+                if(App.config["Messaging"]["DebugDumpAllMessages"]) {
+                    console.log("[AppMessenger:SendMessage] Sending message with name: '" + message.getName() + "' data: ",message.getData());
+                }
                 this.trigger(message.getName(),message);
             }
             /**

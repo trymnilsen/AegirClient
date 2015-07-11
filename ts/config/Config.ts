@@ -1,6 +1,9 @@
 module App {
 
     export var config: {[id:string]: any} = {
+        "Messaging" : {
+            "DebugDumpAllMessages" : true
+        },
         "UI"      : {
             "layoutContainer" : ".app-container"
         },
@@ -94,9 +97,9 @@ module App {
             "StartupState" : "AppReady",
             "States": {
                 "AppReady": {
-                    "ContainerClasses" : ["container"],
+                    "ContainerClasses" : [],
                     "Events": ["AuthSuccess", "AppBoot"],
-                    "Modules": ["PageRender", "Navigation"]
+                    "Modules": ["Editor","PageRender", "Navigation"]
                 }
             }
         }

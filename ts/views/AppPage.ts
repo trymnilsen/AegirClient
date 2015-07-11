@@ -11,9 +11,11 @@ module App.Page {
         public PageId: string;
         public PageIcon: string;
         public PageRoute: string;
+        public PageType: App.Page.EPageType;
 
-        constructor(viewOptions: App.View.IAppViewOptions) {
+        constructor(viewType: App.Page.EPageType, viewOptions: App.View.IAppViewOptions) {
             super(viewOptions || {});
+            this.PageType = viewType;
         }
         public setPageData(pageData: App.Page.AppPageDefinitions)
         {

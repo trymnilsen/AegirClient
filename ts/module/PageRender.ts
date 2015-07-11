@@ -4,6 +4,8 @@
 /// <reference path="../views/panel/PagePanel.ts" />
 /// <reference path="../core/Router.ts" />
 /// <reference path="../messages/Message.ts" />
+/// <reference path="../messages/AppMessenger.ts" />
+
 
 
 module App {
@@ -34,11 +36,14 @@ module App {
 	        	}
 
                 //this.navigateToPage(this.pages[Object.keys(this.pages)[0]]);
-                this.context.getMessengerInstance().subscribe("all",_.bind(this.onRouteChanged,this));
+                this.context.getMessengerInstance().subscribe(
+                    App.constants["MESSAGES"]["ROUTECHANGED"],
+                    _.bind(this.onRouteChanged,this)
+                );
                 //
 			}
-            private onRouteChanged(messageName: string, message: App.Messaging.Message) {
-                console.log("[PAGERENDER:onRouteChanged] "+messageName,message);
+            private onRouteChanged(message: App.Messaging.Message) {
+                console.log("[PAGERENDER:onRouteChanged] ",message);
                 var pageToChangeTo: App.Page.AppPage = this.resolvePageByRoute(<string>message.getData()["page"]);
                 this.navigateToPage(pageToChangeTo);
             }
@@ -88,9 +93,9 @@ module App {
                 return page;
             }
             private createFullViewPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.FullViewPage {
+                ///A fullview page is simply a "manual page", you get a div with 100% 100% width height
                 console.log("[PAGERENDER:createFullViewPage] Creating FullView Page for: '"+pageDefintion.id+"'");
-
-               return new App.Page.FullViewPage();
+                return new App.Page.FullViewPage();
             }
             private resolvePageByRoute(route: string): App.Page.AppPage
             {
@@ -119,6 +124,15 @@ module App {
                 this.activePage.render();
                 console.log("[PAGERENDER:Navigate]Resuming/Rendering Page '"+this.activePage.PageId+"' with backbone cid:'"+this.activePage.cid+"'");
                 appContainer.append(this.activePage.$el);
+
+                //if fullview broadcast that we have the fullview set up
+                if(page.PageType === App.Page.EPageType.FULLVIEW) {
+                    var message: App.Messaging.Message = new App.Messaging.Message(
+                        App.constants["MESSAGES"]["FULLVIEWREADY"],
+                        page
+                    );
+                    this.context.getMessengerInstance().SendMessage(message);
+                }
 	        }
 		}
     }

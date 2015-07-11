@@ -15,13 +15,13 @@ module App {
              * the format of this data based on the messageName. (I.E why would
              * you listen for messages you don't know how to make sense of..)
              */
-            private data: { [id: string]: Object };
+            private data: Object;
             /**
              * Constructs a new message
              * @param the name of the message, available names are defined in [[App.constants]]
              * @param the data in this message, we only assume a key -> value format
              */
-            constructor(messageName: string, data?: { [id: string]: Object }) {
+            constructor(messageName: string, data?:  Object) {
                 this.messageName = messageName;
                 if (!!data) { this.data = data; }
             }
@@ -34,8 +34,12 @@ module App {
             /**
              * Returns the data of this message
              */
-            public getData(): { [id: string]: Object } {
-                return this.data;
+            public getData():  Object  {
+                if(!!this.data) {
+                    return this.data;
+                } else {
+                    console.log("[Message:getData] data was not set for message "+this.messageName);
+                }
             }
         }
     }

@@ -7,7 +7,7 @@ module App.Page {
     export class FullViewPage extends App.Page.AppPage {
 
         constructor() {
-            super({
+            super(App.Page.EPageType.FULLVIEW, {
                 backboneOptions: {
                     className: "full-view-page"
                 }

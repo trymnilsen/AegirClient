@@ -17,7 +17,7 @@ module App.Page {
         private panels : Array<App.Panel.PagePanel>;
         private name : string;
         constructor(panels: Array<App.Panel.PagePanel>) {
-            super({});
+            super(App.Page.EPageType.PANEL,{});
             this.panels = panels;
         }
 

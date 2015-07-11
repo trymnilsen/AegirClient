@@ -12,7 +12,8 @@ module App {
 		},
 		MESSAGES: {
 			MESSAGETEST : "TESTTESTMESSAGE",
-            ROUTECHANGED: "ROUTECHANGE"
+            ROUTECHANGED: "ROUTECHANGE",
+            FULLVIEWREADY: "FW_READY"
 		}
 	}
 }

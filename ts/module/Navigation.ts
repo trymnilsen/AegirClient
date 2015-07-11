@@ -5,6 +5,7 @@ module App {
 	export module Modules {
 
 		export class Navigation extends App.Module {
+            private previousRoute: string;
             /**
              * The navbar view that is rendered and providing user ability to
              * navigate the app
@@ -68,6 +69,7 @@ module App {
             private defaultRoute(attempedRoute: any): void
             {
                 console.log("[NAVIGATION:routing]DefaultRoute",attempedRoute);
+
             }
             private routeChanged(pageId: string, params: string):void {
                 //The params is delivered on the format /xxx/yyy/zzz,
