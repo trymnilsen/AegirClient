@@ -1,1 +1,1 @@
-module App.Template.NavigationButton { export var html =  '<i class="fa"></i>' } 
+module App.Template.NavigationButton { export var html =  '<i class="fa fa-fw"></i>' } 

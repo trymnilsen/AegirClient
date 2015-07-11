@@ -21,14 +21,21 @@ module App.View.Navigation {
          */
         public buttonIcon: string;
 
-        constructor(buttonId: string, buttonTitle: string, buttonIcon: string) {
+        /**
+         * The route name for this button
+         */
+        public buttonRouteName: string;
+
+        constructor(buttonId: string, buttonTitle: string, buttonIcon: string, buttonRouteName: string) {
             //Init parent
             super({
                 backboneOptions: {
-                    className: 'navigation-button'
+                    className: 'navigation-button',
+                    tagName: 'a'
                 }
             });
             //Set value
+            this.buttonRouteName = buttonRouteName;
             this.buttonId    = buttonId;
             this.buttonTitle = buttonTitle;
             this.buttonIcon  = buttonIcon;
@@ -42,6 +49,7 @@ module App.View.Navigation {
         }
         public render(): App.AppView {
             super.render();
+            this.$el.attr("href","#"+this.buttonRouteName);
             $('.fa',this.$el).addClass("fa-"+this.buttonIcon);
             $('.fa',this.$el).tooltip({
                     placement: "right",
