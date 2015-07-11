@@ -142,6 +142,7 @@ module App {
                 var modConfig: { [id: string]: any } = App.config["Modules"][modId];
                 //Set it
                 mods[modId].setConfig(modConfig);
+                mods[modId].setMessenger(this.messenger);
                 //Set AppReady
                 //mods[modId].appReady();
             }
