@@ -1,11 +1,12 @@
-/**
- * Useful variables to change appearance, change at own will
- */
-@pagePanelBgColor : #fff;
+@import "colors.less";
 /**
  * Actuall styles goes here
  */
-.page-panel {
-    box-shadow: 0 2px 0 rgba(0,0,0,0.05);
-    background-color: @pagePanelBgColor;
+.page-panel 
+{
+    .panel-padding
+    {
+        box-shadow: 0 2px 0 rgba(0,0,0,0.05);
+        background-color: @pagePanelBgColor;
+    }
 }

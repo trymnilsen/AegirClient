@@ -32,7 +32,7 @@ module App {
                         "id"        : "PG_VESSEL",
                         "name"      : "Vessel Configurations",
                         "routeName" : "vessel",
-                        "panels"    : ["PL_NEWSPANEL",
+                        "panels"    : [
                                        "PL_NEWSPANEL",
                                        "PL_NEWSPANEL",
                                        "PL_NEWSPANEL",
@@ -44,7 +44,21 @@ module App {
                                        "PL_NEWSPANEL",
                                        "PL_NEWSPANEL",
                                        "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",],
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL",
+                                       "PL_NEWSPANEL"
+                                       ],
                         "icon"      : "anchor"
                     },
                     {

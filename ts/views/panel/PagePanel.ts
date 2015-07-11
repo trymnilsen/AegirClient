@@ -98,6 +98,21 @@ module App {
                 console.log("[PAGEPANEL:setData]Setting Data",newData);
             }
             /**
+             * For the page panels we wrap our templates in a "wrapper" giving
+             * us some padding
+             * @ovveride
+             * @param templateString the template string to template from
+             */
+            protected setTemplate(templateString: string)
+            {
+                this.template = (data)=> {
+                    var templateFunc   = _.template(templateString);
+                    var content        = templateFunc(data);
+                    var contentWrapped = "<div class=\"panel-padding pad-all\">" + content + "</div>";
+                    return contentWrapped;
+                }
+            }
+            /**
              * Factory Method returning a new instance of this Page Panel
              */
             public createNew():App.Panel.PagePanel {
