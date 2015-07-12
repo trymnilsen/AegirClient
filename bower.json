@@ -19,6 +19,7 @@
     "font-awesome": "~4.3.0",
     "gsap": "~1.16.1",
     "jquery-ui-layout-bower": "~1.4.4",
-    "jquery-ui": "~1.11.4"
+    "jquery-ui": "~1.11.4",
+    "threejs": "*"
   }
 }

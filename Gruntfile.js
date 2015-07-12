@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ["style","ts"]
+                    paths: ["style","ts","bower_components"]
                 },
                 files: {
                     "style/style.css": ["style/*.less", "ts/**/*.less"]
