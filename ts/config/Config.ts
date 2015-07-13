@@ -21,7 +21,7 @@ module App {
                         "id"        : "PG_REPLAY",
                         "name"      : "Replay",
                         "routeName" : "replay",
-                        "panels"    : ["PL_NEWSPANEL"],
+                        "panels"    : ["PL_REPLAY_SHIP","PL_FILE_BROWSER","PL_FILE_BROWSER","PL_START_REPLAY"],
                         "icon"      : "history"
                     },
                     {
