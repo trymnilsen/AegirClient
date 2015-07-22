@@ -11,6 +11,20 @@ module App {
             "PageRender" : {
                 "Pages"   : [
                     {
+                        "id"        : "PG_HOME",
+                        "name"      : "Show recents and info",
+                        "routeName" : "home",
+                        "panels"    : ["PL_RECENT"],
+                        "icon"      : "home"
+                    },
+                    {
+                        "id"        : "PG_SEARCH",
+                        "name"      : "Show search results",
+                        "routeName" : "search",
+                        "panels"    : ["PL_RESULTS"],
+                        "icon"      : "search"
+                    },
+                    {
                         "id"        : "PG_SIM",
                         "name"      : "Show Simulation",
                         "routeName" : "Simulate",
