@@ -1,19 +1,17 @@
 {
-  "name": "app",
+  "name": "Aegir Client",
   "version": "0.0.1",
-  "description": "responsive app testing",
+  "description": "Client for Aegir Server",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trymnilsen/app"
+    "url": "https://github.com/trymnilsen/AegirClient"
   },
-  "author": "",
-  "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/trymnilsen/app/issues"
+    "url": "https://github.com/trymnilsen/AegirClient/issues"
   },
   "dependencies": {
     "grunt": "~0.4.5",
