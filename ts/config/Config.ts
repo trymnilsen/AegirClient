@@ -11,6 +11,20 @@ module App {
             "PageRender" : {
                 "Pages"   : [
                     {
+                        "id"        : "PG_HOME",
+                        "name"      : "Show recents and info",
+                        "routeName" : "home",
+                        "panels"    : ["PL_RECENT"],
+                        "icon"      : "home"
+                    },
+                    {
+                        "id"        : "PG_SEARCH",
+                        "name"      : "Show search results",
+                        "routeName" : "search",
+                        "panels"    : ["PL_RESULTS"],
+                        "icon"      : "search"
+                    },
+                    {
                         "id"        : "PG_SIM",
                         "name"      : "Show Simulation",
                         "routeName" : "Simulate",
@@ -28,7 +42,7 @@ module App {
                         "id"        : "PG_REPLAY",
                         "name"      : "Replay",
                         "routeName" : "replay",
-                        "panels"    : ["PL_NEWSPANEL"],
+                        "panels"    : ["PL_REPLAY_SHIP","PL_FILE_BROWSER","PL_FILE_BROWSER","PL_START_REPLAY"],
                         "icon"      : "history"
                     },
                     {
@@ -43,30 +57,6 @@ module App {
                         "name"      : "Vessel Configurations",
                         "routeName" : "vessel",
                         "panels"    : [
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
-                                       "PL_NEWSPANEL",
                                        "PL_NEWSPANEL"
                                        ],
                         "icon"      : "anchor"
