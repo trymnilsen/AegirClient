@@ -1,16 +1,13 @@
 /// <reference path="../core/Module.ts" />
-/// <reference path="../views/editor/layout/EditorContainer.ts" />
 
 module App.Modules {
     export class Editor extends App.Module {
-
-        private editorContainerUI: App.View.Editor.Layout.EditorContainer;
-
+        private UIRenderView: App.View.Editor.Rendering.RenderingView;
         constructor() {
             super();
         }
         appReady(): void {
-            this.editorContainerUI = new App.View.Editor.Layout.EditorContainer();
+            this.UIRenderView = new App.View.Editor.Rendering.RenderingView();
 
             this.context.getMessengerInstance().subscribe(
                 App.constants["MESSAGES"]["FULLVIEWREADY"],
@@ -21,10 +18,10 @@ module App.Modules {
             this.renderUI();
         }
         private renderUI(): void {
-            this.editorContainerUI.render();
+            this.UIRenderView.render();
 
-            $('.full-view-page').append(this.editorContainerUI.$el);
-            this.editorContainerUI.postRender();
+            $('.full-view-page').append(this.UIRenderView.$el);
+            this.UIRenderView.postRender();
         }
     }
 }

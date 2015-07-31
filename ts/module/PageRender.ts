@@ -95,7 +95,7 @@ module App {
             private createFullViewPage(pageDefintion: App.Page.AppPageDefinitions) : App.Page.FullViewPage {
                 ///A fullview page is simply a "manual page", you get a div with 100% 100% width height
                 console.log("[PAGERENDER:createFullViewPage] Creating FullView Page for: '"+pageDefintion.id+"'");
-                return new App.Page.FullViewPage();
+                return new App.Page.FullViewPage(pageDefintion.fullView);
             }
             private resolvePageByRoute(route: string): App.Page.AppPage
             {

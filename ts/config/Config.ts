@@ -18,6 +18,13 @@ module App {
                         "icon"      : "cube"
                     },
                     {
+                        "id"        : "PG_MAP",
+                        "name"      : "Map",
+                        "routeName" : "map",
+                        "panels"    : ["PL_NEWSPANEL"],
+                        "icon"      : "map-o"
+                    },
+                    {
                         "id"        : "PG_REPLAY",
                         "name"      : "Replay",
                         "routeName" : "replay",

@@ -23,11 +23,11 @@
     "grunt-inline-data": "git://github.com/trymnilsen/grunt-inline-data.git#master",
     "grunt-minify-html": "~2.0.0",
     "grunt-serve": "^0.1.6",
-    "grunt-ts": "~4.0.1",
+    "grunt-ts": "^4.2.0",
     "grunt-tslint": "~2.0.0",
     "time-grunt": "~1.0.0",
     "tslint": "~2.1.1",
     "typedoc": "~0.3.2",
-    "typescript": "~1.4.1"
+    "typescript": "^1.5.3"
   }
 }

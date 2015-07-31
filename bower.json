@@ -16,10 +16,10 @@
     "underscore": "~1.7.0",
     "bootstrap": "~3.3.1",
     "jquery": "~2.1.1",
-    "font-awesome": "~4.3.0",
+    "font-awesome": "~4.4.0",
     "gsap": "~1.16.1",
-    "jquery-ui-layout-bower": "~1.4.4",
-    "jquery-ui": "~1.11.4",
-    "threejs": "*"
+    "threejs": "*",
+    "stats.js": "*",
+    "dat-gui": "dataarts/dat.gui#~0.5.1"
   }
 }
