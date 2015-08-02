@@ -16,6 +16,8 @@ module App.Rendering {
         private controls: THREE.OrbitControls;
         private stats: Stats;
         private cube: THREE.Mesh;
+        private gui: dat.GUI;
+        public isRunning: boolean;
         constructor(attachPoint: JQuery) {
             this.container = attachPoint;
         }
@@ -35,7 +37,6 @@ module App.Rendering {
             else
                 this.renderer = new THREE.CanvasRenderer();
             this.renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-            this.container.append(this.renderer.domElement);
             // this.controls
             this.controls = new THREE.OrbitControls( this.camera, this.renderer.domElement );
             // STATS
@@ -74,7 +75,7 @@ module App.Rendering {
             this.cube.position.set(0,26,0);
             this.scene.add(this.cube);
 
-            var gui = new dat.GUI();
+            this.gui = new dat.GUI({autoPlace: false});
 
             var parameters =
             {
@@ -90,30 +91,37 @@ module App.Rendering {
                 x: 0, y: 0, z: 0
             };
             // gui.add( parameters )
-            gui.add( parameters, 'a' ).name('Number');
-            gui.add( parameters, 'b' ).min(128).max(256).step(16).name('Slider');
-            gui.add( parameters, 'c' ).name('String');
-            gui.add( parameters, 'd' ).name('Boolean');
+            this.gui.add( parameters, 'a' ).name('Number');
+            this.gui.add( parameters, 'b' ).min(128).max(256).step(16).name('Slider');
+            this.gui.add( parameters, 'c' ).name('String');
+            this.gui.add( parameters, 'd' ).name('Boolean');
 
-            gui.addColor( parameters, 'e' ).name('Color');
+            this.gui.addColor( parameters, 'e' ).name('Color');
 
             var numberList = [1, 2, 3];
-            gui.add( parameters, 'v', numberList ).name('List');
+            this.gui.add( parameters, 'v', numberList ).name('List');
 
             var stringList = ["One", "Two", "Three"];
-            gui.add( parameters, 'w', stringList ).name('List');
+            this.gui.add( parameters, 'w', stringList ).name('List');
 
-            gui.add( parameters, 'f' ).name('Say "Hello!"');
-            gui.add( parameters, 'g' ).name("Alert Message");
+            this.gui.add( parameters, 'f' ).name('Say "Hello!"');
+            this.gui.add( parameters, 'g' ).name("Alert Message");
 
-            var folder1 = gui.addFolder('Coordinates');
+            var folder1 = this.gui.addFolder('Coordinates');
             folder1.add( parameters, 'x' );
             folder1.add( parameters, 'y' );
             folder1.close();
-            gui.open();
+        }
+        public attach(): void {
+            this.container.append(this.renderer.domElement);
+            this.container.append(this.gui.domElement);
+            this.gui.open();
+            this.isRunning = true;
         }
         public animate(): void {
-            window.requestAnimationFrame(()=> {this.animate();});
+            if(this.isRunning){
+                window.requestAnimationFrame(()=> {this.animate();});
+            }
             this.update();
             this.render();
         }

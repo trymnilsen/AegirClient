@@ -6,10 +6,15 @@ module App.View.Editor.Rendering {
 
         constructor() {
             super({});
-        }
-        public postRender(): App.AppView {
             this.renderingInstance = new App.Rendering.RenderInstance(this.$el);
             this.renderingInstance.init();
+        }
+        public dispose(): void {
+            this.$el.empty();
+            this.renderingInstance.isRunning = false;
+        }
+        public postRender(): App.AppView {
+            this.renderingInstance.attach();
             this.renderingInstance.animate();
             return this;
         }
