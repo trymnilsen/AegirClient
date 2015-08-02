@@ -4,14 +4,13 @@
 /// <reference path="../config/Constants.ts" />
 /// <reference path="../core/IDisposable.ts" />
 
-module App{
+module App.View {
     /**
      * The AppView is the baseclass for all DOM elements rendered by the application
      * It handles managing childviews and contains a context which triggers
      * rerendering if changed.
      */
-    export class AppView extends Backbone.View implements App.Core.IDisposable
-    {
+    export class AppView extends Backbone.View implements App.Core.IDisposable {
         public template: (data)=> string;
         public appendOptions: App.View.IAppViewAppendOptions;
 
@@ -78,8 +77,7 @@ module App{
                 this.stopListenForContext();
             }
         }
-        public setAppendOptions(options: App.View.IAppViewAppendOptions)
-        {
+        public setAppendOptions(options: App.View.IAppViewAppendOptions) {
             if(!options.AttachPointSelector && !options.JQueryAttachPoint) {
                 this.appendOptions = options;
             } else {
@@ -89,7 +87,7 @@ module App{
         /**
          * Set or change to another context for this view
          */
-        public setContext(newContext:App.Core.Context): void{
+        public setContext(newContext:App.Core.Context): void {
             //Remove events for old context
             if(!!this.context){
                 this.context.stopListening();

@@ -1,7 +1,7 @@
 /// <reference path="Context.ts" />
 /// <reference path="../config/IConfigurable.ts" />
 
-module App {
+module App.Core {
     /**
      * Base class For a Module
      */

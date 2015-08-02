@@ -1,10 +1,9 @@
 /// <reference path="../config/Config.ts" />
 /// <reference path="../config/ModuleDefinitions.ts" />
-/// <reference path="AppState.ts"/>
 /// <reference path="Module.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../typings/jquery.d.ts"/>
-module App {
+module App.Core {
     'use strict';
     /**
      * This class is the heart of the application during start up
@@ -19,20 +18,7 @@ module App {
          * Backing variable for the messenger instance
          */
         private messenger: App.Messaging.AppMessenger = null;
-        /**
-         * Backing variable for the available states
-         */
-        private states: { [id: string]: App.Core.AppState } = {};
-        /**
-         * The currently active state
-         */
-        private activeState: App.Core.AppState = null;
-        /**
-         * Creates an internal mapping between messagenames and states,
-         * simplifying changing states based on received messages
-         * E.G authsucess switches from authstate to main app state
-         */
-        private statesEventsMapping: { [id: string]: App.Core.AppState } = {};
+        private layoutManager: App.View.Layout.LayoutManager = null;
         /**
          * Static reference to our root dom node, supplied as a jquery object
          */
@@ -44,10 +30,10 @@ module App {
         constructor() {
             super();
             //Get config for room dom node
-            var layoutRoot: string = App.config['UI']['layoutContainer'];
+            let layoutRoot: string = App.config['UI']['layoutContainer'];
             //Create jquery object
-            App.Application.layoutElement = $(layoutRoot);
-            if(!App.Application.layoutElement[0])
+            App.Core.Application.layoutElement = $(layoutRoot);
+            if(!App.Core.Application.layoutElement[0])
             {
                 console.error("[APPLICATION:Construct]No match for layoutroot",
                         layoutRoot);
@@ -60,11 +46,14 @@ module App {
             //Modules are intialized ahead of states, as the modules gets their
             //optional configs before beeing bootstrapped by the state
             this.createMessenger();
+            this.createLayout();
             this.initModules();
-            this.initStates();
         }
         getMessenger(): App.Messaging.AppMessenger {
             return this.messenger;
+        }
+        private createLayout(): void {
+
         }
         /**
          * Creates and listens to the messenger instance for this application
@@ -78,75 +67,16 @@ module App {
         }
         private receivedMessage(message, data): void {
             console.debug('[APPLICATION:OnMessage] ReceivedMessage: ',message, data);
-            if(!!this.statesEventsMapping[message])
-            {
-                this.setState(this.statesEventsMapping[message]);
-            }
-        }
-        /**
-         * Init all the givens states and sets state given by
-         * the `StatupState`value under AppStates as the active state
-         */
-        private initStates(): void {
-            var stateDefinitions = App.config["AppStates"]["States"];
-            var startupState = App.config["AppStates"]["StartupState"];
-            //Generate all states
-            for (var stateId in stateDefinitions) {
-                var statesConfig = stateDefinitions[stateId];
-
-                var state: App.Core.AppState = new App.Core.AppState();
-                state.setEvents(statesConfig["Events"]);
-
-                for (var i = 0; i < statesConfig["Events"].length; i++) {
-                    var eventName = statesConfig["Events"][i];
-                    this.statesEventsMapping[eventName] = state;
-                }
-
-                state.setModuleIds(statesConfig["Modules"]);
-                state.setClassNames(statesConfig["ContainerClasses"]);
-                this.states[stateId] = state;
-            }
-            //Start our AppState
-            this.setState(this.states[startupState]);
-        }
-        /**
-         * Set a given state as the active one, suspending any current states
-         */
-        private setState(state: App.Core.AppState): void {
-            var t0 = performance.now();
-            //If we have a currently active one, suspend it
-            if(!!this.activeState) {
-                this.activeState.suspend();
-                //Clear container classes
-                var toRemove: string = this.activeState.getClassNames().join(" ");
-                $('.app-container').removeClass(toRemove);
-            }
-            //Activate new appstate
-            //Add classes
-            var toAdd: string = state.getClassNames().join(" ");
-            $('.app-container').addClass(toAdd);
-            //Resume
-            state.resume();
-            //Set to current
-            this.activeState = state;
-            var t1 = performance.now();
-            console.log('[APPLICATION:setstate]SetState took '+(t1 - t0)+' milliseconds');
         }
         /**
          * Initialize all modules
          */
         private initModules(): void {
             //run bootstrap on each of the modules
-            var mods: { [id: string]: App.Module } = App.modDefinitions;
+            let mods:Array<App.Core.Module> = App.Config.getAllModules();
             //Loop through all and give them the proper configs
-            for (var modId in mods) {
-                //Get the configs if any for this module
-                var modConfig: { [id: string]: any } = App.config["Modules"][modId];
-                //Set it
-                mods[modId].setConfig(modConfig);
-                mods[modId].setMessenger(this.messenger);
-                //Set AppReady
-                //mods[modId].appReady();
+            for (let i = 0, l = mods.length; i<l; i++) {
+                
             }
         }
     }
