@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-  <title> Mobile Test </title>
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <title> Aegir </title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link href="bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-	<script src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="bower_components/underscore/underscore.js"></script>
-	<script src="bower_components/backbone/backbone.js"></script>
-	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-	<script src="js/libs/backbone-eventable/backbone-eventable.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="js/libs/backbone-eventable/backbone-eventable.js"></script>
     <script src="bower_components/threejs/build/three.min.js"></script>
     <script src="js/libs/threejs/Detector.js"></script>
     <script src="bower_components/stats.js/build/stats.min.js"></script>
     <script src="js/libs/threejs/OrbitControls.js"></script>
     <script src="bower_components/dat-gui/build/dat.gui.min.js"></script>
-	<script src="js/build/app.js"></script>
-  </head>
-  <body>
-      <div class="nav">
+    <script src="js/build/app.js"></script>
+</head>
 
-      </div>
-      <div id="content">
-          <div class="app-container">
+<body>
+    <div class="topbar">
+    </div>
+    <div id="editor-content">
+        <div class="ui-layout-center" id="fooo">
+        </div>
+        <div class="ui-layout-east">
+            <div id="right-ui-layout-north">
+            </div>
+            <div id="right-ui-layout-center">
+            </div>
+            <div id="right-ui-layout-south">
+            </div>
+        </div>
+        <div class="ui-layout-west">
+            <div id="left-ui-layout-north">
+            </div>
+            <div id="left-ui-layout-center">
+            </div>
+        </div>
+        <div class="ui-layout-south">
+            <div id="bottom-ui-layout-center">
+            </div>
+            <div id="bottom-ui-layout-east">
+            </div>
+            <div id="bottom-ui-layout-west">
+            </div>
+        </div>
+    </div>
+</body>
 
-          </div>
-      </div>
-  </body>
 </html>
