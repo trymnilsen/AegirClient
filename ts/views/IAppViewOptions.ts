@@ -11,7 +11,7 @@ module App {
             /**
              * AppViews to append to our view as children
              */
-            childViews ?: Array<App.AppView>;
+            childViews ?: Array<App.View.AppView>;
             /**
              * Priove a context for the view, if none is given we create one for you :)
              */

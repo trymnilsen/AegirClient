@@ -1,6 +1,12 @@
 /// <reference path="core/Application.ts" />
 var t0 = performance.now();
 console.log('[APPENTRY:EXEC]App Start at '+t0+'ms');
+
+//We have some time to do non-dom related logic
+var mainApp : App.Core.Application = new App.Core.Application();
+//Attach Application to global
+window['Application'] = mainApp;
+        /**
 /**
  * Run on Dom Ready
  */
@@ -14,13 +20,8 @@ $(() => {
         /**
          * Holds the reference to our application object
          */
-        var mainApp : App.Application = new App.Application();
-        //Attach Application to global
-        window['Application'] = mainApp;
-        /**
-         * Calls startup methods and dependencies in the Application
-         */
-        mainApp.bootstrap();
+
+        window['Application'].bootstrap();
 
         var t3 = performance.now();
         console.log('[APPENTRY:DOMLOAD+500ms]Boostrap End at '+t3+'ms');

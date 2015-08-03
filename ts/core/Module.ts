@@ -1,5 +1,6 @@
 /// <reference path="Context.ts" />
 /// <reference path="../config/IConfigurable.ts" />
+/// <reference path="../views/layout/ELayoutPosition.ts" />
 
 module App.Core {
     /**
@@ -18,15 +19,15 @@ module App.Core {
          */
         protected config: { [id: string]: any };
         /**
-         * A Css selector for where to append this module.. 
-         * If the variable is empty, we assume this module is pure business logic
+         * Defines the position of the module in the layout
          */
-        private domAttachSelector: string|Array<string>;
+        protected layoutPosition: App.View.Layout.ELayoutPosition;
         /**
          * Construct a new Model instance
          */
-        constructor() {
+        constructor(layoutPosition: App.View.Layout.ELayoutPosition) {
             this.context = new App.Core.Context();
+            this.layoutPosition = layoutPosition;
         }
         /**
          * Called when the App is ready and config has been loaded
@@ -39,6 +40,9 @@ module App.Core {
         }
         public getMessenger():App.Messaging.AppMessenger {
             return this.context.getMessengerInstance();
+        }
+        public get LayoutPosition(): App.View.Layout.ELayoutPosition {
+            return this.layoutPosition;
         }
         public suspend(): void {
 

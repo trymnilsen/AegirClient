@@ -5,7 +5,8 @@ module App {
             "DebugDumpAllMessages" : true
         },
         "UI"      : {
-            "layoutContainer" : ".app-container"
+            "topBarContainer" : "#topbar-content",
+            "layoutContainer" : "#editor-content"
         },
         "Modules" : {
             "PageRender" : {

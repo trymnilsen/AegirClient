@@ -3,6 +3,8 @@
 /// <reference path="../core/Context.ts"/>
 /// <reference path="../config/Constants.ts" />
 /// <reference path="../core/IDisposable.ts" />
+/// <reference path="IAppViewAppendOptions.ts" />
+/// <reference path="IAppViewOptions.ts" />
 
 module App.View {
     /**
@@ -17,7 +19,7 @@ module App.View {
         protected childApppendOptions: App.View.IAppViewAppendOptions;
         protected context: App.Core.Context = null;
 
-        private childViews: {[id:string] : App.AppView} = {};
+        private childViews: {[id:string] : App.View.AppView} = {};
 
         constructor(options: App.View.IAppViewOptions){
             //Set options for backbone view, if its set or not
@@ -40,7 +42,7 @@ module App.View {
          * of each view.
          * @param view the view we want to append
          */
-        public static resolveViewAppendPoint(view:App.AppView, jqueryContext ?:JQuery) {
+        public static resolveViewAppendPoint(view:App.View.AppView, jqueryContext ?:JQuery) {
 
             //If the jquery object is present use it
             if(!!view.appendOptions.JQueryAttachPoint) {
@@ -68,7 +70,7 @@ module App.View {
          */
         public dispose(domEventsOnly : boolean = false): void {
             for (var childViewId in this.childViews) {
-                var childView : App.AppView = this.childViews[childViewId];
+                var childView : App.View.AppView = this.childViews[childViewId];
                 childView.dispose(domEventsOnly);
             }
             //Remove dom eveants
@@ -100,7 +102,7 @@ module App.View {
          * Render the view, and subviews
          * @return returns self for fluency
          */
-        public render(): App.AppView {
+        public render(): App.View.AppView {
             //Unlisten any dom events
             this.undelegateEvents();
 
@@ -122,11 +124,11 @@ module App.View {
             }
             //Render childviews
             for (var childViewId in this.childViews) {
-                var childView : App.AppView = this.childViews[childViewId];
+                var childView : App.View.AppView = this.childViews[childViewId];
                 childView.render();
                 //If childview does not have an append point, append it directly to us
                 if(!!childView.appendOptions) {
-                    var appendPoint : JQuery = App.AppView.resolveViewAppendPoint(childView,this.$el);
+                    var appendPoint : JQuery = App.View.AppView.resolveViewAppendPoint(childView,this.$el);
                 } else {
                     var appendPoint : JQuery = this.$el;
                 }
@@ -141,11 +143,11 @@ module App.View {
          * We are not guaranteed to have a real dom node ref on render
          * So functions like focus will not work. On post render all dom operations
          * should have been complete, enabling us to use these functions
-         * @return {App.AppView} [description]
+         * @return {App.View.AppView} [description]
          */
-        public postRender(): App.AppView {
+        public postRender(): App.View.AppView {
             for (var childViewId in this.childViews) {
-                var childView: App.AppView = this.childViews[childViewId];
+                var childView: App.View.AppView = this.childViews[childViewId];
                 childView.postRender();
             }
             return this;
@@ -157,7 +159,7 @@ module App.View {
          * entire view
          * @param appendOptions options for appending a view to this view
          */
-        protected appendView(view : App.AppView): void {
+        protected appendView(view : App.View.AppView): void {
             if(!View) {
                 console.warn("[APPVIEW:Append]No childview selected, cannot append.");
                 return;
@@ -190,7 +192,7 @@ module App.View {
                 console.log("[APPVIEW:Append]View :'"+view.cid+"' Already a childview");
             }
         }
-        protected addMultipleViews(views: Array<App.AppView>):void {
+        protected addMultipleViews(views: Array<App.View.AppView>):void {
             //Add childviews
             for (var i = 0; i < views.length; ++i) {
                 this.appendView(views[i]);

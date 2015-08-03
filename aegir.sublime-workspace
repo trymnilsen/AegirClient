@@ -1,0 +1,1667 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"create",
+				"createLayout"
+			],
+			[
+				"rend",
+				"[priv] ● renderingInstance (property) App.View.Editor.Rendering.RenderingView.renderingInstance: App.Rendering.RenderInstance"
+			],
+			[
+				"e",
+				" ● el (property) Backbone.View.el: any"
+			],
+			[
+				"ren",
+				"[priv] ● renderingInstance (property) App.View.Editor.Rendering.RenderingView.renderingInstance: App.Rendering.RenderInstance"
+			],
+			[
+				"re",
+				"[priv] ● renderingInstance (property) App.View.Editor.Rendering.RenderingView.renderingInstance: App.Rendering.RenderInstance"
+			],
+			[
+				"clas",
+				"classname"
+			],
+			[
+				"Red",
+				"[priv] ● renderingInstance (property) App.View.Editor.Rendering.RenderingView.renderingInstance: App.Rendering.RenderInstance"
+			],
+			[
+				"Render",
+				"RenderingView"
+			],
+			[
+				"con",
+				"[priv] ● container (property) App.Rendering.RenderInstance.container: JQuery"
+			],
+			[
+				"GUI",
+				"GUIController"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"juq",
+				"jquery-ui"
+			],
+			[
+				"mess",
+				"[priv] ● messageName (property) App.Messaging.Message.messageName: string"
+			],
+			[
+				"co",
+				"  config var App.config: {"
+			],
+			[
+				"page",
+				"[pub] ● PageType (property) App.Page.AppPage.PageType: Page.EPageType"
+			],
+			[
+				"edi",
+				"[priv] ● editorContainerUI (property) App.Modules.Editor.editorContainerUI: View.Editor.Layout.EditorContainer"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"content",
+				"contentWrapped"
+			],
+			[
+				"temp",
+				"templateFunc"
+			],
+			[
+				"current",
+				"currentPanelsMade"
+			],
+			[
+				"appnd",
+				"[priv] ○ AppendPanels (method) App.Page.PanelPage.AppendPanels(): void"
+			],
+			[
+				"Appenn",
+				"[priv] ○ AppendPanels (method) App.Page.PanelPage.AppendPanels(): void"
+			],
+			[
+				"pagei",
+				"[pub] ● PageId (property) App.Page.AppPage.PageId: string"
+			],
+			[
+				"conm",
+				" ● context (property) App.Module.context: Core.Context"
+			],
+			[
+				"get",
+				"[pub] ○ getMessengerInstance (method) App.Core.Context.getMessengerInstance(): Messaging.AppMessenger"
+			],
+			[
+				"set",
+				"[pub] ○ setPageData (method) App.Page.AppPage.setPageData(pageData: Page.AppPageDefinitions): void"
+			],
+			[
+				"pa",
+				"  Page module App.Page"
+			],
+			[
+				"Page",
+				"PageOptions"
+			],
+			[
+				"App",
+				" ♦ AppPage class App.Page.AppPage"
+			],
+			[
+				"Pa",
+				" ♦ PanelPage class App.Page.PanelPage"
+			],
+			[
+				"crea",
+				"[priv] ○ createPanelPage (method) App.Modules.PageRender.createPanelPage(pageDefintion: Page.AppPageDefinitions): Page.PanelPage"
+			],
+			[
+				"P",
+				" ♦ PanelPage class App.Page.PanelPage"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"rout",
+				"buttonRoute"
+			],
+			[
+				"button",
+				"buttonRouteName"
+			],
+			[
+				"buto",
+				"buttonIcon"
+			],
+			[
+				"butto",
+				"buttonId"
+			],
+			[
+				"append",
+				"appendPoint"
+			],
+			[
+				"I",
+				" ◊ IAppViewAppendOptions interface App.View.IAppViewAppendOptions"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"Proje",
+				"Project"
+			],
+			[
+				"Project",
+				"ProjectRelations"
+			],
+			[
+				"proje",
+				"ProjectRelations"
+			],
+			[
+				"config",
+				"config-stripped"
+			],
+			[
+				"comment",
+				"commentstrip"
+			],
+			[
+				"log",
+				"loginForm	property"
+			],
+			[
+				"aut",
+				"authenticationSuccess	method"
+			],
+			[
+				"sta",
+				"statesEventsMapping	property"
+			],
+			[
+				"pro",
+				"prop	method"
+			],
+			[
+				"C",
+				"Context	module"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"dis",
+				"disableLoginButton	method"
+			],
+			[
+				"over",
+				"overflow"
+			],
+			[
+				"signin-head",
+				"signin-header-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"attac",
+				"attachPoint	local var"
+			],
+			[
+				"Co",
+				"Config	module"
+			],
+			[
+				"ge",
+				"getClassNames	method"
+			],
+			[
+				"lo",
+				"loginForm	property"
+			],
+			[
+				"logi",
+				"loginForm	property"
+			],
+			[
+				"p",
+				"push	method"
+			],
+			[
+				"st",
+				"stateDefinitions	var"
+			],
+			[
+				"modu",
+				"moduleIds	parameter"
+			],
+			[
+				"Module",
+				" ♦ Module class App.Module"
+			],
+			[
+				"Sta",
+				"  stateDefinitions var App.stateDefinitions: {"
+			],
+			[
+				"Collection",
+				" ♦ Collection class Backbone.Collection<TModel extends Backbone.Model>"
+			],
+			[
+				"jqu",
+				"jqueryObj"
+			],
+			[
+				"c",
+				" ● childViews (property) App.View.IAppViewOptions.childViews: AppView[]"
+			],
+			[
+				"appen",
+				" ○ append (method) JQuery.append(content1: JQuery, ...content2: any[]): JQuery (+5 overloads)"
+			],
+			[
+				"addC",
+				" ○ addClass (method) JQuery.addClass(className: string): JQuery (+1 overload)"
+			],
+			[
+				"Panel",
+				" ♦ CustomPagePanel class App.Panel.CustomPagePanel"
+			],
+			[
+				"ap",
+				"[pub] ● appendOptions (property) App.AppView.appendOptions: View.IAppViewAppendOptions"
+			],
+			[
+				"panelI",
+				"panelInstance"
+			],
+			[
+				"setCon",
+				"[pub] ○ setConfig (method) App.Panel.PagePanel.setConfig(newConfigData: {\n    [id: string]: Object;\n}): void"
+			],
+			[
+				"panelId",
+				"PanelID"
+			],
+			[
+				"confi",
+				"configKey"
+			],
+			[
+				"confiogda",
+				"[priv] ● configData (property) App.Panel.PagePanel.configData: {\n    [id: string]: Object;\n}"
+			],
+			[
+				"for",
+				"for	for (…; ++i) {…}"
+			],
+			[
+				"app",
+				" ● appendOptions (property) App.AppView.appendOptions: AppViewAppendOptions"
+			],
+			[
+				"nav",
+				"[priv] ● navBarView (property) App.Modules.Navigation.navBarView: View.NavigationMenu"
+			],
+			[
+				"A",
+				" ♦ AppView class App.AppView"
+			],
+			[
+				"Jqu",
+				"JQuery"
+			],
+			[
+				"child",
+				"childView"
+			],
+			[
+				"is",
+				"[priv] ● isBatchUpdating (property) App.Core.Context.isBatchUpdating: boolean"
+			],
+			[
+				"atta",
+				" ● attachNodeSelector (property) App.AppView.attachNodeSelector: string"
+			],
+			[
+				"red",
+				"[pub] ○ render (method) App.AppView.render(): AppView"
+			],
+			[
+				"view",
+				" ◊ ViewOptions interface Backbone.ViewOptions"
+			],
+			[
+				"panel",
+				"pagePanelBgColor"
+			],
+			[
+				"backr",
+				"background-color"
+			],
+			[
+				"backgro",
+				"background-color"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"appe",
+				" ○ append (method) JQuery.append(content1: JQuery, ...content2: any[]): JQuery (+5 overloads)"
+			],
+			[
+				"curre",
+				"currentPanelWidth"
+			],
+			[
+				"panels",
+				"[priv] ● panels (property) App.AppPage.panels: Panel.PagePanel[]"
+			],
+			[
+				"stop",
+				"[priv] ○ stopListenForContext (method) App.AppView.stopListenForContext(): void"
+			],
+			[
+				"even",
+				" ○ undelegateEvents (method) Backbone.View.undelegateEvents(): any"
+			],
+			[
+				"bind",
+				" ○ bind (method) UnderscoreStatic.bind(func: Function, context: any, ...arguments: any[]): () => any"
+			],
+			[
+				"rou",
+				"[priv] ○ routeChanged (method) App.Modules.PageRender.routeChanged(...args: any[]): void"
+			],
+			[
+				"ro",
+				" ○ route (method) Backbone.Router.route(route: string, name: string, callback?: Function): Backbone.Router (+1 overload)"
+			],
+			[
+				"s",
+				" ○ start (method) Backbone.History.start(options?: Backbone.HistoryOptions): boolean"
+			],
+			[
+				"his",
+				"  history (var) Backbone.history: Backbone.History"
+			],
+			[
+				"route",
+				"routes"
+			],
+			[
+				"listen",
+				"[priv] ○ listenForContextChanges (method) App.AppView.listenForContextChanges(): void"
+			],
+			[
+				"context",
+				"[priv] ● context (property) App.AppView.context: any"
+			],
+			[
+				"g",
+				"greeting"
+			],
+			[
+				"Pre",
+				"Preview2DView"
+			],
+			[
+				"mo",
+				"[pub] ● moduleId string"
+			],
+			[
+				"vie",
+				"ts/views/entitytree/EntityTreeView	less"
+			],
+			[
+				"views",
+				"ts/views/entitytree/EntityTreeView	less"
+			],
+			[
+				"num",
+				"numOfTargetFIlesInlined"
+			],
+			[
+				"numof",
+				"numOfInlines"
+			],
+			[
+				"in",
+				"inlined"
+			],
+			[
+				"numo",
+				"numOfSrcFilesInlined"
+			],
+			[
+				"inli",
+				"inlinedContent"
+			],
+			[
+				"modules",
+				"ModuleOptions"
+			],
+			[
+				"EntityTre",
+				"EntityTreeView"
+			],
+			[
+				"JQ",
+				"JQuery"
+			],
+			[
+				"entity",
+				"entitytree"
+			],
+			[
+				"mod",
+				"[pub] ● modules App.Module[]"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ts/views/layout/LayoutManager.ts",
+			"settings":
+			{
+				"buffer_size": 373,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ts/AppEntryPoint.ts",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "/// <reference path=\"../config/Config.ts\" />\n/// <reference path=\"../config/ModuleDefinitions.ts\" />\n/// <reference path=\"Module.ts\" />\n/// <reference path=\"../views/AppView.ts\" />\n/// <reference path=\"../typings/jquery.d.ts\"/>\nmodule App.Core {\n    'use strict';\n    /**\n     * This class is the heart of the application during start up\n     * it will initialize states and modules. It also has creates and holds\n     * the references to the root dom node, active state (as well as handling)\n     * changes in states and is responsible for keeping a global messenger\n     * instance available, (this will also be the one passed to all of the \n     * available contexts if none is explicitly set)\n     */\n    export class Application extends Backbone.Eventable {\n        /**\n         * Backing variable for the messenger instance\n         */\n        private messenger: App.Messaging.AppMessenger = null;\n        private layoutManager: App.View.Layout.LayoutManager = null;\n        /**\n         * Static reference to our root dom node, supplied as a jquery object\n         */\n        static layoutElement: JQuery = null;\n\n        /**\n         * Constructs as application instance and fetches configs\n         */\n        constructor() {\n            super();\n        }\n        /**\n         * Bootstrap is run on DOM Ready and will init states and modules\n         */\n        bootstrap(): void {\n            //Get config for room dom node\n            let layoutRoot: string = App.config['UI']['layoutContainer'];\n            this.createMessenger();\n            //Create jquery object\n            App.Core.Application.layoutElement = $(layoutRoot);\n            if(!App.Core.Application.layoutElement[0])\n            {\n                console.error(\"[APPLICATION:Construct]No match for layoutroot\",\n                        layoutRoot);\n            }\n            //Modules are intialized ahead of states, as the modules gets their\n            //optional configs before beeing bootstrapped by the state\n            this.createLayout();\n            this.initModules();\n        }\n        getMessenger(): App.Messaging.AppMessenger {\n            return this.messenger;\n        }\n        private createLayout(): void {\n\n        }\n        /**\n         * Creates and listens to the messenger instance for this application\n         */\n        private createMessenger(): void {\n            this.messenger = new App.Messaging.AppMessenger();\n            //All is a magic word for jquery/backbone\n            if(App.config[\"Messaging\"][\"DebugDumpAllMessages\"]) {\n                this.messenger.subscribe(\"all\", _.bind(this.receivedMessage,this));\n            }\n        }\n        private receivedMessage(message, data): void {\n            console.debug('[APPLICATION:OnMessage] ReceivedMessage: ',message, data);\n        }\n        /**\n         * Initialize all modules\n         */\n        private initModules(): void {\n            //run bootstrap on each of the modules\n            let mods:Array<App.Core.Module> = App.Config.getAllModules();\n            //Loop through all and give them the proper configs\n            for (let i = 0, l = mods.length; i<l; i++) {\n                \n            }\n        }\n    }\n}",
+			"file": "ts/core/Application.ts",
+			"file_size": 3194,
+			"file_write_time": 130829837148313018,
+			"settings":
+			{
+				"buffer_size": 3194,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "save ",
+		"selected_items":
+		[
+			[
+				"save ",
+				"Project: Save As"
+			],
+			[
+				"format",
+				"TypeScript: FormatDocument"
+			],
+			[
+				"typescript",
+				"TypeScript: FormatBlock"
+			],
+			[
+				"typescr",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"ty",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"type",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"fulls",
+				"View: Toggle Full Screen"
+			],
+			[
+				"findre",
+				"TypeScript: FindReferences"
+			],
+			[
+				"typ",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"ht",
+				"HTMLPrettify"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"removep",
+				"Package Control: Remove Package"
+			],
+			[
+				"find",
+				"Find in Files…"
+			],
+			[
+				"repla",
+				"Replace…"
+			],
+			[
+				"trail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"typesc",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"comment",
+				"Toggle Comment"
+			],
+			[
+				"pretty",
+				"HTMLPrettify"
+			],
+			[
+				"findi",
+				"Find in Files…"
+			],
+			[
+				"exit",
+				"Exit Sublime Text"
+			],
+			[
+				"goto",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"findin",
+				"Find in Files…"
+			],
+			[
+				"trtail",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"removepa",
+				"Package Control: Remove Package"
+			],
+			[
+				"full",
+				"View: Toggle Full Screen"
+			],
+			[
+				"thr",
+				"Themr: Toggle Theme Settings"
+			],
+			[
+				"thmr",
+				"Themr: Toggle Theme Settings"
+			],
+			[
+				"ext",
+				"Exit Sublime Text"
+			],
+			[
+				"th",
+				"Themr: List themes"
+			],
+			[
+				"close",
+				"Close Window"
+			],
+			[
+				"thm",
+				"Themr: List themes"
+			],
+			[
+				"document",
+				"TypeScript: FormatDocument"
+			],
+			[
+				"forma",
+				"TypeScript: FormatDocument"
+			],
+			[
+				"grunt",
+				"Grunt"
+			],
+			[
+				"grut",
+				"Grunt"
+			],
+			[
+				"gr",
+				"Grunt: Kill Running Tasks"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"installpa",
+				"Package Control: Install Package"
+			],
+			[
+				"ex",
+				"Exit Sublime Text"
+			],
+			[
+				"findref",
+				"TypeScript: FindReferences"
+			],
+			[
+				"quickin",
+				"TypeScript: QuickInfoDocumentation"
+			],
+			[
+				"sytype",
+				"Set Syntax: TypeScript"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"open ",
+				"Project: Open Project…"
+			],
+			[
+				"ardef",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"spaces",
+				"Indentation: Use Spaces"
+			],
+			[
+				"prefere",
+				"Preferences: Browse Packages"
+			],
+			[
+				"prefus",
+				"Preferences: Settings - User"
+			],
+			[
+				"pre",
+				"Preferences: Settings - Default"
+			],
+			[
+				"usespa",
+				"Indentation: Use Spaces"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"defi",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"pref",
+				"Preferences: Settings - User"
+			],
+			[
+				"filemov",
+				"Quick File Move: Move Current File"
+			],
+			[
+				"fullsc",
+				"View: Toggle Full Screen"
+			],
+			[
+				"preference",
+				"Preferences: Settings - User"
+			],
+			[
+				"open",
+				"Project: Open Project…"
+			],
+			[
+				"pro",
+				"Project: Save As"
+			],
+			[
+				"a",
+				"ArcticTypescript: Reopen Project (after config changes)"
+			],
+			[
+				"",
+				"ArcticTypescript: Go to definition"
+			],
+			[
+				"art",
+				"ArcticTypescript: Reopen Project (after config changes)"
+			],
+			[
+				"ar",
+				"ArcticTypescript: Reopen Project (after config changes)"
+			],
+			[
+				"new",
+				"ANF: New File"
+			],
+			[
+				"ful",
+				"View: Toggle Full Screen"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"newf",
+				"ANF: New File"
+			],
+			[
+				"file",
+				"File: New File"
+			],
+			[
+				"git",
+				"GitGutter: Compare Against HEAD"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"gru",
+				"Grunt"
+			],
+			[
+				"eix",
+				"Exit Sublime Text"
+			],
+			[
+				"reload",
+				"Typescript: Reload Project"
+			],
+			[
+				"grun",
+				"Grunt"
+			],
+			[
+				"toggle",
+				"Toggle Comment"
+			],
+			[
+				"togco",
+				"Toggle Comment"
+			],
+			[
+				"themr",
+				"Themr: Toggle Theme Settings"
+			],
+			[
+				"newfile",
+				"ANF: New File"
+			],
+			[
+				"newfi",
+				"ANF: New File"
+			],
+			[
+				"relo",
+				"Typescript: Reload Project"
+			],
+			[
+				"def",
+				"Typescript: Go to definition"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"new file",
+				"ANF: New File"
+			],
+			[
+				"packagers",
+				"Package Control: List Packages"
+			]
+		],
+		"width": 484.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ts/aegirApp",
+		"/home/ts/aegirApp/ts",
+		"/home/ts/aegirApp/ts/model",
+		"/home/ts/aegirApp/ts/views",
+		"/home/ts/aegirApp/ts/views/layout"
+	],
+	"file_history":
+	[
+		"/home/ts/aegirApp/tsconfig.json",
+		"/home/ts/.config/sublime-text-3/Packages/ArcticTypescript/ArcticTypescript.sublime-settings",
+		"/home/ts/aegirApp/ts/views/layout/LayoutManager.ts",
+		"/home/ts/aegirApp/bower.json",
+		"/home/ts/aegirApp/ts/module/SceneItemsModule.ts",
+		"/home/ts/aegirApp/ts/module/EditPropertiesModule.ts",
+		"/home/ts/aegirApp/index.html",
+		"/home/ts/aegirApp/ts/typings/dat-gui.d.ts",
+		"/home/ts/aegirApp/ts/module/LogModule.ts",
+		"/home/ts/aegirApp/ts/module/SearchResultsModule.ts",
+		"/home/ts/aegirApp/ts/module/MapModule.ts",
+		"/home/ts/aegirApp/ts/module/OutputModule.ts",
+		"/home/ts/aegirApp/ts/module/VesselConfigurationModule.ts",
+		"/home/ts/aegirApp/ts/module/StatisticsModule.ts",
+		"/home/ts/aegirApp/ts/module/ReplayModule.ts",
+		"/home/ts/aegirApp/ts/views/layout/LayoutPanel.ts",
+		"/home/ts/aegirApp/ts/views/layout/LayoutTabContainer.ts",
+		"/home/ts/aegirApp/ts/views/layout/ELayoutPosition.ts",
+		"/home/ts/aegirApp/ts/views/menubar/MenubarView.ts",
+		"/home/ts/aegirApp/ts/views/menubar/SettingsButton.ts",
+		"/home/ts/aegirApp/ts/views/search/searchbar/SearchBar.ts",
+		"/home/ts/aegirApp/ts/views/search/searchresults/SearchResultList.ts",
+		"/home/ts/aegirApp/ts/views/search/searchresults/SearchResultItem.ts",
+		"/home/ts/aegirApp/ts/core/Application.ts",
+		"/home/ts/aegirApp/ts/AppEntryPoint.ts",
+		"/home/ts/aegirApp/ts/core/Module.ts",
+		"/home/ts/aegirApp/ts/views/menubar/CurrentSimulationNameView.ts",
+		"/home/ts/aegirApp/ts/module/.gitkeep",
+		"/home/ts/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/ts/aegirApp/ts/config/ModuleDefinitions.ts",
+		"/home/ts/aegirApp/ts/views/AppView.ts",
+		"/home/ts/aegirApp/app.sublime-project",
+		"/home/ts/aegirApp/app.sublime-workspace",
+		"/home/ts/aegirFront/ts/typings/three.d.ts",
+		"/home/ts/aegirFront/ts/typings/waa.d.ts",
+		"/home/ts/aegirFront/Gruntfile.js",
+		"/home/ts/aegirFront/package.json",
+		"/home/ts/aegirFront/ts/typings/backbone.d.ts",
+		"/home/ts/aegirFront/index.html",
+		"/home/ts/aegirFront/js/libs/threejs/Detector.js",
+		"/home/ts/aegirFront/bower.json",
+		"/home/ts/aegirFront/ts/typings/dat-gui.d.ts",
+		"/home/ts/aegirFront/ts/typings/detector.d.ts",
+		"/home/ts/aegirFront/ts/typings/stats.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-orbitcontrols.d.ts",
+		"/home/ts/aegirFront/ts/views/editor/rendering/RenderingView.ts",
+		"/home/ts/aegirFront/js/libs/threejs/OrbitControls.js",
+		"/home/ts/aegirFront/ts/module/PageRender.ts",
+		"/home/ts/aegirFront/ts/config/Constants.ts",
+		"/home/ts/aegirFront/ts/views/page/FullViewPage.ts",
+		"/home/ts/aegirFront/ts/config/Config.ts",
+		"/home/ts/aegirFront/tsconfig.json",
+		"/home/ts/aegirFront/ts/module/Editor.ts",
+		"/home/ts/aegirFront/ts/rendering/RenderInstance.ts",
+		"/home/ts/aegirFront/ts/typings/three-vrcontrols.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-vreffect.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-canvasrenderer.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-trackballcontrols.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-shaderpass.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-renderpass.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-projector.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-maskpass.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-effectcomposer.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-copyshader.d.ts",
+		"/home/ts/aegirFront/ts/typings/three-css3drenderer.d.ts",
+		"/home/ts/aegirFront/ts/config/ModuleDefinitions.ts",
+		"/home/ts/aegirFront/ts/module/Navigation.ts",
+		"/home/ts/aegirFront/ts/core/AppState.ts",
+		"/home/ts/aegirFront/style/globalAppStyle.less",
+		"/home/ts/aegirFront/ts/views/editor/layout/EditorLayout.less",
+		"/home/ts/aegirFront/ts/views/editor/layout/EditorContainer.ts",
+		"/home/ts/aegirFront/ts/typings/jquery-ui-layout.d.ts",
+		"/home/ts/aegirFront/ts/views/editor/layout/EditorLayout.html.ts",
+		"/home/ts/aegirFront/ts/core/Application.ts",
+		"/home/ts/aegirFront/ts/messages/AppMessenger.ts",
+		"/home/ts/aegirFront/ts/messages/Message.ts",
+		"/home/ts/aegirFront/ts/typings/mediastream.d.ts",
+		"/home/ts/aegirFront/bower_components/jquery-ui-layout-bower/source/stable/layout-default.css",
+		"/home/ts/aegirFront/ts/views/page/AppPageDefinitions.ts",
+		"/home/ts/aegirFront/ts/views/page/EPageType.ts",
+		"/home/ts/aegirFront/ts/views/editor/layout/EditorLayout.html",
+		"/home/ts/aegirFront/ts/views/AppView.ts",
+		"/home/ts/aegirFront/ts/views/page/PanelPage.ts",
+		"/home/ts/aegirFront/ts/factory/FullViewFactory.ts",
+		"/home/ts/aegirFront/ts/views/editor/layout/PreviewContainer.ts",
+		"/home/ts/aegirFront/ts/views/editor/layout/SidebarContainer.ts",
+		"/home/ts/aegirFront/ts/views/panel/PagePanel.ts",
+		"/home/ts/aegirFront/ts/views/panel/PagePanel.less",
+		"/home/ts/aegirFront/style/colors.less",
+		"/home/ts/aegirFront/ts/typings/jqueryui.d.ts",
+		"/home/ts/aegirFront/ts/typings/underscore.d.ts",
+		"/home/ts/aegirFront/ts/components/editor/Editor.ts",
+		"/home/ts/app/ts/config/Config.ts",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationContainer.less",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationContainer.ts",
+		"/home/ts/aegirFront/ts/core/Module.ts",
+		"/home/ts/aegirFront/ts/core/Context.ts",
+		"/home/ts/aegirFront/ts/messages/IMessageable.ts",
+		"/home/ts/app/ts/core/Application.ts",
+		"/home/ts/aegirFront/ts/views/page/PanelPageOptions.ts",
+		"/home/ts/aegirFront/ts/views/page/PanelPageDefinitions.ts",
+		"/home/ts/.config/sublime-text-3/Packages/User/ArcticTypescript.sublime-settings",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationButton.ts",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationButton.html.ts",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationButton.html",
+		"/home/ts/aegirFront/ts/views/navigation/INavigationButtonType.ts",
+		"/home/ts/aegirFront/ts/config/NavButtonIconDefinitions.ts",
+		"/home/ts/aegirFront/ts/views/navigation/NavigationButtonTypes.ts",
+		"/home/ts/app/ts/typings/backbone.d.ts",
+		"/home/ts/app/ts/views/AppView.ts",
+		"/home/ts/app/ts/messages/AppMessenger.ts",
+		"/home/ts/app/ts/views/panel/PagePanel.ts",
+		"/home/ts/app/ts/config/ModuleDefinitions.ts",
+		"/home/ts/app/ts/views/authentication/LoginForm/LoginForm.html",
+		"/home/ts/app/style/globalAppStyle.less",
+		"/home/ts/app/ts/views/authentication/LoginForm/LoginForm.less",
+		"/home/ts/app/ts/views/navigation/NavigationMenu.ts",
+		"/home/ts/app/index.html",
+		"/home/ts/app/ts/views/authentication/LoginContainer/LoginContainer.ts",
+		"/home/ts/app/js/libs/header-animation/header-animation.js",
+		"/home/ts/app/ts/views/authentication/LoginAnimation/LoginAnimation.ts",
+		"/home/ts/app/ts/views/authentication/LoginContainer/LoginContainer.html",
+		"/home/ts/app/ts/views/IAppViewOptions.ts",
+		"/home/ts/app/bower.json",
+		"/home/ts/app/ts/module/Authentication.ts",
+		"/home/ts/app/ts/AppEntryPoint.ts",
+		"/home/ts/app/ts/config/StateDefinitions.ts",
+		"/home/ts/app/ts/views/authentication/LoginForm/LoginForm.ts"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 119.0,
+		"where_history":
+		[
+			"/home/ts/aegirFront",
+			"/home/ts/app/ts",
+			"/home/kaywinnet/GameEditor/ts"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"Detector",
+			"cube",
+			"controls",
+			"container",
+			"scene",
+			";\n",
+			"appReady",
+			"postRender",
+			"container",
+			"Message",
+			"PageOptions",
+			"}",
+			"},\n",
+			"refresh",
+			"name",
+			"true",
+			"console.",
+			"String",
+			"string",
+			"String",
+			"string",
+			"CollectionFetchOptions",
+			"createPanels",
+			"PanelInstance",
+			"childView",
+			"attachNodeSelector",
+			"}",
+			"listento",
+			".Events",
+			"Events",
+			"routes",
+			"event",
+			"getData",
+			"true",
+			"WebGLRenderingContext",
+			"TEXTURE17",
+			"game",
+			"inlinedata",
+			"editorPropertiesView",
+			"false"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"this.cube",
+			"this.controls",
+			"this.container",
+			"this.scene"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ts/views/layout/LayoutManager.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 373,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								373,
+								373
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ts/AppEntryPoint.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1001,
+								1001
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ts/core/Application.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1265,
+								1265
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"extensions":
+							[
+								"ts"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 279.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "aegir.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"applioc",
+				"ts/core/Application.ts"
+			],
+			[
+				"dat",
+				"ts/typings/dat-gui.d.ts"
+			],
+			[
+				"datg",
+				"ts/typings/dat-gui.d.ts"
+			],
+			[
+				"renderi",
+				"ts/rendering/RenderInstance.ts"
+			],
+			[
+				"rendervi",
+				"ts/views/editor/rendering/RenderingView.ts"
+			],
+			[
+				"config",
+				"ts/config/Config.ts"
+			],
+			[
+				"constats",
+				"ts/config/Constants.ts"
+			],
+			[
+				"renderinview",
+				"ts/views/editor/rendering/RenderingView.ts"
+			],
+			[
+				"consta",
+				"ts/config/Constants.ts"
+			],
+			[
+				"fullp",
+				"ts/views/page/FullViewPage.ts"
+			],
+			[
+				"bowe",
+				"bower.json"
+			],
+			[
+				"rendervie",
+				"ts/views/editor/rendering/RenderingView.ts"
+			],
+			[
+				"ind",
+				"index.html"
+			],
+			[
+				"back",
+				"ts/typings/backbone.d.ts"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"pak",
+				"package.json"
+			],
+			[
+				"pakc",
+				"package.json"
+			],
+			[
+				"gruntfi",
+				"Gruntfile.js"
+			],
+			[
+				"threed",
+				"ts/typings/three.d.ts"
+			],
+			[
+				"editor",
+				"ts/module/Editor.ts"
+			],
+			[
+				"fullviewp",
+				"ts/views/page/FullViewPage.ts"
+			],
+			[
+				"pagerende",
+				"ts/module/PageRender.ts"
+			],
+			[
+				"stats",
+				"ts/typings/stats.d.ts"
+			],
+			[
+				"orbit",
+				"ts/typings/three-orbitcontrols.d.ts"
+			],
+			[
+				"ts",
+				"tsconfig.json"
+			],
+			[
+				"appview",
+				"ts/views/AppView.ts"
+			],
+			[
+				"inde",
+				"index.html"
+			],
+			[
+				"editorla",
+				"ts/views/editor/layout/EditorLayout.less"
+			],
+			[
+				"index",
+				"index.html"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"modulede",
+				"ts/config/ModuleDefinitions.ts"
+			],
+			[
+				"messag",
+				"ts/messages/Message.ts"
+			],
+			[
+				"appmess",
+				"ts/messages/AppMessenger.ts"
+			],
+			[
+				"appl",
+				"ts/core/Application.ts"
+			],
+			[
+				"tscon",
+				"tsconfig.json"
+			],
+			[
+				"pagepanel",
+				"ts/views/panel/PagePanel.ts"
+			],
+			[
+				"panelpag",
+				"ts/views/page/PanelPage.ts"
+			],
+			[
+				"tsco",
+				"tsconfig.json"
+			],
+			[
+				"context",
+				"ts/core/Context.ts"
+			],
+			[
+				"pagedei",
+				"ts/views/page/AppPageDefinitions.ts"
+			],
+			[
+				"con",
+				"ts/config/Config.ts"
+			],
+			[
+				"module",
+				"ts/core/Module.ts"
+			],
+			[
+				"app",
+				"ts/core/Application.ts"
+			],
+			[
+				"logless",
+				"ts/views/authentication/LoginForm/LoginForm.less"
+			],
+			[
+				"atuh",
+				"ts/module/Authentication.ts"
+			],
+			[
+				"loginfr",
+				"ts/views/authentication/LoginForm/LoginForm.ts"
+			],
+			[
+				"eventable",
+				"js/libs/backbone-eventable/backbone-eventable.js"
+			],
+			[
+				"message",
+				"ts/messages/Message.ts"
+			],
+			[
+				"messsenger",
+				"ts/messages/AppMessenger.ts"
+			],
+			[
+				"",
+				"ts/module/Authentication.ts"
+			],
+			[
+				"loginform",
+				"ts/views/authentication/LoginForm/LoginForm.ts"
+			],
+			[
+				"backbone",
+				"ts/typings/backbone.d.ts"
+			],
+			[
+				"iappview",
+				"ts/views/IAppViewOptions.ts"
+			],
+			[
+				"conf",
+				"ts/config/Config.ts"
+			],
+			[
+				"appcl",
+				"ts/core/Application.ts"
+			],
+			[
+				"appsta",
+				"ts/core/AppState.ts"
+			],
+			[
+				"confsta",
+				"ts/config/StateDefinitions.ts"
+			],
+			[
+				"modude",
+				"ts/config/ModuleDefinitions.ts"
+			],
+			[
+				"appe",
+				"ts/AppEntryPoint.ts"
+			],
+			[
+				"appli",
+				"ts/core/Application.ts"
+			],
+			[
+				"contex",
+				"ts/core/Context.ts"
+			],
+			[
+				"state",
+				"ts/config/StateDefinitions.ts"
+			],
+			[
+				"bakc",
+				"ts/typings/backbone.d.ts"
+			],
+			[
+				"rou",
+				"ts/core/Router.ts"
+			],
+			[
+				"tsconf",
+				"tsconfig.json"
+			],
+			[
+				"backbo",
+				"ts/typings/backbone.d.ts"
+			],
+			[
+				"2d",
+				"ts/module/Preview2D.ts"
+			],
+			[
+				"gru",
+				"Gruntfile.js"
+			],
+			[
+				"phaser",
+				"ts/typings/phaser.d.ts"
+			],
+			[
+				"2dpre",
+				"ts/module/2dPreview.ts"
+			],
+			[
+				"2dpr",
+				"ts/module/2dPreview.ts"
+			],
+			[
+				"entitytreetm",
+				"ts/views/entitytree/EntityTreeView.tpl.html"
+			],
+			[
+				"entit",
+				"ts/views/entitytree/EntityTreeView.less"
+			],
+			[
+				"mainle",
+				"style/main.less"
+			],
+			[
+				"entitytre",
+				"ts/module/EntityTree.ts"
+			],
+			[
+				"appent",
+				"ts/AppEntryPoint.ts"
+			],
+			[
+				"entityteev",
+				"ts/views/entitytree/EntityTreeView.ts"
+			],
+			[
+				"entitytree",
+				"ts/views/entitytree/EntityTreeView.ts"
+			],
+			[
+				"jqtree",
+				"ts/typings/jqtree.ts"
+			],
+			[
+				"prop",
+				"ts/views/properties/PropertiesView.ts"
+			],
+			[
+				"lay",
+				"ts/module/Layout.ts"
+			],
+			[
+				"subli",
+				"editor.sublime-project"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/GameEditor/editor.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 278.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -3,6 +3,7 @@
 /// <reference path="Module.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../typings/jquery.d.ts"/>
+/// <reference path="LayoutManager.ts"/>
 module App.Core {
     'use strict';
     /**
@@ -13,47 +14,35 @@ module App.Core {
      * instance available, (this will also be the one passed to all of the 
      * available contexts if none is explicitly set)
      */
+
     export class Application extends Backbone.Eventable {
         /**
          * Backing variable for the messenger instance
          */
         private messenger: App.Messaging.AppMessenger = null;
         private layoutManager: App.View.Layout.LayoutManager = null;
-        /**
-         * Static reference to our root dom node, supplied as a jquery object
-         */
-        static layoutElement: JQuery = null;
 
         /**
          * Constructs as application instance and fetches configs
          */
         constructor() {
             super();
-            //Get config for room dom node
-            let layoutRoot: string = App.config['UI']['layoutContainer'];
-            //Create jquery object
-            App.Core.Application.layoutElement = $(layoutRoot);
-            if(!App.Core.Application.layoutElement[0])
-            {
-                console.error("[APPLICATION:Construct]No match for layoutroot",
-                        layoutRoot);
-            }
+            this.createMessenger();
+            this.layoutManager = new App.View.Layout.LayoutManager();
         }
         /**
          * Bootstrap is run on DOM Ready and will init states and modules
          */
         bootstrap(): void {
-            //Modules are intialized ahead of states, as the modules gets their
-            //optional configs before beeing bootstrapped by the state
-            this.createMessenger();
-            this.createLayout();
             this.initModules();
+            this.layoutManager.render();
         }
+        /**
+         * Get the application messenger
+         * @return the messenger
+         */
         getMessenger(): App.Messaging.AppMessenger {
             return this.messenger;
-        }
-        private createLayout(): void {
-
         }
         /**
          * Creates and listens to the messenger instance for this application
@@ -76,7 +65,7 @@ module App.Core {
             let mods:Array<App.Core.Module> = App.Config.getAllModules();
             //Loop through all and give them the proper configs
             for (let i = 0, l = mods.length; i<l; i++) {
-                
+                this.layoutManager.addModule(mods[i]);
             }
         }
     }
