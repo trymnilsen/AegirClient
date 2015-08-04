@@ -4,4 +4,23 @@
 #topbar-content { 
     height: @topBarHeight;
     background-color: @editor-dark-color;
+
+    position: relative;
+
+    .right-topbar {
+        position: absolute;
+        right:0;
+        a.fa {
+            width: 32px;
+            height:32px;
+            color:white;
+            font-size: 22px;
+            text-decoration: none;
+            padding-left: 8px;
+            padding-top: 4px;
+            &:hover {
+                background-color: @focusColor;
+            }
+        }
+    }
 }

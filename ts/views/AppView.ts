@@ -192,15 +192,24 @@ module App.View {
                 console.log("[APPVIEW:Append]View :'"+view.cid+"' Already a childview");
             }
         }
+        /**
+         * Appends multiple childviews to this view
+         */
         protected addMultipleViews(views: Array<App.View.AppView>):void {
             //Add childviews
             for (var i = 0; i < views.length; ++i) {
                 this.appendView(views[i]);
             }
         }
+        /**
+         * Sets the template of this view from a given string
+         */
         protected setTemplate(templateString :string): void {
             this.template = _.template(templateString);
         }
+        /**
+         * Start to listen for context changes
+         */
         private listenForContextChanges(): void {
             if(!!this.context) {
                 this.context.listenTo(this,
@@ -208,6 +217,9 @@ module App.View {
                     this.contextUpdated);
             }
         }
+        /**
+         * Release any event listeners on the current context
+         */
         private stopListenForContext(): void {
             if(!!this.context) {
                 this.context.stopListening(this,

@@ -5,8 +5,18 @@ module App.View.Menu {
 
         constructor() {
             //Init parent
-            super({});
-
+            super({
+                backboneOptions: {
+                    className: "fa fa-cog",
+                    tagName: "a"
+                }
+            });
+            this.events = <any>{
+                "click": () => { this.openSettings(); }
+            };
+        }
+        public openSettings():void {
+            console.log('foo');
         }
     }
 }

@@ -35,7 +35,7 @@ module App.View.Layout {
             this.modulePositions[modPosNumber].push(mod);
         }
         private createPanels(): void {
-
+            
         }
         private addTopBar():void {
             this.topBarUI = new App.View.Menu.MenubarView();
