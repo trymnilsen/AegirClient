@@ -3,6 +3,8 @@
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../views/layout/ELayoutPosition.ts" />
 /// <reference path="../typings/jquery-ui-layout.d.ts" />
+/// <reference path="../views/layout/LayoutTabContainer.ts" />
+/// <reference path="../views/layout/LayoutTab.ts" />
 
 module App.View.Layout {
 
@@ -24,6 +26,7 @@ module App.View.Layout {
         public render(): void {
             this.addLayout();
             this.addTopBar();
+            this.createPanels();
         }
         public addModule(mod: App.Core.Module): void {
             //check if this position already has a module
@@ -35,7 +38,17 @@ module App.View.Layout {
             this.modulePositions[modPosNumber].push(mod);
         }
         private createPanels(): void {
-            
+            for(let key in this.modulePositions) {
+                //Get modules
+                let modules: Array<App.Core.Module> = this.modulePositions[key];
+                //Create container
+                let tabContainer: App.View.Layout.LayoutTabContainer = new App.View.Layout.LayoutTabContainer();
+                for (let i = 0, l = modules.length; i < l; i++) {
+                    let title: string = modules[i].Name;
+                    let tab: App.View.Layout.LayoutTab = tabContainer.GetNewTab(title);
+                    //TODO add view
+                }
+            }
         }
         private addTopBar():void {
             this.topBarUI = new App.View.Menu.MenubarView();

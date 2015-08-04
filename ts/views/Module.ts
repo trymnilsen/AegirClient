@@ -1,12 +1,15 @@
-/// <reference path="Context.ts" />
+/// <reference path="../core/Context.ts" />
 /// <reference path="../config/IConfigurable.ts" />
-/// <reference path="../views/layout/ELayoutPosition.ts" />
+/// <reference path="../messages/IMessageable.ts" />
+/// <reference path="layout/ELayoutPosition.ts" />
+/// <reference path="AppView.ts" />
 
-module App.Core {
+
+module App.View {
     /**
      * Base class For a Module
      */
-    export class Module implements App.Config.IConfigurable,
+    export class Module extends App.View.AppView implements App.Config.IConfigurable,
                                    App.Messaging.IMessageable {
         /**
          * The Context for this module
@@ -23,9 +26,15 @@ module App.Core {
          */
         protected layoutPosition: App.View.Layout.ELayoutPosition;
         /**
+         * The display name of this module
+         * @type {string}
+         */
+        public Name: string = "no name";
+        /**
          * Construct a new Model instance
          */
         constructor(layoutPosition: App.View.Layout.ELayoutPosition) {
+            super({});
             this.context = new App.Core.Context();
             this.layoutPosition = layoutPosition;
         }
