@@ -1,4 +1,4 @@
-/// <reference path="../views/Module.ts" />
+/// <reference path="../views/BaseModule.ts" />
 /// <reference path="../views/menubar/MenubarView.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../views/layout/ELayoutPosition.ts" />
@@ -13,7 +13,7 @@ module App.View.Layout {
         private layoutUI: JQueryLayout;
         private topBarUI: App.View.Menu.MenubarView;
 
-        private modules: Array<App.View.Module>;
+        private modules: Array<App.View.BaseModule>;
         private positionSelectors: {[id: number]: string} = {
             [App.View.Layout.ELayoutPosition.CENTER]      : '#ui-layout-center',
             [App.View.Layout.ELayoutPosition.LEFTUP]      : '#left-ui-layout-north',
@@ -28,7 +28,7 @@ module App.View.Layout {
         /**
          * Typescript does not yet support enums as the key type, so we use the number value instead
          */
-        private modulePositions: { [id: number]: Array<App.View.Module> };
+        private modulePositions: { [id: number]: Array<App.View.BaseModule> };
 
         constructor() {
             this.modules = [];
@@ -39,7 +39,7 @@ module App.View.Layout {
             this.addTopBar();
             this.createPanels();
         }
-        public addModule(mod: App.View.Module): void {
+        public addModule(mod: App.View.BaseModule): void {
             //check if this position already has a module
             var modPosNumber: number = mod.LayoutPosition;
             if(!this.modulePositions[modPosNumber])
@@ -51,7 +51,7 @@ module App.View.Layout {
         private createPanels(): void {
             for(let key in this.modulePositions) {
                 //Get modules
-                let modules: Array<App.View.Module> = this.modulePositions[key];
+                let modules: Array<App.View.BaseModule> = this.modulePositions[key];
                 //Create container
                 let tabContainer: App.View.Layout.LayoutTabContainer = new App.View.Layout.LayoutTabContainer();
                 for (let i = 0, l = modules.length; i < l; i++) {
@@ -60,7 +60,10 @@ module App.View.Layout {
                     //Append our view to this tab
                     tab.appendView(modules[i]);
                 }
-
+                //Get element to append container to
+                let selector: string = this.positionSelectors[key];
+                let element: JQuery = this.resolveSelector(selector);
+                element.appendTo(tabContainer.$el);
             }
         }
         private addTopBar():void {
@@ -135,11 +138,11 @@ module App.View.Layout {
 
             });
         }
-        private getLayoutPaneForPosition(position: App.View.Layout.ELayoutPosition) {
-            switch(position) {
-                case App.View.Layout.ELayoutPosition.CENTER
-            }
-        }
+        /**
+         * Resolves a selector string into a jquery object
+         * @param  {string} selector [description]
+         * @return {JQuery}          [description]
+         */
         private resolveSelector(selector: string): JQuery {
             let selectorResult: JQuery = $(selector);
             //Create jquery object

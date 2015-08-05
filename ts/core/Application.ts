@@ -1,6 +1,6 @@
 /// <reference path="../config/Config.ts" />
 /// <reference path="../config/ModuleDefinitions.ts" />
-/// <reference path="Module.ts" />
+/// <reference path="../views/BaseModule.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../typings/jquery.d.ts"/>
 /// <reference path="LayoutManager.ts"/>
@@ -63,7 +63,7 @@ module App.Core {
          */
         private initModules(): void {
             //run bootstrap on each of the modules
-            let mods:Array<App.Core.Module> = App.Config.getAllModules();
+            let mods:Array<App.View.BaseModule> = App.Config.getAllModules();
             //Loop through all and give them the proper configs
             for (let i = 0, l = mods.length; i<l; i++) {
                 this.layoutManager.addModule(mods[i]);

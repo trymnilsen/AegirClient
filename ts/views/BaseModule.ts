@@ -9,7 +9,7 @@ module App.View {
     /**
      * Base class For a Module
      */
-    export class Module extends App.View.AppView implements App.Config.IConfigurable,
+    export class BaseModule extends App.View.AppView implements App.Config.IConfigurable,
                                    App.Messaging.IMessageable {
         /**
          * The Context for this module
