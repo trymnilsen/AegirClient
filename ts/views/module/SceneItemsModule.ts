@@ -7,6 +7,7 @@ module App.View.Mod {
 
          constructor(){
              super(App.View.Layout.ELayoutPosition.LEFTUP);
+             this.Name = "Simulation Scene";
          }
     }
 }
