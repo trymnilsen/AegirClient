@@ -1,4 +1,4 @@
-/// <reference path="Module.ts" />
+/// <reference path="../views/Module.ts" />
 /// <reference path="../views/menubar/MenubarView.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../views/layout/ELayoutPosition.ts" />
@@ -13,11 +13,11 @@ module App.View.Layout {
         private layoutUI: JQueryLayout;
         private topBarUI: App.View.Menu.MenubarView;
 
-        private modules: Array<App.Core.Module>;
+        private modules: Array<App.View.Module>;
         /**
          * Typescript does not yet support enums as the key type, so we use the number value instead
          */
-        private modulePositions: { [id: number]: Array<App.Core.Module> };
+        private modulePositions: { [id: number]: Array<App.View.Module> };
 
         constructor() {
             this.modules = [];
@@ -28,7 +28,7 @@ module App.View.Layout {
             this.addTopBar();
             this.createPanels();
         }
-        public addModule(mod: App.Core.Module): void {
+        public addModule(mod: App.View.Module): void {
             //check if this position already has a module
             var modPosNumber: number = mod.LayoutPosition;
             if(!this.modulePositions[modPosNumber])
@@ -40,13 +40,14 @@ module App.View.Layout {
         private createPanels(): void {
             for(let key in this.modulePositions) {
                 //Get modules
-                let modules: Array<App.Core.Module> = this.modulePositions[key];
+                let modules: Array<App.View.Module> = this.modulePositions[key];
                 //Create container
                 let tabContainer: App.View.Layout.LayoutTabContainer = new App.View.Layout.LayoutTabContainer();
                 for (let i = 0, l = modules.length; i < l; i++) {
                     let title: string = modules[i].Name;
                     let tab: App.View.Layout.LayoutTab = tabContainer.GetNewTab(title);
-                    //TODO add view
+                    //TODO add views
+                    tab.appendView(modules[i]);
                 }
             }
         }

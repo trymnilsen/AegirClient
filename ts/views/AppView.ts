@@ -159,7 +159,7 @@ module App.View {
          * entire view
          * @param appendOptions options for appending a view to this view
          */
-        protected appendView(view : App.View.AppView): void {
+        public appendView(view : App.View.AppView): void {
             if(!View) {
                 console.warn("[APPVIEW:Append]No childview selected, cannot append.");
                 return;
@@ -195,7 +195,7 @@ module App.View {
         /**
          * Appends multiple childviews to this view
          */
-        protected addMultipleViews(views: Array<App.View.AppView>):void {
+        public addMultipleViews(views: Array<App.View.AppView>):void {
             //Add childviews
             for (var i = 0; i < views.length; ++i) {
                 this.appendView(views[i]);

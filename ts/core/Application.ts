@@ -50,6 +50,7 @@ module App.Core {
         private createMessenger(): void {
             this.messenger = new App.Messaging.AppMessenger();
             //All is a magic word for jquery/backbone
+
             if(App.config["Messaging"]["DebugDumpAllMessages"]) {
                 this.messenger.subscribe("all", _.bind(this.receivedMessage,this));
             }

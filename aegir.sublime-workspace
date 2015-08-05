@@ -496,14 +496,6 @@
 	"buffers":
 	[
 		{
-			"file": "ts/views/layout/LayoutManager.ts",
-			"settings":
-			{
-				"buffer_size": 373,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "ts/AppEntryPoint.ts",
 			"settings":
 			{
@@ -512,13 +504,10 @@
 			}
 		},
 		{
-			"contents": "/// <reference path=\"../config/Config.ts\" />\n/// <reference path=\"../config/ModuleDefinitions.ts\" />\n/// <reference path=\"Module.ts\" />\n/// <reference path=\"../views/AppView.ts\" />\n/// <reference path=\"../typings/jquery.d.ts\"/>\nmodule App.Core {\n    'use strict';\n    /**\n     * This class is the heart of the application during start up\n     * it will initialize states and modules. It also has creates and holds\n     * the references to the root dom node, active state (as well as handling)\n     * changes in states and is responsible for keeping a global messenger\n     * instance available, (this will also be the one passed to all of the \n     * available contexts if none is explicitly set)\n     */\n    export class Application extends Backbone.Eventable {\n        /**\n         * Backing variable for the messenger instance\n         */\n        private messenger: App.Messaging.AppMessenger = null;\n        private layoutManager: App.View.Layout.LayoutManager = null;\n        /**\n         * Static reference to our root dom node, supplied as a jquery object\n         */\n        static layoutElement: JQuery = null;\n\n        /**\n         * Constructs as application instance and fetches configs\n         */\n        constructor() {\n            super();\n        }\n        /**\n         * Bootstrap is run on DOM Ready and will init states and modules\n         */\n        bootstrap(): void {\n            //Get config for room dom node\n            let layoutRoot: string = App.config['UI']['layoutContainer'];\n            this.createMessenger();\n            //Create jquery object\n            App.Core.Application.layoutElement = $(layoutRoot);\n            if(!App.Core.Application.layoutElement[0])\n            {\n                console.error(\"[APPLICATION:Construct]No match for layoutroot\",\n                        layoutRoot);\n            }\n            //Modules are intialized ahead of states, as the modules gets their\n            //optional configs before beeing bootstrapped by the state\n            this.createLayout();\n            this.initModules();\n        }\n        getMessenger(): App.Messaging.AppMessenger {\n            return this.messenger;\n        }\n        private createLayout(): void {\n\n        }\n        /**\n         * Creates and listens to the messenger instance for this application\n         */\n        private createMessenger(): void {\n            this.messenger = new App.Messaging.AppMessenger();\n            //All is a magic word for jquery/backbone\n            if(App.config[\"Messaging\"][\"DebugDumpAllMessages\"]) {\n                this.messenger.subscribe(\"all\", _.bind(this.receivedMessage,this));\n            }\n        }\n        private receivedMessage(message, data): void {\n            console.debug('[APPLICATION:OnMessage] ReceivedMessage: ',message, data);\n        }\n        /**\n         * Initialize all modules\n         */\n        private initModules(): void {\n            //run bootstrap on each of the modules\n            let mods:Array<App.Core.Module> = App.Config.getAllModules();\n            //Loop through all and give them the proper configs\n            for (let i = 0, l = mods.length; i<l; i++) {\n                \n            }\n        }\n    }\n}",
 			"file": "ts/core/Application.ts",
-			"file_size": 3194,
-			"file_write_time": 130829837148313018,
 			"settings":
 			{
-				"buffer_size": 3194,
+				"buffer_size": 2687,
 				"line_ending": "Unix"
 			}
 		}
@@ -530,8 +519,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 400.0,
-		"last_filter": "save ",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -891,7 +880,7 @@
 				"Package Control: List Packages"
 			]
 		],
-		"width": 484.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -912,14 +901,14 @@
 	},
 	"expanded_folders":
 	[
-		"/home/ts/aegirApp",
-		"/home/ts/aegirApp/ts",
-		"/home/ts/aegirApp/ts/model",
-		"/home/ts/aegirApp/ts/views",
-		"/home/ts/aegirApp/ts/views/layout"
+		"/home/kaywinnet/AegirClient",
+		"/home/kaywinnet/AegirClient/ts",
+		"/home/kaywinnet/AegirClient/ts/core"
 	],
 	"file_history":
 	[
+		"/home/kaywinnet/AegirClient/ts/core/Application.ts",
+		"/home/kaywinnet/AegirClient/ts/views/layout/LayoutManager.ts",
 		"/home/ts/aegirApp/tsconfig.json",
 		"/home/ts/.config/sublime-text-3/Packages/ArcticTypescript/ArcticTypescript.sublime-settings",
 		"/home/ts/aegirApp/ts/views/layout/LayoutManager.ts",
@@ -1045,9 +1034,7 @@
 		"/home/ts/app/ts/views/IAppViewOptions.ts",
 		"/home/ts/app/bower.json",
 		"/home/ts/app/ts/module/Authentication.ts",
-		"/home/ts/app/ts/AppEntryPoint.ts",
-		"/home/ts/app/ts/config/StateDefinitions.ts",
-		"/home/ts/app/ts/views/authentication/LoginForm/LoginForm.ts"
+		"/home/ts/app/ts/AppEntryPoint.ts"
 	],
 	"find":
 	{
@@ -1134,39 +1121,6 @@
 			[
 				{
 					"buffer": 0,
-					"file": "ts/views/layout/LayoutManager.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 373,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								373,
-								373
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "ts/AppEntryPoint.ts",
 					"semi_transient": false,
 					"settings":
@@ -1178,8 +1132,8 @@
 						"selection":
 						[
 							[
-								1001,
-								1001
+								339,
+								339
 							]
 						],
 						"settings":
@@ -1189,46 +1143,47 @@
 							[
 								"ts"
 							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": "ts/core/Application.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3194,
+						"buffer_size": 2687,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1265,
-								1265
+								1561,
+								1561
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": -0.0,
+						"translation.y": 459.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1290,6 +1245,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"app",
+				"ts/core/Application.ts"
+			],
 			[
 				"applioc",
 				"ts/core/Application.ts"
@@ -1465,10 +1424,6 @@
 			[
 				"module",
 				"ts/core/Module.ts"
-			],
-			[
-				"app",
-				"ts/core/Application.ts"
 			],
 			[
 				"logless",
