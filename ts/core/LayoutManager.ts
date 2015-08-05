@@ -14,6 +14,17 @@ module App.View.Layout {
         private topBarUI: App.View.Menu.MenubarView;
 
         private modules: Array<App.View.Module>;
+        private positionSelectors: {[id: number]: string} = {
+            [App.View.Layout.ELayoutPosition.CENTER]      : '#ui-layout-center',
+            [App.View.Layout.ELayoutPosition.LEFTUP]      : '#left-ui-layout-north',
+            [App.View.Layout.ELayoutPosition.LEFTDOWN]    : '#left-ui-layout-center',
+            [App.View.Layout.ELayoutPosition.DOWNLEFT]    : '#bottom-ui-layout-west',
+            [App.View.Layout.ELayoutPosition.DOWNCENTER]  : '#bottom-ui-layout-center',
+            [App.View.Layout.ELayoutPosition.DOWNRIGHT]   : '#bottom-ui-layout-east',
+            [App.View.Layout.ELayoutPosition.RIGHTUP]     : '#right-ui-layout-north',
+            [App.View.Layout.ELayoutPosition.RIGHTCENTER] : '#right-ui-layout-center',
+            [App.View.Layout.ELayoutPosition.RIGHTDOWN]   : '#right-ui-layout-south'
+        }
         /**
          * Typescript does not yet support enums as the key type, so we use the number value instead
          */
@@ -46,9 +57,10 @@ module App.View.Layout {
                 for (let i = 0, l = modules.length; i < l; i++) {
                     let title: string = modules[i].Name;
                     let tab: App.View.Layout.LayoutTab = tabContainer.GetNewTab(title);
-                    //TODO add views
+                    //Append our view to this tab
                     tab.appendView(modules[i]);
                 }
+
             }
         }
         private addTopBar():void {
@@ -96,7 +108,7 @@ module App.View.Layout {
                     }
                 },
                 center: {
-
+                    paneSelector: '#ui-layout-center'
                 },
                 south: {
                     size: 150,
@@ -122,6 +134,11 @@ module App.View.Layout {
                 //livePaneResizing    : true,
 
             });
+        }
+        private getLayoutPaneForPosition(position: App.View.Layout.ELayoutPosition) {
+            switch(position) {
+                case App.View.Layout.ELayoutPosition.CENTER
+            }
         }
         private resolveSelector(selector: string): JQuery {
             let selectorResult: JQuery = $(selector);

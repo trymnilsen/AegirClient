@@ -4,28 +4,28 @@ module App.View.Layout {
     // |           |                             |  UP      |
     // |           |                             +----------+
     // |   LEFT    |                             |  RIGHT   |
-    // |   UP      |                             |  UP      |
-    // |           |                             |  CENTER  |
+    // |   UP      |                             |  CENTER  |
+    // |           |                             |          |
     // |           |                             +----------+
     // +-----------+         CENTER              |          |
     // |           |                             |          |
     // |           |                             |  RIGHT   |
     // |   LEFT    |                             |  DOWN    |
-    // |   CENTER  |                             |  CENTER  |
+    // |   DOWN    |                             |          |
     // |           |                             |          |
     // |           |                             |          |
     // +-----------+-------------+-------------+-+----------+
-    // |        LEFT DOWN        |   CENTER    |   RIGHT    |
-    // |                         |   DOWN      |   DOWN     |
+    // |        DOWNLEFT         |   DOWN      |   DOWN     |
+    // |                         |   CENTER    |   RIGHT    |
     // +-------------------------+-------------+------------+
     export enum ELayoutPosition {
         LEFTUP,
-        LEFTCENTER,
         LEFTDOWN,
-        CENTERDOWN,
+        DOWNLEFT,
+        DOWNCENTER,
+        DOWNRIGHT,
         RIGHTDOWN,
-        RIGHTDOWNCENTER,
-        RIGHTUPCENTER,
+        RIGHTCENTER,
         RIGHTUP,
         CENTER
     }
