@@ -16,20 +16,24 @@ module App.View.Layout {
         constructor() {
             //Init parent
             super({});
-
+            this.events = {
+                "click .layout-tab-container": (event) => { this.tabPressed(event);}
+            }
         }
         /**
          * Creates and returns a new tab added to this container with the given name
          * @param          title of this tab
          * @return         newly created tab
          */
-        public GetNewTab(name: string): App.View.Layout.LayoutTab {
+        public getNewTab(name: string): App.View.Layout.LayoutTab {
             let newTab = new App.View.Layout.LayoutTab();
             this.tabs.push(newTab);
-            this.appendView(newTab);
             newTab.Title = name;
 
             return newTab;
+        }
+        public tabPressed(event) {
+
         }
     }
 }
