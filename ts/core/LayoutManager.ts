@@ -37,7 +37,7 @@ module App.View.Layout {
         public render(): void {
             this.addLayout();
             this.addTopBar();
-            //this.createPanels();
+            this.createPanels();
         }
         public addModule(mod: App.View.BaseModule): void {
             //check if this position already has a module
@@ -61,10 +61,9 @@ module App.View.Layout {
                     tab.view = modules[i];
                 }
                 //Get element to append container to
-                let selector: string = this.positionSelectors[key];
-                let element: JQuery = this.resolveSelector(selector);
+                let element: JQuery = this.resolveSelectorByPosition(key);
                 tabContainer.render();
-                element.appendTo(tabContainer.$el);
+                element.append(tabContainer.$el);
                 tabContainer.postRender();
             }
         }
@@ -140,6 +139,16 @@ module App.View.Layout {
                 //livePaneResizing    : true,
 
             });
+        }
+        private resolveSelectorByPosition(pos: App.View.Layout.ELayoutPosition, useContainer: boolean = true)
+        {
+            let selectorString = this.positionSelectors[pos];
+            if(useContainer)
+            {
+                selectorString = selectorString + " div.layout-full-size-container";
+            }
+            let jqueryObj = this.resolveSelector(selectorString);
+            return jqueryObj;
         }
         /**
          * Resolves a selector string into a jquery object
