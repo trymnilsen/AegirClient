@@ -79,12 +79,6 @@ module App.View.Layout {
                 defaults: { 
                     fxName              : 'none',
                 },
-                north: {
-                    size        : 29,
-                    resizable   : false,
-                    closable    : false,
-                    //showOverflowOnHover: true
-                },
                 east: {
                     childOptions : {
                         defaults: {
@@ -128,7 +122,7 @@ module App.View.Layout {
                 },
                 west: {
                     size: 300,
-                    closable    : false,
+                    //closable    : false,
                     childOptions: {
                         defaults: {
                             fxName: 'none',
