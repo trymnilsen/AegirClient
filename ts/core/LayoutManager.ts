@@ -37,7 +37,7 @@ module App.View.Layout {
         public render(): void {
             this.addLayout();
             this.addTopBar();
-            this.createPanels();
+            //this.createPanels();
         }
         public addModule(mod: App.View.BaseModule): void {
             //check if this position already has a module
