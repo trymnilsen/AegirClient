@@ -106,6 +106,15 @@ module.exports = function(grunt) {
             options: {
                 port: 8282
             }
+        },
+        watch: {
+          scripts: {
+            files: ['**/*.ts'],
+            tasks: ['dev'],
+            options: {
+              spawn: false,
+            }
+          }
         }
 
 });
@@ -116,6 +125,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-tslint');
     grunt.loadNpmTasks('grunt-serve');
+    //grunt.loadNpmTasks('grunt-contrib-watch');
     // Default task(s).
     //Runs all tasks suitable for development (Use uglify at own will)
     grunt.registerTask('default',   ['clean:build',

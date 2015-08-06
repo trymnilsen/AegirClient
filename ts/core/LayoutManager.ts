@@ -28,7 +28,7 @@ module App.View.Layout {
         /**
          * Typescript does not yet support enums as the key type, so we use the number value instead
          */
-        private modulePositions: { [id: number]: Array<App.View.BaseModule> };
+        private modulePositions: { [id: number]: Array<App.View.BaseModule> } = {};
 
         constructor() {
             this.modules = [];
@@ -56,14 +56,16 @@ module App.View.Layout {
                 let tabContainer: App.View.Layout.LayoutTabContainer = new App.View.Layout.LayoutTabContainer();
                 for (let i = 0, l = modules.length; i < l; i++) {
                     let title: string = modules[i].Name;
-                    let tab: App.View.Layout.LayoutTab = tabContainer.GetNewTab(title);
+                    let tab: App.View.Layout.LayoutTab = tabContainer.getNewTab(title);
                     //Append our view to this tab
-                    tab.appendView(modules[i]);
+                    tab.view = modules[i];
                 }
                 //Get element to append container to
                 let selector: string = this.positionSelectors[key];
                 let element: JQuery = this.resolveSelector(selector);
+                tabContainer.render();
                 element.appendTo(tabContainer.$el);
+                tabContainer.postRender();
             }
         }
         private addTopBar():void {
@@ -72,7 +74,8 @@ module App.View.Layout {
             this.resolveSelector(App.config['UI']['topBarContainer']).append(this.topBarUI.$el);
         }
         private addLayout():void {
-            this.layoutUI = this.resolveSelector(App.config['UI']['layoutContainer']).layout({
+            this.layoutUI = this.resolveSelector(App.config['UI']['layoutContainer']);
+            this.layoutUI.layout({
                 defaults: {
                     fxName: 'none',
                     applyDefaultStyles: false,
@@ -81,7 +84,7 @@ module App.View.Layout {
                     childOptions: {
                         defaults: {
                             fxName: 'none',
-                            applyDefaultStyles: false
+                            //applyDefaultStyles: false
                         },
                         north: {
                             size: 224,
@@ -99,7 +102,7 @@ module App.View.Layout {
                     childOptions: {
                         defaults: {
                             fxName: 'none',
-                            applyDefaultStyles: false
+                            //applyDefaultStyles: false
                         },
                         north: {
                             size: 224,
@@ -110,16 +113,13 @@ module App.View.Layout {
                         }
                     }
                 },
-                center: {
-                    paneSelector: '#ui-layout-center'
-                },
                 south: {
                     size: 150,
                     minSize: 150,
                     childOptions: {
                         defaults: {
                             fxName: 'none',
-                            applyDefaultStyles: false
+                            //applyDefaultStyles: false
                         },
                         west: {
                             paneSelector: '#bottom-ui-layout-west',

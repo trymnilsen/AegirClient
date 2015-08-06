@@ -2,6 +2,8 @@
 /// <reference path="../menubar/MenubarView.ts" />
 /// <reference path="../AppView.ts" />
 /// <reference path="LayoutTab.ts" />
+/// <reference path="LayoutTabContainer.html.ts" />
+
 
 module App.View.Layout {
 
@@ -16,9 +18,11 @@ module App.View.Layout {
         constructor() {
             //Init parent
             super({});
-            this.events = {
+            this.events = <any>{
                 "click .layout-tab-container": (event) => { this.tabPressed(event);}
             }
+
+            this.setTemplate(App.Template.LayoutTabContainer.html);
         }
         /**
          * Creates and returns a new tab added to this container with the given name
@@ -31,6 +35,17 @@ module App.View.Layout {
             newTab.Title = name;
 
             return newTab;
+        }
+        public render(): App.View.AppView {
+            this.undelegateEvents();
+            this.$el.empty();
+
+            var renderedContent: string = this.template({
+                tabs: this.tabs
+            });
+            this.$el.html(renderedContent);
+
+            return this;
         }
         public tabPressed(event) {
 

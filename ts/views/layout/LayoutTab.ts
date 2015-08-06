@@ -1,12 +1,12 @@
 /// <reference path="../AppView.ts" />
-/// <reference path="LayoutTab.html.ts" />
+
 module App.View.Layout {
 
     export class LayoutTab {
         /**
          * The view contained in this tab
          */
-        private view: App.View.AppView;
+        public view: App.View.AppView;
         /**
          * Title used for this tab
          * @type {string}
@@ -16,8 +16,8 @@ module App.View.Layout {
          * Creates a new instance of a layouttab 
          * for use with the {App.View.Layout.LayoutTabContainer}
          */
-        constructor(view: App.View.AppView) {
-            this.view = view;
+        constructor() {
+            
         }
     }
 }

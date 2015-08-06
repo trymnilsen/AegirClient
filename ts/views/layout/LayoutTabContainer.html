@@ -1,7 +1,7 @@
 <div class="layout-container-tabs-list">
-    <% _.each(tabs, function(tab) { %>
-        <div class="layout-tab">
-            <span><%= tab.title %>
+    <% _.each(tabs, function(tab, index) { %>
+        <div class="layout-tab" data-tab-index="<%= index %>">
+            <span><%= tab.title %></span>
         </div>
     <% }) %>
 </div>
