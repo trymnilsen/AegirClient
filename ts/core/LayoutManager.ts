@@ -128,20 +128,20 @@ module App.View.Layout {
                 },
                 west: {
                     size: 300,
-                    closable    : false
-                    // childOptions: {
-                    //     defaults: {
-                    //         fxName: 'none',
-                    //         //applyDefaultStyles: false
-                    //     },
-                    //     north: {
-                    //         size: 224,
-                    //         paneSelector: '#left-ui-layout-north'
-                    //     },
-                    //     center: {
-                    //         paneSelector: '#left-ui-layout-center'
-                    //     }
-                    // }
+                    closable    : false,
+                    childOptions: {
+                        defaults: {
+                            fxName: 'none',
+                            //applyDefaultStyles: false
+                        },
+                        north: {
+                            size: 224,
+                            paneSelector: '#left-ui-layout-north'
+                        },
+                        center: {
+                            paneSelector: '#left-ui-layout-center'
+                        }
+                    }
                 }
                 //livePaneResizing    : true,
 
