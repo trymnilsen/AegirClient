@@ -75,47 +75,47 @@ module App.Rendering {
             this.cube.position.set(0,26,0);
             this.scene.add(this.cube);
 
-            this.gui = new dat.GUI({autoPlace: false});
+            // this.gui = new dat.GUI({autoPlace: false});
 
-            var parameters =
-            {
-                a: 200, // numeric
-                b: 200, // numeric slider
-                c: "Hello, GUI!", // string
-                d: false, // boolean (checkbox)
-                e: "#ff8800", // color (hex)
-                f: function() { alert("Hello!") },
-                g: function() { alert( parameters.c ) },
-                v : 0,    // dummy value, only type is important
-                w: "...", // dummy value, only type is important
-                x: 0, y: 0, z: 0
-            };
-            // gui.add( parameters )
-            this.gui.add( parameters, 'a' ).name('Number');
-            this.gui.add( parameters, 'b' ).min(128).max(256).step(16).name('Slider');
-            this.gui.add( parameters, 'c' ).name('String');
-            this.gui.add( parameters, 'd' ).name('Boolean');
+            // var parameters =
+            // {
+            //     a: 200, // numeric
+            //     b: 200, // numeric slider
+            //     c: "Hello, GUI!", // string
+            //     d: false, // boolean (checkbox)
+            //     e: "#ff8800", // color (hex)
+            //     f: function() { alert("Hello!") },
+            //     g: function() { alert( parameters.c ) },
+            //     v : 0,    // dummy value, only type is important
+            //     w: "...", // dummy value, only type is important
+            //     x: 0, y: 0, z: 0
+            // };
+            // // gui.add( parameters )
+            // this.gui.add( parameters, 'a' ).name('Number');
+            // this.gui.add( parameters, 'b' ).min(128).max(256).step(16).name('Slider');
+            // this.gui.add( parameters, 'c' ).name('String');
+            // this.gui.add( parameters, 'd' ).name('Boolean');
 
-            this.gui.addColor( parameters, 'e' ).name('Color');
+            // this.gui.addColor( parameters, 'e' ).name('Color');
 
-            var numberList = [1, 2, 3];
-            this.gui.add( parameters, 'v', numberList ).name('List');
+            // var numberList = [1, 2, 3];
+            // this.gui.add( parameters, 'v', numberList ).name('List');
 
-            var stringList = ["One", "Two", "Three"];
-            this.gui.add( parameters, 'w', stringList ).name('List');
+            // var stringList = ["One", "Two", "Three"];
+            // this.gui.add( parameters, 'w', stringList ).name('List');
 
-            this.gui.add( parameters, 'f' ).name('Say "Hello!"');
-            this.gui.add( parameters, 'g' ).name("Alert Message");
+            // this.gui.add( parameters, 'f' ).name('Say "Hello!"');
+            // this.gui.add( parameters, 'g' ).name("Alert Message");
 
-            var folder1 = this.gui.addFolder('Coordinates');
-            folder1.add( parameters, 'x' );
-            folder1.add( parameters, 'y' );
-            folder1.close();
+            // var folder1 = this.gui.addFolder('Coordinates');
+            // folder1.add( parameters, 'x' );
+            // folder1.add( parameters, 'y' );
+            // folder1.close();
         }
         public attach(): void {
             this.container.append(this.renderer.domElement);
-            this.container.append(this.gui.domElement);
-            this.gui.open();
+            // this.container.append(this.gui.domElement);
+            // this.gui.open();
             this.isRunning = true;
         }
         public animate(): void {

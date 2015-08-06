@@ -1,4 +1,4 @@
-/// <reference path="../views/BaseModule.ts" />
+/// <reference path="../views/module/BaseModule.ts" />
 /// <reference path="../views/menubar/MenubarView.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../views/layout/ELayoutPosition.ts" />

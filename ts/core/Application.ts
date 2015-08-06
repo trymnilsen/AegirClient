@@ -1,6 +1,6 @@
 /// <reference path="../config/Config.ts" />
 /// <reference path="../config/ModuleDefinitions.ts" />
-/// <reference path="../views/BaseModule.ts" />
+/// <reference path="../views/module/BaseModule.ts" />
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../typings/jquery.d.ts"/>
 /// <reference path="LayoutManager.ts"/>

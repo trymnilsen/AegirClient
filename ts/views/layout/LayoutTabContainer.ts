@@ -1,4 +1,4 @@
-/// <reference path="../../views/BaseModule.ts" />
+/// <reference path="../../views/module/BaseModule.ts" />
 /// <reference path="../menubar/MenubarView.ts" />
 /// <reference path="../AppView.ts" />
 /// <reference path="LayoutTab.ts" />
@@ -44,10 +44,16 @@ module App.View.Layout {
                 tabs: this.tabs
             });
             this.$el.html(renderedContent);
-
+            this.tabs[0].view.render();
+            $('.layout-container-active-tab', this.$el).append(this.tabs[0].view.el);
             return this;
         }
-        public tabPressed(event) {
+        public postRender(): App.View.AppView {
+            //For now we only have one view
+            this.tabs[0].view.postRender();
+            return this;
+        }
+        private tabPressed(event) {
 
         }
     }

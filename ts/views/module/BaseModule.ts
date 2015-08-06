@@ -1,8 +1,8 @@
-/// <reference path="../core/Context.ts" />
-/// <reference path="../config/IConfigurable.ts" />
-/// <reference path="../messages/IMessageable.ts" />
-/// <reference path="layout/ELayoutPosition.ts" />
-/// <reference path="AppView.ts" />
+/// <reference path="../../core/Context.ts" />
+/// <reference path="../../config/IConfigurable.ts" />
+/// <reference path="../../messages/IMessageable.ts" />
+/// <reference path="../layout/ELayoutPosition.ts" />
+/// <reference path="../AppView.ts" />
 
 
 module App.View {
@@ -33,8 +33,13 @@ module App.View {
         /**
          * Construct a new Model instance
          */
-        constructor(layoutPosition: App.View.Layout.ELayoutPosition) {
-            super({});
+        constructor(layoutPosition: App.View.Layout.ELayoutPosition, name: string) {
+            super({
+                backboneOptions: {
+                    className:"module-view module-"+name.replace(/\s+/g, '-').toLowerCase()
+                }
+            });
+            this.Name = name;
             this.context = new App.Core.Context();
             this.layoutPosition = layoutPosition;
         }
