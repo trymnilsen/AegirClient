@@ -35,3 +35,6 @@ js/build
 doc
 # Users Environment Variables
 .lock-wscript
+
+#sublime settings
+*.sublime-workspace 
