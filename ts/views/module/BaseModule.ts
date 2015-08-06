@@ -47,7 +47,7 @@ module App.View {
          * Called when the App is ready and config has been loaded
          */
         appReady(): void {
-
+            
         }
         public setMessenger(messenger: App.Messaging.AppMessenger) {
             this.context.setMessengerInstance(messenger);

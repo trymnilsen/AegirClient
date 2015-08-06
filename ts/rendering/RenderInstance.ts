@@ -25,7 +25,11 @@ module App.Rendering {
             // this.scene
             this.scene = new THREE.Scene();
             // CAMERA
-            var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+            var SCREEN_WIDTH = this.container.width();
+            var SCREEN_HEIGHT = this.container.height();
+            console.log(SCREEN_WIDTH, SCREEN_HEIGHT);
+            console.log("Inner", this.container.innerWidth(), this.container.innerHeight());
+            console.log("outer", this.container.outerWidth(), this.container.outerHeight());
             var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
             this.camera = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
             this.scene.add(this.camera);

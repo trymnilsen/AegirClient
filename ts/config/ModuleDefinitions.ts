@@ -7,6 +7,8 @@
 /// <reference path="../views/module/SceneItemsModule.ts" />
 /// <reference path="../views/module/StatisticsModule.ts" />
 /// <reference path="../views/module/VesselConfigurationModule.ts" />
+/// <reference path="../views/module/preview/PreviewModule.ts" />
+
 
 module App.Config {
     export function getAllModules() {
@@ -20,6 +22,7 @@ module App.Config {
         modules.push(new App.View.Mod.SceneItemsModule());
         modules.push(new App.View.Mod.StatisticsModule());
         modules.push(new App.View.Mod.VesselConfiguration());
+        modules.push(new App.View.Mod.PreviewModule());
         return modules;
     }
 }

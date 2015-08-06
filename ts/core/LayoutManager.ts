@@ -15,7 +15,7 @@ module App.View.Layout {
 
         private modules: Array<App.View.BaseModule>;
         private positionSelectors: {[id: number]: string} = {
-            [App.View.Layout.ELayoutPosition.CENTER]      : '#ui-layout-center',
+            [App.View.Layout.ELayoutPosition.CENTER]      : '.ui-layout-center',
             [App.View.Layout.ELayoutPosition.LEFTUP]      : '#left-ui-layout-north',
             [App.View.Layout.ELayoutPosition.LEFTDOWN]    : '#left-ui-layout-center',
             [App.View.Layout.ELayoutPosition.DOWNLEFT]    : '#bottom-ui-layout-west',
