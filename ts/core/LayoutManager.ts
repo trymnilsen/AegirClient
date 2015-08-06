@@ -10,7 +10,7 @@ module App.View.Layout {
 
     export class LayoutManager {
 
-        private layoutUI: JQueryLayout;
+        private layoutUI: any;
         private topBarUI: App.View.Menu.MenubarView;
 
         private modules: Array<App.View.BaseModule>;
@@ -76,60 +76,52 @@ module App.View.Layout {
         private addLayout():void {
             this.layoutUI = this.resolveSelector(App.config['UI']['layoutContainer']);
             this.layoutUI.layout({
-                defaults: {
-                    fxName: 'none',
-                    applyDefaultStyles: false,
+                defaults: { 
+                    fxName              : 'none',
+                },
+                north: {
+                    size        : 29,
+                    resizable   : false,
+                    closable    : false,
+                    //showOverflowOnHover: true
                 },
                 east: {
-                    childOptions: {
+                    childOptions : {
                         defaults: {
-                            fxName: 'none',
-                            //applyDefaultStyles: false
+                            fxName              : 'none',
                         },
                         north: {
-                            size: 224,
-                            paneSelector: '#right-ui-layout-north'
+                            size : 224,
+                            paneSelector : '#right-ui-layout-north'
                         },
                         center: {
-                            paneSelector: '#right-ui-layout-center'
+                            paneSelector : '#right-ui-layout-center'
                         },
                         south: {
-                            paneSelector: '#right-ui-layout-south'
+                            paneSelector: '#right-ui-layout-south',
+                            size: 100
                         }
                     }
                 },
-                west: {
-                    childOptions: {
-                        defaults: {
-                            fxName: 'none',
-                            //applyDefaultStyles: false
-                        },
-                        north: {
-                            size: 224,
-                            paneSelector: '#left-ui-layout-north'
-                        },
-                        center: {
-                            paneSelector: '#left-ui-layout-center'
-                        }
-                    }
+                center: {
+                    onresize    : function(evt) {console.log(evt);}
                 },
-                south: {
-                    size: 150,
-                    minSize: 150,
-                    childOptions: {
+                south : {
+                    size            : 150,
+                    minSize         : 150,
+                    childOptions    : {
                         defaults: {
-                            fxName: 'none',
-                            //applyDefaultStyles: false
+                            fxName              : 'none',
                         },
-                        west: {
-                            paneSelector: '#bottom-ui-layout-west',
+                        west    : {
+                            paneSelector    : '#bottom-ui-layout-west',
                             size: 625
                         },
-                        center: {
-                            paneSelector: '#bottom-ui-layout-center'
+                        center  : {
+                            paneSelector    : '#bottom-ui-layout-center'
                         },
-                        east: {
-                            paneSelector: '#bottom-ui-layout-east',
+                        east    : {
+                            paneSelector    : '#bottom-ui-layout-east',
                             size: 202
                         }
                     }
