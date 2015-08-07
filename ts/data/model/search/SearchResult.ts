@@ -1,6 +1,6 @@
-/// <reference path="../../typings/backbone.d.ts" />
+/// <reference path="../../../typings/backbone.d.ts" />
 
-module App.Model.Search {
+module App.Data.Model.Search {
 
     export class SearchResult extends Backbone.Model{
         /**

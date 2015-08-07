@@ -3,8 +3,8 @@
 module App {
     export module Data {
         export module Persistance {
-            export interface IPersistanceProvider {
-                persist(model: Backbone.Model): void;
+            export interface IPersistanceProvider<TModel extends Backbone.Model> {
+                persist(): void;
             }
         }
     }

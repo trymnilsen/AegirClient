@@ -2,24 +2,15 @@
 /// <reference path="IAppCollectionOptions.ts" />
 /// <reference path="persistance/IPersistanceProvider.ts" />
 
-module App {
-    export module Data {
-        export class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
+module App.Data {
+    export class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
 
-            private options : App.IAppCollectionOptions;
-            private persistance: App.Data.Persistance.IPersistanceProvider;
+        private persistance: App.Data.Persistance.IPersistanceProvider<TModel>;
 
-            constructor(options: App.IAppCollectionOptions) {
-                super();
-                this.options = options;
+        constructor(persistance: App.Data.Persistance.IPersistanceProvider<TModel>) {
+            super();
+            this.persistance = persistance;
 
-            }
-            private bootstrapData():void {
-                if( !!this.options.boostrapId
-                    || this.options.boostrapId!=="") {
-
-                }
-            }
         }
     }
 }

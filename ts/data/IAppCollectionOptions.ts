@@ -1,5 +1,5 @@
-module App {
+module App.Data {
     export interface IAppCollectionOptions {
-        boostrapId : string;
+        
     }
 }
