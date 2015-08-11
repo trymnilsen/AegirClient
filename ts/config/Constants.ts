@@ -8,7 +8,12 @@ module App {
 	 */
 	export var constants: {[id:string]: any} = {
 		EVENTS : {
-			NOTIFYCONTEXTPROPERTYCHANGED : "ECONTEXTPROPCHANGED"
+			CONTEXT : {
+				NOTIFYCONTEXTPROPERTYCHANGED : "ECONTEXTPROPCHANGED"
+			},
+			PERSISTANCE: {
+				ONEUPDATED : ""
+			}
 		},
 		MESSAGES: {
 			MESSAGETEST : "TESTTESTMESSAGE",
@@ -16,5 +21,6 @@ module App {
             FULLVIEWREADY: "FW_READY",
             FULLVIEWDISPOSE: "FW_DISPOSE"
 		}
+
 	}
 }
