@@ -1,5 +1,6 @@
 /// <reference path="BaseModule.ts" />
 /// <reference path="../layout/ELayoutPosition.ts" />
+/// <reference path="../../data/model/log/LogLineCollection.ts" />
 
 
 module App.View.Mod {
@@ -7,6 +8,7 @@ module App.View.Mod {
 
          constructor(){
              super(App.View.Layout.ELayoutPosition.DOWNLEFT, "Log");
+             new App.Data.Model.Log.LogLineCollection();
          }
     }
 }

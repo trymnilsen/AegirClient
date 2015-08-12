@@ -1,15 +1,17 @@
 /// <reference path="../typings/backbone.d.ts" />
 /// <reference path="IAppCollectionOptions.ts" />
-/// <reference path="persistance/IPersistanceProvider.ts" />
+/// <reference path="persistance/PersistanceProvider.ts" />
 //
 module App.Data {
     export class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
 
-        private persistance: App.Data.Persistance.IPersistanceProvider<TModel>;
+        private persistance: Array<App.Data.Persistance.PersistanceProvider<TModel>> = [];
 
-        constructor(persistance: App.Data.Persistance.IPersistanceProvider<TModel>) {
+        constructor() {
             super();
-            this.persistance = persistance;
+        }
+        public addPersistance(persistOption: App.Data.Persistance.PersistanceProvider<TModel>) {
+            this.persistance.push(persistOption);
         }
         private peristanceSingleUpdated(update: TModel): void {
 
@@ -18,4 +20,4 @@ module App.Data {
 
         }
     }
-}l
+}

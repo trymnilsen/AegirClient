@@ -1,6 +1,6 @@
 /// <reference path="../../core/Context.ts" />
 /// <reference path="../../config/IConfigurable.ts" />
-/// <reference path="../../messages/IMessageable.ts" />
+/// <reference path="../../messenger/IMessageable.ts" />
 /// <reference path="../layout/ELayoutPosition.ts" />
 /// <reference path="../AppView.ts" />
 

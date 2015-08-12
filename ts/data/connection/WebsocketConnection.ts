@@ -1,29 +1,37 @@
-/// <reference path="../../messenger/AppMessenger.ts" />
+/// <reference path="../../typings/backbone-eventable.d.ts" />
 
 module App.Data.Connection {
-    export class WebsocketConnection {
+    /**
+     * Singleton class for websocket connection
+     */
+    export class WebsocketConnection extends Backbone.Eventable{
 
 		static instance: App.Data.Connection.WebsocketConnection = null;
 		static isOpen: boolean = false;
 
 		private connection: WebSocket;
-		private messenger: App.Messaging.AppMessenger;
 
-        constructor(messenger: App.Messaging.AppMessenger) {
-			this.messenger = messenger;
+        constructor() {
+            super();
 			this.connection = new WebSocket("ws:\\localhost:8888");
 			this.connection.onmessage = (data) => { this.websocketMessageReceived(data);}
+            this.connection.onerror = (data) => { console.log("WS error: ", data);}
         }
-
-        public static connect(messenger: App.Messaging.AppMessenger): void {
-        	if(!App.Data.Connection.WebsocketConnection.instance)
-        	{
-				App.Data.Connection.WebsocketConnection.instance = new App.Data.Connection.WebsocketConnection(messenger);
-        	}
+        /**
+         * Singleton method for returing one instance of this object
+         */
+        public static getInstance(): App.Data.Connection.WebsocketConnection {
+            if(!App.Data.Connection.WebsocketConnection.instance)
+            {
+                App.Data.Connection.WebsocketConnection.instance = new App.Data.Connection.WebsocketConnection();
+            }
+            return App.Data.Connection.WebsocketConnection.instance;
         }
-
+        /**
+         * Callback for message received from the websocket interface
+         */
         private websocketMessageReceived(data): void {
-
+            this.trigger("MODELCHANGE", data);
         }
     }
 }

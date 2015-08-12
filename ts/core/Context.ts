@@ -1,4 +1,4 @@
-///<reference path="../messages/AppMessenger.ts" />
+///<reference path="../messenger/AppMessenger.ts" />
 ///<reference path="../typings/backbone.d.ts" />
 ///<reference path="../config/Constants.ts" />
 
