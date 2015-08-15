@@ -6,7 +6,7 @@ module App.View.Mod {
     export class StatisticsModule extends App.View.BaseModule {
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.RIGHTCENTER,"Statistics");
+             super(App.View.Layout.ELayoutPosition.RIGHTDOWN,"Statistics");
          }
     }
 }

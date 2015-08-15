@@ -17,7 +17,8 @@ module App.View.Layout {
         private positionSelectors: {[id: number]: string} = {
             [App.View.Layout.ELayoutPosition.CENTER]      : '.ui-layout-center',
             [App.View.Layout.ELayoutPosition.LEFTUP]      : '#left-ui-layout-north',
-            [App.View.Layout.ELayoutPosition.LEFTDOWN]    : '#left-ui-layout-center',
+            [App.View.Layout.ELayoutPosition.LEFTCENTER]  : '#left-ui-layout-center',
+            [App.View.Layout.ELayoutPosition.LEFTDOWN]    : '#left-ui-layout-south',
             [App.View.Layout.ELayoutPosition.DOWNLEFT]    : '#bottom-ui-layout-west',
             [App.View.Layout.ELayoutPosition.DOWNCENTER]  : '#bottom-ui-layout-center',
             [App.View.Layout.ELayoutPosition.DOWNRIGHT]   : '#bottom-ui-layout-east',
@@ -75,10 +76,11 @@ module App.View.Layout {
         private addLayout():void {
             this.layoutUI = this.resolveSelector(App.config['UI']['layoutContainer']);
             this.layoutUI.layout({
-                defaults: { 
+                defaults: {
                     fxName              : 'none',
                 },
                 east: {
+                    minSize: 250,
                     childOptions : {
                         defaults: {
                             fxName              : 'none',
@@ -92,7 +94,8 @@ module App.View.Layout {
                         },
                         south: {
                             paneSelector: '#right-ui-layout-south',
-                            size: 100
+                            size: 100,
+                            minSize: 50,
                         }
                     }
                 },
@@ -121,6 +124,7 @@ module App.View.Layout {
                 },
                 west: {
                     size: 300,
+                    minSize: 250,
                     //closable    : false,
                     childOptions: {
                         defaults: {
@@ -133,6 +137,10 @@ module App.View.Layout {
                         },
                         center: {
                             paneSelector: '#left-ui-layout-center'
+                        },
+                        south: {
+                            paneSelector: '#left-ui-layout-south',
+                            minSize         : 150
                         }
                     }
                 }
@@ -140,6 +148,32 @@ module App.View.Layout {
 
             });
         }
+
+        ///////////////////
+        // Resize Events
+        ///////////////////
+
+        /**
+         * Callback for the resize of the center pane used for visualization
+         * @param {[type]} event [description]
+         */
+        private visualizationResized(event)
+        {
+
+        }
+        /**
+         * Callback for the map pane resizing
+         * @param {[type]} event [description]
+         */
+        private mapResized(event)
+        {
+
+        }
+
+        /////////////////
+        ///Helpers
+        /////////////////
+
         private resolveSelectorByPosition(pos: App.View.Layout.ELayoutPosition, useContainer: boolean = true)
         {
             let selectorString = this.positionSelectors[pos];

@@ -6,7 +6,7 @@ module App.View.Mod {
     export class VesselConfiguration extends App.View.BaseModule {
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.RIGHTDOWN, "Vessel Configuration");
+             super(App.View.Layout.ELayoutPosition.RIGHTUP, "Vessel Configuration");
          }
     }
 }

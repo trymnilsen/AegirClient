@@ -6,7 +6,7 @@ module App.View.Mod {
     export class EditPropertiesModule extends App.View.BaseModule {
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.LEFTDOWN, "Properties");
+             super(App.View.Layout.ELayoutPosition.RIGHTCENTER, "Properties");
          }
     }
 }

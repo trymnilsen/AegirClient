@@ -5,7 +5,7 @@
 
 module App.View.Mod {
     export class MapModule extends App.View.BaseModule {
-        private map: L.Map = null;        
+        private map: L.Map = null;
         constructor(){
             super(App.View.Layout.ELayoutPosition.DOWNCENTER, "Map");
         }
@@ -16,7 +16,7 @@ module App.View.Mod {
             // create the tile layer with correct attribution
             var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
             var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-            var osm = new L.TileLayer(osmUrl, { attribution: osmAttrib});        
+            var osm = new L.TileLayer(osmUrl, { attribution: osmAttrib});
 
             this.map.addLayer(osm);
             return this;

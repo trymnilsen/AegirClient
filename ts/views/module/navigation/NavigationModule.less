@@ -1,0 +1,41 @@
+.module-view.module-navigation {
+    @rowHeight: 50px;
+    padding: 20px;
+
+    .nav-padding {
+        width:100%;
+        height: 100%;
+        position: relative;
+    }
+
+    button {
+        font-size: 16px;
+        position: absolute;
+
+        @txtButtonWidth : 65px;
+
+        &.sim-nav-row-1 {
+            top: 0px;
+        }
+        &.sim-nav-row-2 {
+            top: @rowHeight;
+        }
+        &.sim-nav-row-3 {
+            top: @rowHeight * 2;
+        }
+        &.sim-nav-rot-clock {
+            right:0px;
+        }
+        &.sim-nav-move-fwd {
+            left:50%;
+            margin-left: (@txtButtonWidth/2)* -1;
+        }
+        &.sim-nav-move-right {
+            right: 0px;
+        }
+        &.sim-nav-move-back {
+            left: 50%;
+            margin-left: (@txtButtonWidth/2)* -1;
+        }
+    }
+}

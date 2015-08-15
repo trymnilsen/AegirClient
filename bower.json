@@ -20,6 +20,7 @@
     "gsap": "~1.16.1",
     "threejs": "*",
     "stats.js": "*",
+    "antiscroll":"Automattic/antiscroll",
     "dat-gui": "dataarts/dat.gui#~0.5.1",
     "layout": "allpro/layout#~1.4.3",
     "jquery-ui": "~1.11.4"
