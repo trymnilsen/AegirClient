@@ -2,7 +2,7 @@
 /// <reference path="PlaybackView.html.ts" />
 
 
-module App.View.Menu {
+module App.View.Playback {
 
     export class PlaybackView extends App.View.AppView {
 

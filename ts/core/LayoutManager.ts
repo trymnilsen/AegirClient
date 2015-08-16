@@ -6,6 +6,7 @@
 /// <reference path="../views/layout/LayoutTabContainer.ts" />
 /// <reference path="../views/layout/LayoutTab.ts" />
 
+
 module App.View.Layout {
 
     export class LayoutManager {
@@ -73,6 +74,7 @@ module App.View.Layout {
             this.topBarUI.render();
             this.resolveSelector(App.config['UI']['topBarContainer']).append(this.topBarUI.$el);
         }
+
         private addLayout():void {
             this.layoutUI = this.resolveSelector(App.config['UI']['layoutContainer']);
             this.layoutUI.layout({
@@ -132,7 +134,8 @@ module App.View.Layout {
                             //applyDefaultStyles: false
                         },
                         north: {
-                            size: 224,
+                            minSize: 330,
+                            size: 350,
                             paneSelector: '#left-ui-layout-north'
                         },
                         center: {

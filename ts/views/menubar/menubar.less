@@ -7,9 +7,23 @@
 
     position: relative;
 
+    & > div {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        & > div {
+            position: absolute;
+            display: inline-block;
+        }
+    }
+    .middle-topbar {
+        left:50%;
+        margin-left: -150px;
+    }
     .right-topbar {
         position: absolute;
         right:0;
+        top:0px;
         a.fa {
             width: 32px;
             height:32px;

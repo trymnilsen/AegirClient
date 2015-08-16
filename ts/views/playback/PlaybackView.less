@@ -1,20 +1,29 @@
-.replay-controls-wrapper {
-        @playColor: rgb(181, 230, 29);
-        @pauseColor: rgb(255,128,64);
-        @grayPlayControlColor: rgb(192,192,192);
+.playback-view {
+    display: inline-block;
+    .playback-controls-wrapper {
+            @playColor: rgb(181, 230, 29);
+            @pauseColor: rgb(255,128,64);
+            @grayPlayControlColor: rgb(192,192,192);
 
-        text-align: center;
-        font-size: 24px;
-        padding-top: 5px;
-        padding-bottom: 10px;
-        .fa {
-            padding: 5px;
-            color: @grayPlayControlColor;
-            &.fa-play {
-                color: @playColor;
+            text-align: center;
+            font-size: 24px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            div {
+                font-size: 20px;
+                padding-bottom: 5px;
+                color:@grayPlayControlColor;
+                display: inline-block;
             }
-            &.fa-pause {
-                color: @pauseColor;
+            .fa {
+                padding: 5px;
+                color: @grayPlayControlColor;
+                &.fa-play {
+                    color: @playColor;
+                }
+                &.fa-stop {
+                    color: @pauseColor;
+                }
             }
-        }
+    }
 }
