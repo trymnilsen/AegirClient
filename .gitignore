@@ -37,4 +37,4 @@ doc
 .lock-wscript
 
 #sublime settings
-*.sublime-workspace 
+aegir.sublime-workspace 
