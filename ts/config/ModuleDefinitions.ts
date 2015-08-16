@@ -1,5 +1,5 @@
 /// <reference path="../views/module/BaseModule" />
-/// <reference path="../views/module/EditPropertiesModule.ts" />
+/// <reference path="../views/module/properties/EditPropertiesModule.ts" />
 /// <reference path="../views/module/LogModule.ts" />
 /// <reference path="../views/module/OutputModule.ts" />
 /// <reference path="../views/module/replay/ReplayModule.ts" />

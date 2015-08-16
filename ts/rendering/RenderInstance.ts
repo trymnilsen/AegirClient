@@ -15,7 +15,7 @@ module App.Rendering {
         private renderer: THREE.Renderer;
         private controls: THREE.OrbitControls;
         private stats: Stats;
-        private cube: THREE.Mesh;
+        private mesh: THREE.Mesh;
         private gui: dat.GUI;
         public isRunning: boolean;
         constructor(attachPoint: JQuery) {
@@ -50,11 +50,14 @@ module App.Rendering {
             this.stats.domElement.style.zIndex = '100';
             this.container.append( this.stats.domElement );
             // LIGHT
+
+
             var light = new THREE.PointLight(0xffffff);
-            light.position.set(0,250,0);
+            light.position.set(100,250,100);
             this.scene.add(light);
+            /*
             // FLOOR
-            var floorTexture = THREE.ImageUtils.loadTexture('images/checkerboard.jpg');
+            var floorTexture = new THREE.ImageUtils.loadTexture( 'images/checkerboard.jpg' );
             floorTexture.wrapS = floorTexture.wrapT = THREE.RepeatWrapping;
             floorTexture.repeat.set( 10, 10 );
             var floorMaterial = new THREE.MeshBasicMaterial( { map: floorTexture, side: THREE.DoubleSide } );
@@ -62,59 +65,52 @@ module App.Rendering {
             var floor = new THREE.Mesh(floorGeometry, floorMaterial);
             floor.position.y = -0.5;
             floor.rotation.x = Math.PI / 2;
-            this.scene.add(floor);
-            // SKYBOX/FOG
+            scene.add(floor);
+            */
+            // SKYBOX
             var skyBoxGeometry = new THREE.CubeGeometry( 10000, 10000, 10000 );
             var skyBoxMaterial = new THREE.MeshBasicMaterial( { color: 0x9999ff, side: THREE.BackSide } );
             var skyBox = new THREE.Mesh( skyBoxGeometry, skyBoxMaterial );
-            // this.scene.add(skyBox);
-            this.scene.fog = new THREE.FogExp2( 0x9999ff, 0.00025 );
+            this.scene.add(skyBox);
 
             ////////////
             // CUSTOM //
             ////////////
-            var cubeGeometry = new THREE.CubeGeometry( 50, 50, 50 );
-            var cubeMaterial = new THREE.MeshBasicMaterial( { color: 0x000088 } );
-            this.cube = new THREE.Mesh( cubeGeometry, cubeMaterial );
-            this.cube.position.set(0,26,0);
-            this.scene.add(this.cube);
 
-            // this.gui = new dat.GUI({autoPlace: false});
+            var geometry = new THREE.SphereGeometry( 30, 32, 16 );
+            var material = new THREE.MeshLambertMaterial( { color: 0x000088 } );
+            this.mesh = new THREE.Mesh( geometry, material );
+            this.mesh.position.set(40,40,40);
+            this.scene.add(this.mesh);
 
-            // var parameters =
-            // {
-            //     a: 200, // numeric
-            //     b: 200, // numeric slider
-            //     c: "Hello, GUI!", // string
-            //     d: false, // boolean (checkbox)
-            //     e: "#ff8800", // color (hex)
-            //     f: function() { alert("Hello!") },
-            //     g: function() { alert( parameters.c ) },
-            //     v : 0,    // dummy value, only type is important
-            //     w: "...", // dummy value, only type is important
-            //     x: 0, y: 0, z: 0
-            // };
-            // // gui.add( parameters )
-            // this.gui.add( parameters, 'a' ).name('Number');
-            // this.gui.add( parameters, 'b' ).min(128).max(256).step(16).name('Slider');
-            // this.gui.add( parameters, 'c' ).name('String');
-            // this.gui.add( parameters, 'd' ).name('Boolean');
+            var axes = new THREE.AxisHelper(50);
+            axes.position = this.mesh.position;
+            this.scene.add(axes);
 
-            // this.gui.addColor( parameters, 'e' ).name('Color');
+            var gridXZ = new THREE.GridHelper(100, 10);
+            gridXZ.setColors( new THREE.Color(0x006600).getHex(), new THREE.Color(0x006600).getHex() );
+            gridXZ.position.set( 100,0,100 );
+            this.scene.add(gridXZ);
 
-            // var numberList = [1, 2, 3];
-            // this.gui.add( parameters, 'v', numberList ).name('List');
+            var gridXY = new THREE.GridHelper(100, 10);
+            gridXY.position.set( 100,100,0 );
+            gridXY.rotation.x = Math.PI/2;
+            gridXY.setColors( new THREE.Color(0x000066).getHex(), new THREE.Color(0x000066).getHex() );
+            this.scene.add(gridXY);
 
-            // var stringList = ["One", "Two", "Three"];
-            // this.gui.add( parameters, 'w', stringList ).name('List');
+            var gridYZ = new THREE.GridHelper(100, 10);
+            gridYZ.position.set( 0,100,100 );
+            gridYZ.rotation.z = Math.PI/2;
+            gridYZ.setColors( new THREE.Color(0x660000).getHex(), new THREE.Color(0x660000).getHex() );
+            this.scene.add(gridYZ);
 
-            // this.gui.add( parameters, 'f' ).name('Say "Hello!"');
-            // this.gui.add( parameters, 'g' ).name("Alert Message");
+            // direction (normalized), origin, length, color(hex)
+            var origin = new THREE.Vector3(50,100,50);
+            var terminus  = new THREE.Vector3(75,75,75);
+            var direction = new THREE.Vector3().subVectors(terminus, origin).normalize();
+            var arrow = new THREE.ArrowHelper(direction, origin, 50, 0x884400);
+            this.scene.add(arrow);
 
-            // var folder1 = this.gui.addFolder('Coordinates');
-            // folder1.add( parameters, 'x' );
-            // folder1.add( parameters, 'y' );
-            // folder1.close();
         }
         public attach(): void {
             this.container.append(this.renderer.domElement);
