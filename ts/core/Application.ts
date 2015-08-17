@@ -28,7 +28,7 @@ module App.Core {
         constructor() {
             super();
             this.createMessenger();
-            this.layoutManager = new App.View.Layout.LayoutManager();
+            this.layoutManager = new App.View.Layout.LayoutManager(this.messenger);
         }
         /**
          * Bootstrap is run on DOM Ready and will init states and modules

@@ -3,7 +3,10 @@
 /// <reference path="Menubar.html.ts" />
 /// <reference path="SettingsButton.ts" />
 /// <reference path="../playback/PlaybackView.ts" />
-
+/// <reference path="../../messenger/AppMessenger.ts" />
+/// <reference path="../../messenger/messages/Notification.ts" />
+/// <reference path="../../config/Constants.ts" />
+/// <reference path="../../typings/toastr.d.ts" />
 
 module App.View.Menu {
 
@@ -14,10 +17,11 @@ module App.View.Menu {
         private searchfield: App.View.Search.SearchBar;
         private settingsButton: App.View.Menu.SettingsButton;
         private playbackControls: App.View.Playback.PlaybackView;
+        private messenger: App.Messaging.AppMessenger;
         /**
          * Instantiates a new instance of the menu bar
          */
-        constructor() {
+        constructor(messenger: App.Messaging.AppMessenger) {
             //Init parent
             super({});
             this.searchfield = new App.View.Search.SearchBar();
@@ -36,6 +40,15 @@ module App.View.Menu {
                 AttachPointSelector: ".right-topbar"
             };
             this.setTemplate(App.Template.Menubar.html);
+
+            //Messaging Setup
+            this.messenger = messenger;
+            this.messenger.on(App.constants['MESSAGES']['NOTIFICATION'], this.showNotification, this);
+        }
+        private showNotification(event)
+        {
+            toastr.info("foobar");
+            console.log(event);
         }
     }
 }

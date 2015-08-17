@@ -13,6 +13,7 @@ module App.View.Layout {
 
         private layoutUI: any;
         private topBarUI: App.View.Menu.MenubarView;
+        private messenger: App.Messaging.AppMessenger;
 
         private modules: Array<App.View.BaseModule>;
         private positionSelectors: {[id: number]: string} = {
@@ -32,9 +33,9 @@ module App.View.Layout {
          */
         private modulePositions: { [id: number]: Array<App.View.BaseModule> } = {};
 
-        constructor() {
+        constructor(messenger: App.Messaging.AppMessenger) {
             this.modules = [];
-
+            this.messenger = messenger;
         }
         public render(): void {
             this.addLayout();
@@ -70,7 +71,7 @@ module App.View.Layout {
             }
         }
         private addTopBar():void {
-            this.topBarUI = new App.View.Menu.MenubarView();
+            this.topBarUI = new App.View.Menu.MenubarView(this.messenger);
             this.topBarUI.render();
             this.resolveSelector(App.config['UI']['topBarContainer']).append(this.topBarUI.$el);
         }
@@ -105,7 +106,7 @@ module App.View.Layout {
                     onresize    : function(evt) {console.log(evt);}
                 },
                 south : {
-                    size            : 150,
+                    size            : 300,
                     minSize         : 150,
                     childOptions    : {
                         defaults: {
