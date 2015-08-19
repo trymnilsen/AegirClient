@@ -104,7 +104,7 @@ module.exports = function(grunt) {
         },
         serve: {
             options: {
-                port: 8282
+                port: 8080
             }
         },
         watch: {

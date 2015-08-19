@@ -5,6 +5,7 @@
 /// <reference path="../typings/jquery-ui-layout.d.ts" />
 /// <reference path="../views/layout/LayoutTabContainer.ts" />
 /// <reference path="../views/layout/LayoutTab.ts" />
+/// <reference path="../views/statusbar/StatusbarView.ts" />
 
 
 module App.View.Layout {
@@ -13,6 +14,8 @@ module App.View.Layout {
 
         private layoutUI: any;
         private topBarUI: App.View.Menu.MenubarView;
+        private statusBarUi: App.View.Status.StatusbarView;
+
         private messenger: App.Messaging.AppMessenger;
 
         private modules: Array<App.View.BaseModule>;
@@ -40,6 +43,7 @@ module App.View.Layout {
         public render(): void {
             this.addLayout();
             this.addTopBar();
+            this.addStatusbar();
             this.createPanels();
         }
         public addModule(mod: App.View.BaseModule): void {
@@ -74,6 +78,11 @@ module App.View.Layout {
             this.topBarUI = new App.View.Menu.MenubarView(this.messenger);
             this.topBarUI.render();
             this.resolveSelector(App.config['UI']['topBarContainer']).append(this.topBarUI.$el);
+        }
+        private addStatusbar():void {
+            this.statusBarUi = new App.View.Status.StatusbarView();
+            this.statusBarUi.render();
+            this.resolveSelector(App.config['UI']['statusbar']).append(this.statusBarUi.$el);
         }
 
         private addLayout():void {

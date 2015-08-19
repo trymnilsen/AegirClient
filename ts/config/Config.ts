@@ -7,6 +7,7 @@ module App {
         "UI"      : {
             "topBarContainer" : "#topbar-content",
             "layoutContainer" : "#editor-content",
+            "statusbar" : "#statusbar-wrapper"
         },
         "Modules" : {
             "PageRender" : {
