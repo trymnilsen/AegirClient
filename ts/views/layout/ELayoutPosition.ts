@@ -11,16 +11,15 @@ module App.View.Layout {
     // |   LEFT    |                             |          |
     // |   CENTER  |                             |  RIGHT   |
     // |           |                             |  DOWN    |
-    // +-----------+                             |          |
-    // |   LEFT    |                             |          |
-    // |   DOWN    |                             |          |
+    // |           |                             |          |
+    // |           |                             |          |
+    // |           |                             |          |
     // +-----------+-------------+-------------+-+----------+
     // |        DOWNLEFT         |   DOWN      |   DOWN     |
     // |                         |   CENTER    |   RIGHT    |
     // +-------------------------+-------------+------------+
     export enum ELayoutPosition {
         LEFTUP,
-        LEFTDOWN,
         LEFTCENTER,
         DOWNLEFT,
         DOWNCENTER,

@@ -23,7 +23,6 @@ module App.View.Layout {
             [App.View.Layout.ELayoutPosition.CENTER]      : '.ui-layout-center',
             [App.View.Layout.ELayoutPosition.LEFTUP]      : '#left-ui-layout-north',
             [App.View.Layout.ELayoutPosition.LEFTCENTER]  : '#left-ui-layout-center',
-            [App.View.Layout.ELayoutPosition.LEFTDOWN]    : '#left-ui-layout-south',
             [App.View.Layout.ELayoutPosition.DOWNLEFT]    : '#bottom-ui-layout-west',
             [App.View.Layout.ELayoutPosition.DOWNCENTER]  : '#bottom-ui-layout-center',
             [App.View.Layout.ELayoutPosition.DOWNRIGHT]   : '#bottom-ui-layout-east',
@@ -150,10 +149,6 @@ module App.View.Layout {
                         },
                         center: {
                             paneSelector: '#left-ui-layout-center'
-                        },
-                        south: {
-                            paneSelector: '#left-ui-layout-south',
-                            minSize         : 150
                         }
                     }
                 }

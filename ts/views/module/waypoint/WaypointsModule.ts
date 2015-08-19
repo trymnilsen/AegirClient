@@ -6,7 +6,7 @@ module App.View.Mod {
     export class WaypointsModule extends App.View.BaseModule {
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.LEFTDOWN, "Waypoints");
+             super(App.View.Layout.ELayoutPosition.LEFTCENTER, "Waypoints");
          }
     }
 }

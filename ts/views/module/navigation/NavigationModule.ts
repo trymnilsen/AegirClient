@@ -11,7 +11,7 @@ module App.View.Mod {
              super(App.View.Layout.ELayoutPosition.LEFTCENTER, "Navigation");
              this.setTemplate(App.Template.NavigationModule.html);
 
-             let navCanvas: App.View.Mod.Navigation.NavigationVisualization = new App.View.Mod.Navigation.NavigationVisualization();
+             let navCanvas: App.View.Mod.Navigation.NavigationVisualization = new App.View.Mod.Navigation.NavigationVisualization(300,350);
              navCanvas.appendOptions = {
                  AttachPointSelector : ".nav-viz-wrapper"
              };

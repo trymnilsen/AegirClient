@@ -23,7 +23,7 @@ module App.Config {
         modules.push(new App.View.Mod.VesselConfiguration());
         modules.push(new App.View.Mod.PreviewModule());
         modules.push(new App.View.Mod.NavigationModule());
-        modules.push(new App.View.Mod.WaypointsModule());
+        //modules.push(new App.View.Mod.WaypointsModule());
         return modules;
     }
 }
