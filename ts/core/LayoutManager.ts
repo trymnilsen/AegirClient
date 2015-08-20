@@ -44,6 +44,7 @@ module App.View.Layout {
             this.addTopBar();
             this.addStatusbar();
             this.createPanels();
+            this.topBarUI.postRender();
         }
         public addModule(mod: App.View.BaseModule): void {
             //check if this position already has a module
