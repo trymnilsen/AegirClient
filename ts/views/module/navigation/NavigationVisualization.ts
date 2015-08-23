@@ -9,8 +9,10 @@ module App.View.Mod.Navigation {
      * Definitions of force types
      */
     enum ForcePointType {
-        ACCELERATION,
-        VELOCITY
+        BOWACCELERATION,
+        BOWVELOCITY,
+        STERNACCELERATION,
+        STERNVELOCITY
     }
     enum DraggingMode {
         FORCEDRAG,
@@ -51,7 +53,7 @@ module App.View.Mod.Navigation {
      */
     export class NavigationVisualization extends App.View.AppView {
 
-        public static FORCEPOINT_RADIUS:number = 30;
+        public static FORCEPOINT_RADIUS:number = 8;
 
         private ctx: CanvasRenderingContext2D;
 
@@ -62,7 +64,7 @@ module App.View.Mod.Navigation {
         private canvasW: number;
         private canvasH: number;
 
-        private shipShape: App.View.Shape.CanvasShape;
+        private shipShape: App.View.Shape.Ship;
         private gridShape: App.View.Shape.CanvasShape;
 
         private forcePoints: Array<ForcePoint> = [];
@@ -106,7 +108,7 @@ module App.View.Mod.Navigation {
                         Y: 0,
                         Scale: 1
                     },
-                    forceType: ForcePointType.VELOCITY
+                    forceType: ForcePointType.BOWACCELERATION
                 },
                 {
                     transform: {
@@ -114,7 +116,7 @@ module App.View.Mod.Navigation {
                         Y: 0,
                         Scale: 1
                     },
-                    forceType: ForcePointType.VELOCITY
+                    forceType: ForcePointType.BOWVELOCITY
                 },
                 {
                     transform: {
@@ -122,7 +124,7 @@ module App.View.Mod.Navigation {
                         Y: 0,
                         Scale: 1
                     },
-                    forceType: ForcePointType.ACCELERATION
+                    forceType: ForcePointType.STERNACCELERATION
                 },
                 {
                     transform: {
@@ -130,7 +132,7 @@ module App.View.Mod.Navigation {
                         Y: 0,
                         Scale: 1
                     },
-                    forceType: ForcePointType.ACCELERATION
+                    forceType: ForcePointType.STERNVELOCITY
                 }];
         }
         private resize(width: number, height: number) {
@@ -257,17 +259,38 @@ module App.View.Mod.Navigation {
         private drawForcePoint(force: ForcePoint): void {
 
             let color: string = "";
+            let shipPosition: App.View.Shape.ICanvasShapeTransformation = this.shipShape.getTransformation();
+            let lineAnchorY: number = 0;
             let radius: number = App.View.Mod.
-                Navigation.NavigationVisualization
-                .FORCEPOINT_RADIUS;
+                Navigation.NavigationVisualization.FORCEPOINT_RADIUS;
 
+            if (force.forceType == ForcePointType.BOWACCELERATION ||
+                force.forceType == ForcePointType.BOWVELOCITY) {
+                lineAnchorY = this.shipShape.bowPosition;
+            }else if (force.forceType == ForcePointType.STERNACCELERATION ||
+                    force.forceType == ForcePointType.STERNVELOCITY) {
+                lineAnchorY = this.shipShape.sternPosition;
+            }
+            //Draw Line
+            this.ctx.save();
+            this.ctx.setLineDash([5, 15]);
+            this.ctx.beginPath();
+            this.ctx.moveTo(shipPosition.X+this.shipShape.width/2, shipPosition.Y + lineAnchorY);
+            this.ctx.lineTo(force.transform.X, force.transform.Y);
+            this.ctx.lineWidth = 4;
+            this.ctx.stroke();
+
+            //Draw Cirlce
+            this.ctx.restore();
             this.ctx.beginPath();
             this.ctx.arc(force.transform.X, force.transform.Y,radius, 0, Math.PI * 2, true);
 
 
-            if (force.forceType == ForcePointType.ACCELERATION) {
+            if (force.forceType == ForcePointType.BOWACCELERATION ||
+                    force.forceType == ForcePointType.STERNACCELERATION) {
                 color = "#e61d5f";
-            } else if (force.forceType == ForcePointType.VELOCITY) {
+            } else if (force.forceType == ForcePointType.BOWVELOCITY ||
+                    force.forceType == ForcePointType.STERNVELOCITY) {
                 color = "#1ed36f";
             }
 
@@ -277,6 +300,8 @@ module App.View.Mod.Navigation {
             this.ctx.strokeStyle = "#1C1C1E";
             this.ctx.lineWidth = 2;
             this.ctx.stroke();
+
+
         }
     }
 }

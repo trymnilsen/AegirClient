@@ -10,15 +10,22 @@ module App.View.Shape {
         /**
          * Width of the ship graphics
          */
-        private width: number;
+        public width: number;
         /**
          * Height of the ship graphics
          */
-        private height: number;
+        public height: number;
+
+        public bowPosition: number;
+
+        public sternPosition: number;
         constructor(width: number, height: number) {
             super();
             this.height = height;
             this.width = width;
+
+            this.bowPosition = this.height * App.View.Shape.Ship.BOW_SIZE;
+            this.sternPosition = this.height * 0.9;
         }
         public draw(ctx: CanvasRenderingContext2D) {
 

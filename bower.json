@@ -24,6 +24,7 @@
     "stats.js": "*",
     "threejs": "*",
     "toastr": "~2.1.2",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+    "bootstrap-sweetalert": "~0.4.5"
   }
 }

@@ -7,6 +7,7 @@
 /// <reference path="../../messenger/messages/Notification.ts" />
 /// <reference path="../../config/Constants.ts" />
 /// <reference path="../../typings/toastr.d.ts" />
+/// <reference path="../toolbar/ToolbarView.ts" />
 
 module App.View.Menu {
 
@@ -17,6 +18,7 @@ module App.View.Menu {
         private searchfield: App.View.Search.SearchBar;
         private settingsButton: App.View.Menu.SettingsButton;
         private playbackControls: App.View.Playback.PlaybackView;
+        private toolbarUi: App.View.Toolbar.ToolbarView;
         private messenger: App.Messaging.AppMessenger;
         /**
          * Instantiates a new instance of the menu bar
@@ -27,12 +29,17 @@ module App.View.Menu {
             this.searchfield = new App.View.Search.SearchBar();
             this.settingsButton = new App.View.Menu.SettingsButton();
             this.playbackControls = new App.View.Playback.PlaybackView();
+            this.toolbarUi = new App.View.Toolbar.ToolbarView();
             this.appendView(this.searchfield);
             this.appendView(this.settingsButton);
             this.appendView(this.playbackControls);
+            this.appendView(this.toolbarUi);
+            this.toolbarUi.appendOptions = {
+                AttachPointSelector: ".left-topbar"
+            };
             this.playbackControls.appendOptions = {
                 AttachPointSelector: ".middle-topbar"
-            }
+            };
             this.settingsButton.appendOptions = {
                 AttachPointSelector: ".right-topbar"
             };
