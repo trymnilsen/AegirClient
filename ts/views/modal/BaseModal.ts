@@ -2,11 +2,15 @@
 /// <reference path="BaseModal.html.ts" />
 /// <reference path="../../typings/bootstrap.d.ts" />
 
-
 module App.View.Modal {
 
     export interface ModalCloseData {
-
+        title: string,
+        content: App.View.AppView,
+        onSuccess?: () => void,
+        onClose?: () => void,
+        successText?: string,
+        cancelText?: string
     }
 
     export class BaseModal {
@@ -14,24 +18,22 @@ module App.View.Modal {
         private contentView: App.View.AppView;
         private modalId: string;
         private modalElement: JQuery;
-        private closeInfo: (closeInfo: Object) => void;
+        private onClose: () => void;
+        private onSuccess: () => void;
         private title: string;
-        private okButtonText: string;
-        private cancelButtonText: string;
+        private okText: string;
+        private cancelText: string;
         /**
          * Instantiates a new instance of the menu bar
          */
-        constructor(title: string,
-                    content: App.View.AppView,
-                    close: (closeInfo: Object) => void,
-                    okButtonText: string = "Ok",
-                    cancelButtonText: string= "Cancel") {
-            this.okButtonText = okButtonText;
-            this.cancelButtonText = cancelButtonText;
-            this.modalId = "modal-" + content.cid;
-            this.title = title;
-            this.contentView = content;
-            this.closeInfo = close;
+        constructor(opts: ModalCloseData) {
+            this.okText = opts.successText ? opts.successText : "Ok";
+            this.cancelText = opts.cancelText ? opts.cancelText : "Cancel";
+            this.modalId = "modal-" + opts.content.cid;
+            this.onClose = opts.onClose ? opts.onClose : null;
+            this.onSuccess = opts.onSuccess ? opts.onSuccess : null;
+            this.title = opts.title;
+            this.contentView = opts.content;
         }
         /**
          * Adds the given content to the dom and returns the JQUERY ref of the
@@ -51,8 +53,10 @@ module App.View.Modal {
             this.contentView.render();
             contentRoot.append(this.contentView.$el);
             this.contentView.postRender();
-            //Set up close event
+            //Set up events
             this.modalElement.on('hidden.bs.modal', (event) => { this.disposeModal(event); });
+            let successButtton = $('.success', this.modalElement);
+            successButtton.on('click', () => { this.successModal(); });
             return modalElement;
         }
         public show(): void {
@@ -61,12 +65,23 @@ module App.View.Modal {
         private populateModalData(): void {
             $('.modal-title').append(this.title);
             this.modalElement.attr("id", this.modalId);
-            $('.modal-footer .btn.btn-default', this.modalElement).html(this.cancelButtonText);
-            $('.modal-footer .btn.btn-primary', this.modalElement).html(this.okButtonText);
+            $('.modal-footer .btn.btn-default', this.modalElement).html(this.cancelText);
+            $('.modal-footer .btn.btn-primary', this.modalElement).html(this.okText);
+        }
+        private successModal():void {
+            console.log("On Modal Success pressed");
+            if(this.onSuccess) {
+                console.log("Calling success callback");
+                this.onSuccess();
+            }
         }
         private disposeModal(event): void {
             this.modalElement.off();
-            this.closeInfo(event);
+            $('button.btn.btn-primary.success', this.modalElement).off();
+            if(this.onClose)
+            {
+                this.onClose();
+            }
             this.contentView.dispose();
             $('#modals-container').remove(this.modalId);
         }

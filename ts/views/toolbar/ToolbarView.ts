@@ -3,6 +3,7 @@
 /// <reference path="../modal/project/NewProjectView" />
 /// <reference path="../modal/BaseModal.ts" />
 /// <reference path="../../typings/sweetalert.d.ts" />
+/// <reference path="../../service/ProjectService.ts" />
 
 
 module App.View.Toolbar {
@@ -26,16 +27,20 @@ module App.View.Toolbar {
         }
         private newProjectClick(): void {
             let content: App.View.Project.NewProjectView = new App.View.Project.NewProjectView();
-            let modal: App.View.Modal.BaseModal = new App.View.Modal.BaseModal("Create Project",
-                                                        content,
-                                                        (closeData) => { this.newProjectClosed(closeData); },
-                                                        "Create Project");
+            let modal: App.View.Modal.BaseModal = new App.View.Modal.BaseModal({
+                content : content,
+                successText : "Create Project",
+                onSuccess: () => { this.onNewProjectSuccess(); },
+                title: "Create New Project"
+            });
 
             modal.render();
             modal.show();
         }
-        private newProjectClosed(closeData): void {
-            console.log(closeData);
+        private onNewProjectSuccess(): void {
+            let projService: App.Service.ProjectService = new App.Service.ProjectService();
+            let result = projService.create("FoobarProject", "FshipName", 300, 60);
+            console.log("New Project", result);
         }
         private deleteProject(): void {
             sweetAlert({
