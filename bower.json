@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "antiscroll": "Automattic/antiscroll",
+    "selectize": "brianreavis/selectize.js",
     "backbone": "~1.1.2",
     "bootstrap": "~3.3.1",
     "dat-gui": "dataarts/dat.gui#~0.5.1",

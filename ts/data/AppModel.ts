@@ -6,10 +6,12 @@
 module App.Data {
     export class AppModel extends Backbone.Model {
 
+        protected urlFragment: string;
+
         constructor(attributes?: any, options?: any) {
             super(attributes, options);
-            this.urlRoot = function() {
-                return App.config["HTTP"]["ApiRootUrl"];
+            this.urlRoot = () => {
+                return App.config["HTTP"]["ApiRootUrl"]+"/"+this.urlFragment+"/";
             }
         }
 

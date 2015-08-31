@@ -72,6 +72,13 @@ module App {
     				this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
                 }
 			}
+            public resetData(data: {[id: string]: Object}, notify: boolean = true): void {
+                this.data = data;
+                if(notify)
+                {
+                    this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+                }
+            }
 	  	}
 	}
 }

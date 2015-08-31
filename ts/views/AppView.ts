@@ -29,7 +29,7 @@ module App.View {
             if(!!options.context) {
                 this.setContext(options.context);
             } else {
-                var newContext : App.Core.Context = new App.Core.Context();
+                let newContext : App.Core.Context = new App.Core.Context();
                 this.setContext(newContext);
             }
             //Append childviews
@@ -49,7 +49,7 @@ module App.View {
                 return view.appendOptions.JQueryAttachPoint;
             //else use the selector
             } else if(!!view.appendOptions.AttachPointSelector) {
-                var jqueryObj : JQuery = null;
+                let jqueryObj : JQuery = null;
                 if(!!jqueryContext) {
                     jqueryObj = $(view.appendOptions.AttachPointSelector, jqueryContext);
                 } else {
@@ -69,8 +69,8 @@ module App.View {
          * Dispose any resources this view holds
          */
         public dispose(domEventsOnly : boolean = false): void {
-            for (var childViewId in this.childViews) {
-                var childView : App.View.AppView = this.childViews[childViewId];
+            for (let childViewId in this.childViews) {
+                let childView : App.View.AppView = this.childViews[childViewId];
                 childView.dispose(domEventsOnly);
             }
             //Remove dom eveants
@@ -108,14 +108,14 @@ module App.View {
 
             //get context
             if(!!this.context) {
-                var data : any = this.context.getAllData();
+                let data : any = this.context.getAllData();
                 //Data was not thruthy
                 if(!data) {
                     console.warn("[APPVIEW:Render]Data for view rerender was invalid, was:",data);
                 }
                 if(!!this.template)
                 {
-                    var renderedContent : string = this.template(data);
+                    let renderedContent : string = this.template(data);
                     this.$el.html(renderedContent);
                 }
 
@@ -123,18 +123,9 @@ module App.View {
                 console.warn("[APPVIEW:Render]Context was invalid, was:",this.context);
             }
             //Render childviews
-            for (var childViewId in this.childViews) {
-                var childView : App.View.AppView = this.childViews[childViewId];
-                childView.render();
-                //If childview does not have an append point, append it directly to us
-                if(!!childView.appendOptions) {
-                    var appendPoint : JQuery = App.View.AppView.resolveViewAppendPoint(childView,this.$el);
-                } else {
-                    var appendPoint : JQuery = this.$el;
-                }
-
-                appendPoint.append(childView.$el);
-
+            for (let childViewId in this.childViews) {
+                let childView : App.View.AppView = this.childViews[childViewId];
+                this.renderChildView(childView);
             }
             this.delegateEvents();
             return this;
@@ -146,8 +137,8 @@ module App.View {
          * @return {App.View.AppView} [description]
          */
         public postRender(): App.View.AppView {
-            for (var childViewId in this.childViews) {
-                var childView: App.View.AppView = this.childViews[childViewId];
+            for (let childViewId in this.childViews) {
+                let childView: App.View.AppView = this.childViews[childViewId];
                 childView.postRender();
             }
             return this;
@@ -158,8 +149,9 @@ module App.View {
          * events etc) if we destroy the view/remove it, or want to re-render the
          * entire view
          * @param appendOptions options for appending a view to this view
+         * @param renderOnAppend should the view also be rendered after appending?
          */
-        public appendView(view : App.View.AppView): void {
+        public appendView(view : App.View.AppView, renderOnAppend: boolean = false): void {
             if(!View) {
                 console.warn("[APPVIEW:Append]No childview selected, cannot append.");
                 return;
@@ -188,6 +180,10 @@ module App.View {
             //Check if already appended
             if(!this.childViews[view.cid]) {
                 this.childViews[view.cid] = view;
+                if(renderOnAppend)
+                {
+                    this.renderChildView(view);
+                }
             } else {
                 console.log("[APPVIEW:Append]View :'"+view.cid+"' Already a childview");
             }
@@ -197,9 +193,26 @@ module App.View {
          */
         public addMultipleViews(views: Array<App.View.AppView>):void {
             //Add childviews
-            for (var i = 0; i < views.length; ++i) {
+            for (let i = 0; i < views.length; ++i) {
                 this.appendView(views[i]);
             }
+        }
+        private renderChildView(view: App.View.AppView) {
+            let appendPoint: JQuery = null;
+            view.render();
+            //If childview does not have an append point, append it directly to us
+            if(!!view.appendOptions) {
+                appendPoint = App.View.AppView.resolveViewAppendPoint(view,this.$el);
+            } else {
+                appendPoint = this.$el;
+            }
+
+            appendPoint.append(view.$el);
+        }
+        protected removeChildView(view: App.View.AppView) {
+            view.dispose();
+            view.remove();
+            delete this.childViews[view.cid];
         }
         /**
          * Sets the template of this view from a given string

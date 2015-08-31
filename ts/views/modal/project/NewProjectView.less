@@ -1,0 +1,46 @@
+.new-project-view{
+    .form-group {
+        position: relative;
+        label {
+            font-size: 14px;
+        }
+        i.fa.fa-fx
+        {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 16px;
+        }
+        i.hiddenIcon {
+            display: none;
+        }
+        &.fa-spinner {
+            color: #505050;
+        }
+        &.fa-check {
+            color: #0AA952;
+        }
+        &.fa-exclamation-triangle {
+            color: #a94442;
+        }
+
+
+        .vessel-select.hidden {
+            height: 0%;
+        }
+    }
+
+    .vessel-select {
+        .selectize-input input[type="text"] {
+            width: calc(~"100% - 32px") !important;
+        }
+        i.fa{
+            width: 16px;
+        }
+        .form-group {
+            .selectize-control {
+                font-size: 14px;
+            }
+        }
+    }
+}

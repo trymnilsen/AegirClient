@@ -30,16 +30,16 @@ module App.View.Toolbar {
             let modal: App.View.Modal.BaseModal = new App.View.Modal.BaseModal({
                 content : content,
                 successText : "Create Project",
-                onSuccess: () => { this.onNewProjectSuccess(); },
+                onSuccess: (data: any) => { this.onNewProjectSuccess(data); },
                 title: "Create New Project"
             });
 
             modal.render();
             modal.show();
         }
-        private onNewProjectSuccess(): void {
+        private onNewProjectSuccess(data :{[id:string] : Object}): void {
             let projService: App.Service.ProjectService = new App.Service.ProjectService();
-            let result = projService.create("FoobarProject", "FshipName", 300, 60);
+            let result = projService.create(<string>data['ProjectName']);
             console.log("New Project", result);
         }
         private deleteProject(): void {

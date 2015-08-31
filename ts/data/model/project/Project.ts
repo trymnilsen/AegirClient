@@ -11,7 +11,7 @@ module App.Data.Model.Project {
         constructor() {
             //Init parent
             super();
-
+            this.urlFragment = "project";
         }
 
         get Id(): number {
@@ -42,5 +42,28 @@ module App.Data.Model.Project {
             return this.get('VesselWidth');
         }
 
+        public parse(response, options)
+        {
+            //Model Might be returned wrapped in an array
+            if(response.constructor == Array)
+            {
+                response = response[0];
+            }
+            let attributes: { [id: string]: string } = {};
+            //Fill in attributes
+            attributes['LastModifiedDate'] = response['LastModified'];
+            attributes['CreatedDate'] = response['LastModified'];
+            attributes['ProjectName'] = response['Name'];
+            attributes['VesselName'] = response['Vessel']['Name'];
+            attributes['VesselLength'] = response['Vessel']['Width'];
+            attributes['VesselWidth'] = response['Vessel']['Height'];
+            attributes['Id'] = response['GUID'];
+            //Demo - not yet implemented
+            attributes['ProjectDescription'] = "Testing some stuff with bla";
+            attributes['NumOfOutputs'] = "4";
+            attributes['isSimulating'] = "true"; //Just for testing and will be truthy anyway
+
+            return attributes;
+        }
     }
 }

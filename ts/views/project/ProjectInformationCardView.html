@@ -1,0 +1,35 @@
+<div>
+    <div class="project-details">
+        <div class="project-vessel-names">
+            <div class="project-name"><%= ProjectName %></div>
+            <div class="project-vessel">
+                <i class="fa fa-fx fa-ship"></i>
+                <span><%= VesselName %></span>
+             </div>
+        </div>
+        <div>
+            <div class="created-date">
+                <i class="fa fa-fx fa-clock-o"></i>
+                <span><%= CreatedDate %></span>
+            </div>
+            <div class="modified-date">
+                <i class="fa fa-fx fa-clock-o"></i>
+                <span><%= LastModifiedDate %></span>
+            </div>
+        </div>
+        <div class="description"><%= ProjectDescription %></div>
+    </div>
+    <div class="simulation-details">
+         <div class="outputs">
+             <span>Outputs</span>
+             <span class="output-count"><%= NumOfOutputs %></span>
+         </div>
+         <div class="simulation-status">
+             <% if(isSimulating) {%>
+                 <i class="fa fa-fx fa-circle"></i>
+                 <span>Currently Simulating</span>
+             <% } %>
+         </div>
+    </div>
+</div>
+<span class="project-link"><a href="#!/project/<%= Id %>" target="_self">Open Project</a></span>
