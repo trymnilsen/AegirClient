@@ -8,9 +8,9 @@ module App.Data.Model.Project {
         /**
          * Contains data about a single search result
          */
-        constructor() {
+        constructor(attributes: any = {}) {
             //Init parent
-            super();
+            super(attributes || {});
             this.urlFragment = "project";
         }
 

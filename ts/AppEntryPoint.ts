@@ -4,13 +4,11 @@ console.log('[APPENTRY:EXEC]App Start at '+t0+'ms');
 
 //We have some time to do non-dom related logic
 var mainApp : App.Core.Application = new App.Core.Application();
-//Attach Application to global
-window['Application'] = mainApp;
-        /**
+
 /**
  * Run on Dom Ready
  */
-$(() => {
+$((app: App.Core.Application) => {
  	var t1 = performance.now();
     console.log('[APPENTRY:DOMLOAD]Dom Start at '+t1+'ms');
     console.log('[APPENTRY:DOMLOAD]DomReady took '+(t1 - t0)+' milliseconds');
@@ -21,7 +19,7 @@ $(() => {
          * Holds the reference to our application object
          */
 
-        window['Application'].bootstrap();
+        app.bootstrap();
 
         var t3 = performance.now();
         console.log('[APPENTRY:DOMLOAD+500ms]Boostrap End at '+t3+'ms');

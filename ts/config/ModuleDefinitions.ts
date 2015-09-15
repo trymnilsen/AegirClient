@@ -6,12 +6,13 @@
 /// <reference path="../views/module/StatisticsModule.ts" />
 /// <reference path="../views/module/VesselConfigurationModule.ts" />
 /// <reference path="../views/module/map/MapModule.ts" />
-/// <reference path="../views/module/preview/PreviewModule.ts" />
 /// <reference path="../views/module/waypoint/WaypointsModule.ts" />
 /// <reference path="../views/module/navigation/NavigationModule.ts" />
+/// <reference path="../views/module/screen/ScreenModule.ts" />
+/// <reference path="../editor/Workspace.ts" />
 
 module App.Config {
-    export function getAllModules() {
+    export function getAllModules(workspace: App.Editor.Workspace) {
         let modules: Array<App.View.BaseModule> = [];
         //Set up all modules and add
         modules.push(new App.View.Mod.EditPropertiesModule());
@@ -21,8 +22,9 @@ module App.Config {
         modules.push(new App.View.Mod.ReplayModule());
         modules.push(new App.View.Mod.StatisticsModule());
         modules.push(new App.View.Mod.VesselConfiguration());
-        modules.push(new App.View.Mod.PreviewModule());
+        //modules.push(new App.View.Mod.PreviewModule());
         modules.push(new App.View.Mod.NavigationModule());
+        modules.push(new App.View.Mod.ScreenModule(workspace.OpenProjects));
         //modules.push(new App.View.Mod.WaypointsModule());
         return modules;
     }

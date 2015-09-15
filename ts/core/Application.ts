@@ -4,6 +4,8 @@
 /// <reference path="../views/AppView.ts" />
 /// <reference path="../typings/jquery.d.ts"/>
 /// <reference path="LayoutManager.ts"/>
+/// <reference path="../editor/Workspace.ts" />
+
 module App.Core {
     'use strict';
     /**
@@ -21,7 +23,7 @@ module App.Core {
          */
         private messenger: App.Messaging.AppMessenger = null;
         private layoutManager: App.View.Layout.LayoutManager = null;
-
+        private workspace: App.Editor.Workspace;
         /**
          * Constructs as application instance and fetches configs
          */
@@ -29,6 +31,7 @@ module App.Core {
             super();
             this.createMessenger();
             this.layoutManager = new App.View.Layout.LayoutManager(this.messenger);
+            this.workspace = new App.Editor.Workspace();
         }
         /**
          * Bootstrap is run on DOM Ready and will init states and modules
@@ -63,7 +66,7 @@ module App.Core {
          */
         private initModules(): void {
             //run bootstrap on each of the modules
-            let mods:Array<App.View.BaseModule> = App.Config.getAllModules();
+            let mods:Array<App.View.BaseModule> = App.Config.getAllModules(this.workspace);
             //Loop through all and give them the proper configs
             for (let i = 0, l = mods.length; i<l; i++) {
                 this.layoutManager.addModule(mods[i]);

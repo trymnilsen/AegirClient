@@ -1,0 +1,117 @@
+@import "animations.less";
+
+.module-view.module-screens {
+    .tabs-item > div.screen-tab-item {
+        /* display: inline-block; */
+        display: inline-block;
+    }
+
+    .screen-tab-item:last-child {
+        /* border-right: 2px solid red; */
+    }
+
+    .screen-tab-item {
+        height: 100%;
+        background-color: #303030;
+        vertical-align: top;
+        padding-left: 16px;
+        cursor: pointer;
+        /* padding-right: 16px; */
+    }
+
+    .screen-tab-item .tab-close {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        vertical-align: top;
+        float: right;
+    }
+
+    .screen-tab-item div {
+        display: inline-block;
+    }
+
+    .screen-tab-item .tab-close:hover {
+        background-color: #E61D44;
+    }
+
+    .screen-tab-item:hover {
+        background-color: #1C1C1E;
+    }
+
+    .startup-tab:hover i.fa.fa-home.fa-fx:before {
+        content: "\f045" !important;
+    }
+
+    .startup-tab:hover i.fa.fa-home.fa-fx {
+        font-size: 18px !important;
+        padding-top: 4px !important;
+        padding-left: 8px !important;
+    }
+
+    .screen-tab-item.startup-tab i {
+        font-size: 20px;
+        padding-left: 5px;
+        padding-top: 2px;
+        color: white;
+    }
+
+    .screen-tab-item .tab-recording {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        vertical-align: top;
+        margin-left: 8px;
+        animation-name: blink;
+        animation-duration: 1s;
+        animation-iteration-count:infinite;
+        animation-direction: alternate;
+        overflow: hidden;
+    }
+    .tab-recording i {
+        color: red;
+        text-align: center;
+        vertical-align: sub;
+        width: 12px;
+        font-size: 12px;
+        height: 12px;
+        position: absolute;
+        left: 6px;
+        top: 5px;
+    }
+    .screen-tab-item.startup-tab {
+        width: 32px;
+        padding: 0 !important;
+        background-color: #1D9F2A;
+    }
+
+    .screen-tab-item .tab-recording.not-simulating {
+        width:0px !important;
+        margin-left: 24px;
+    }
+
+    .tabs-item {
+        height: 24px;
+        overflow: hidden;
+        background-color: #303030;
+    }
+
+    .screen-tab-item .screen-tab-item-title {
+        font-size: 16px;
+        color: white;
+    }
+
+    .screen-tab-item .tab-close i.fa-close {
+        text-align: center;
+        vertical-align: sub;
+        width: 12px;
+        font-size: 12px;
+        height: 12px;
+        position: absolute;
+        left: 6px;
+        top: 5px;
+        color: white;
+    }
+}

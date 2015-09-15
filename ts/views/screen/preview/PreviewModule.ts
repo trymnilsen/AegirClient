@@ -1,4 +1,4 @@
-/// <reference path="../BaseModule.ts" />
+/// <reference path="../../module/BaseModule.ts" />
 /// <reference path="../../layout/ELayoutPosition.ts" />
 /// <reference path="../../../rendering/RenderInstance.ts" />
 
