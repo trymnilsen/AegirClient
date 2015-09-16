@@ -20,7 +20,17 @@ module App {
             ROUTECHANGED: "ROUTECHANGE",
             FULLVIEWREADY: "FW_READY",
             FULLVIEWDISPOSE: "FW_DISPOSE",
-            NOTIFICATION: "GENERIC_NOTIFICATION"
+            NOTIFICATION: "GENERIC_NOTIFICATION",
+            ROUTER: {
+            	CHANGEROUTE: "CHANGE_ROUTE",
+            	ROUTETOPROJECT: "ROUTER_REQUEST_PROJECT_CHANGE"
+            },
+            WORKSPACE : {
+            	CURRENTPROJECTCHANGED: "PROJECT_CHANGE"
+            },
+            STATUSBAR: {
+            	QUEUE: "QUEUE_STATUS_BARMESSAGE"
+            }
 		}
 
 	}

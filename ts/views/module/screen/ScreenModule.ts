@@ -6,7 +6,7 @@
 /// <reference path="IScreenView.ts" />
 /// <reference path="ScreenStartupTabItem.ts" />
 /// <reference path="../../screen/startup/StartupScreen.ts" />
-
+/// <reference path="../../screen/project/ProjectScreen.ts" />
 
 module App.View.Mod {
     export class ScreenModule extends App.View.BaseModule {
@@ -22,7 +22,9 @@ module App.View.Mod {
 
             this.setTemplate(App.Template.ScreenModule.html);
             this.openProjects = openProjects;
-
+            this.openProjects.on("add",(project: App.Data.Model.Project.Project) => {
+                this.AddNewProjectToScreens(project);
+            });
         }
 
         public postRender(): ScreenModule {
@@ -39,7 +41,9 @@ module App.View.Mod {
             return this;
         }
         private AddNewProjectToScreens(project: App.Data.Model.Project.Project): void {
-
+            let projectScreen = new App.View.Screen.Project.ProjectScreen(project);
+            let projectScreenDetails = new App.View.Screen.OpenScreenDetails(projectScreen);
+            this.appendScreen(projectScreenDetails);
         }
         private appendScreen(screen: App.View.Screen.OpenScreenDetails, setAsActive: boolean = false):void {
             //Append tab to tabs

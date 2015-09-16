@@ -32,10 +32,9 @@ module App.Service {
          * @param  failureCallback     callback for server error
          */
         public fetchByName(name: string,
-                           successCallback?: (fetched: App.Data.Model.Project.Project)=>void,
-                           notFoundCallback?: ()=> void,
-                           failureCallback?: ()=> void):void
-        {
+            successCallback?: (fetched: App.Data.Model.Project.Project) => void,
+            notFoundCallback?: () => void,
+            failureCallback?: () => void): void {
             let fetchedModel: App.Data.Model.Project.Project = new App.Data.Model.Project.Project();
             let opts: Object = {
                 data: $.param({ projectname: name })
@@ -45,21 +44,19 @@ module App.Service {
             if (successCallback) { opts['success'] = successCallback; }
             if (notFoundCallback || failureCallback) {
                 //Creating a "routing method" to call either not found or failure based on status code
-                opts['error'] = (model, response ,options) => {
+                opts['error'] = (model, response, options) => {
                     //Log it
-                    console.log("[ProjectService::FetchByName] Error fetching project by name:",name);
+                    console.log("[ProjectService::FetchByName] Error fetching project by name:", name);
                     console.group("[ProjectService::FetchByName] Args");
                     console.log("Model", model);
                     console.log("Response", response);
                     console.log("options", options);
                     console.groupEnd();
                     //Route it
-                    if(response.status === 404)
-                    {
+                    if (response.status === 404) {
                         notFoundCallback();
                     }
-                    else
-                    {
+                    else {
                         failureCallback();
                     }
                 }

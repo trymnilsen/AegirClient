@@ -5,6 +5,7 @@
 /// <reference path="../typings/jquery.d.ts"/>
 /// <reference path="LayoutManager.ts"/>
 /// <reference path="../editor/Workspace.ts" />
+/// <reference path="Router.ts" />
 
 module App.Core {
     'use strict';
@@ -24,6 +25,7 @@ module App.Core {
         private messenger: App.Messaging.AppMessenger = null;
         private layoutManager: App.View.Layout.LayoutManager = null;
         private workspace: App.Editor.Workspace;
+        private router: App.Core.Router;
         /**
          * Constructs as application instance and fetches configs
          */
@@ -31,7 +33,8 @@ module App.Core {
             super();
             this.createMessenger();
             this.layoutManager = new App.View.Layout.LayoutManager(this.messenger);
-            this.workspace = new App.Editor.Workspace();
+            this.workspace = new App.Editor.Workspace(this.messenger);
+            this.router = new App.Core.Router(this.messenger);
         }
         /**
          * Bootstrap is run on DOM Ready and will init states and modules
@@ -71,6 +74,7 @@ module App.Core {
             for (let i = 0, l = mods.length; i<l; i++) {
                 this.layoutManager.addModule(mods[i]);
             }
+            Backbone.history.start();
         }
     }
 }
