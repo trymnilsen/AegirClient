@@ -25,9 +25,9 @@ module App.Editor {
         public get OpenProjects(): App.Data.Model.Project.ProjectCollection {
             return this.openProjects;
         }
-        private changeProjectById(projectId: string) {
+        private changeProjectById(projectId: App.Messaging.Message) {
         	//Create a project with and get with this id
-			let project = new App.Data.Model.Project.Project({id: projectId});
+			let project = new App.Data.Model.Project.Project({id: projectId.getData()});
 			this.ChangeProject(project);
         }
         private ChangeProject(project: App.Data.Model.Project.Project) {
