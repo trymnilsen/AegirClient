@@ -41,6 +41,12 @@ module App.Data.Model.Project {
         get VesselWidth(): number {
             return this.get('VesselWidth');
         }
+        get IsSimulating(): boolean {
+            return this.get('IsSimulating');
+        }
+        set IsSimulating(value: boolean) {
+            this.set('IsSimulating',value);
+        }
 
         public parse(response, options)
         {
@@ -66,7 +72,7 @@ module App.Data.Model.Project {
             attributes['VesselWidth'] = "300";
             attributes['ProjectDescription'] = "Testing some stuff with bla";
             attributes['NumOfOutputs'] = "4";
-            attributes['isSimulating'] = "true"; //Just for testing and will be truthy anyway
+            attributes['IsSimulating'] = "true"; //Just for testing and will be truthy anyway
 
             return attributes;
         }

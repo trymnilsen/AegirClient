@@ -3,6 +3,7 @@
 /// <reference path="StartupRecentProject.ts" />
 /// <reference path="StartupUserLastestProjects.ts" />
 /// <reference path="../../module/screen/IScreenView.ts" />
+/// <reference path="../../module/screen/ScreenTabData.ts" />
 
 
 module App.View.Screen.Startup {
@@ -34,8 +35,8 @@ module App.View.Screen.Startup {
         public needsInit(): boolean {
             return false;
         }
-        public getScreenTitle(): string {
-            return "Startup";
+        public getScreenTab(): App.View.Screen.ScreenTabData {
+            return new App.View.Screen.ScreenTabData("Startup");
         }
         public initScreen(): void {
 

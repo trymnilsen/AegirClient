@@ -13,7 +13,7 @@ module App.View.Screen {
         public constructor(content: IScreenView)
         {
             this.content = content;
-            this.tab = new ScreenTabItem(content.getScreenTitle());
+            this.tab = new ScreenTabItem(content.getScreenTab());
         }
         get Tab():ScreenTabItem {
             return this.tab;

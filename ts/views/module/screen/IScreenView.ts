@@ -1,4 +1,5 @@
 /// <reference path="../../AppView.ts" />
+/// <reference path="ScreenTabData.ts" />
 
 module App.View.Screen {
     export interface IScreenView {
@@ -7,6 +8,6 @@ module App.View.Screen {
         resume(): void;
         needsInit(): boolean;
         initScreen(): void;
-        getScreenTitle(): string;
+        getScreenTab(): App.View.Screen.ScreenTabData;
     }
 }

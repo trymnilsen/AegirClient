@@ -69,14 +69,14 @@ module App {
                 //dont notify it we are batch updating it
                 if(notify)
                 {
-    				this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+    				this.trigger(App.constants['EVENTS']['CONTEXT']['NOTIFYCONTEXTPROPERTYCHANGED']);
                 }
 			}
             public resetData(data: {[id: string]: Object}, notify: boolean = true): void {
                 this.data = data;
                 if(notify)
                 {
-                    this.trigger(App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+                    this.trigger(App.constants['EVENTS']['CONTEXT']['NOTIFYCONTEXTPROPERTYCHANGED']);
                 }
             }
 	  	}

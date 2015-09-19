@@ -22,9 +22,6 @@ module App.View.Mod {
 
             this.setTemplate(App.Template.ScreenModule.html);
             this.openProjects = openProjects;
-            this.openProjects.on("add",(project: App.Data.Model.Project.Project) => {
-                this.AddNewProjectToScreens(project);
-            });
         }
 
         public postRender(): ScreenModule {
@@ -35,9 +32,19 @@ module App.View.Mod {
             $(".tabs-item", this.$el).append(this.statupScreenButton.$el);
 
             //Add the startup screen
-            let startupScreen = new App.View.Screen.Startup.StartupScreen();
-            let startupScreenDetails = new App.View.Screen.OpenScreenDetails(startupScreen);
-            this.appendScreen(startupScreenDetails, true);
+            if(this.openProjects.length<1)
+            {
+                let startupScreen = new App.View.Screen.Startup.StartupScreen();
+                let startupScreenDetails = new App.View.Screen.OpenScreenDetails(startupScreen);
+                this.appendScreen(startupScreenDetails, true);
+            } else {
+                for (let i:number = 0; i < this.openProjects.length; ++i) {
+                    this.AddNewProjectToScreens(this.openProjects.at(i));
+                }
+            }
+            this.openProjects.on("add",(project: App.Data.Model.Project.Project) => {
+                this.AddNewProjectToScreens(project);
+            });
             return this;
         }
         private AddNewProjectToScreens(project: App.Data.Model.Project.Project): void {

@@ -225,9 +225,8 @@ module App.View {
          */
         private listenForContextChanges(): void {
             if(!!this.context) {
-                this.context.listenTo(this,
-                    App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED'],
-                    this.contextUpdated);
+                this.context.on(App.constants['EVENTS']['CONTEXT']['NOTIFYCONTEXTPROPERTYCHANGED'],
+                    this.contextUpdated,this);
             }
         }
         /**
@@ -235,8 +234,7 @@ module App.View {
          */
         private stopListenForContext(): void {
             if(!!this.context) {
-                this.context.stopListening(this,
-                    App.constants['EVENTS']['NOTIFYCONTEXTPROPERTYCHANGED']);
+                this.context.off(App.constants['EVENTS']['CONTEXT']['NOTIFYCONTEXTPROPERTYCHANGED']);
             }
         }
         private contextUpdated(): void {

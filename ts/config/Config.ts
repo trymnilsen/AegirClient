@@ -2,7 +2,7 @@ module App {
 
     export var config: {[id:string]: any} = {
         "HTTP": {
-            "ApiRootUrl" : "http://localhost:8080"
+            "ApiRootUrl" : "http://localhost:8090"
         },
         "Messaging" : {
             "DebugDumpAllMessages" : true
