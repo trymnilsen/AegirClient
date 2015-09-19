@@ -44,6 +44,11 @@ module App.Data.Model.Project {
 
         public parse(response, options)
         {
+            //If we got no response there is nothing to parse
+            if(!response)
+            {
+                return {};
+            }
             //Model Might be returned wrapped in an array
             if(response.constructor == Array)
             {
@@ -51,14 +56,14 @@ module App.Data.Model.Project {
             }
             let attributes: { [id: string]: string } = {};
             //Fill in attributes
-            attributes['LastModifiedDate'] = response['LastModified'];
-            attributes['CreatedDate'] = response['LastModified'];
-            attributes['ProjectName'] = response['Name'];
-            attributes['VesselName'] = response['Vessel']['Name'];
-            attributes['VesselLength'] = response['Vessel']['Width'];
-            attributes['VesselWidth'] = response['Vessel']['Height'];
-            attributes['Id'] = response['GUID'];
+            attributes['LastModifiedDate'] = response['LastModifiedDate'];
+            attributes['CreatedDate'] = response['CreatedDate'];
+            attributes['ProjectName'] = response['ProjectName'];
+            attributes['Id'] = response['Id'];
             //Demo - not yet implemented
+            attributes['VesselName'] = "Name";
+            attributes['VesselLength'] = "50";
+            attributes['VesselWidth'] = "300";
             attributes['ProjectDescription'] = "Testing some stuff with bla";
             attributes['NumOfOutputs'] = "4";
             attributes['isSimulating'] = "true"; //Just for testing and will be truthy anyway
