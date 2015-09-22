@@ -2,6 +2,7 @@
 /// <reference path="../../module/screen/IScreenView.ts" />
 /// <reference path="../../../data/model/project/Project.ts" />
 /// <reference path="../../module/screen/ScreenTabData.ts" />
+/// <reference path="InvalidProjectView.ts" />
 
 
 module App.View.Screen.Project {
@@ -9,12 +10,13 @@ module App.View.Screen.Project {
 
         private project: App.Data.Model.Project.Project;
         private tabData: App.View.Screen.ScreenTabData;
-
+        private screenContent: App.View.AppView;
         constructor(project: App.Data.Model.Project.Project){
             super({});
             this.project = project;
             this.createTabData();
-            this.project.on("change:ProjectName", this.projectReset, this);
+            this.project.on("error", this.projectError, this);
+            this.project.on("change", this.projectReset, this);
         }
 
         public getView(): App.View.AppView {
@@ -35,8 +37,26 @@ module App.View.Screen.Project {
         public initScreen(): void {
 
         }
+        private projectError(project: App.Data.Model.Project.Project,
+                             response: JQueryXHR) {
+            if(response.status === 404) {
+                let errorView = new App.View.Screen.Project.InvalidProjectView();
+                this.setContent(errorView);
+            }
+        }
         private projectReset(foo,bar,baz,faz): void {
             this.tabData.Title = this.project.ProjectName;
+        }
+        private setContent(view: App.View.AppView) {
+            if(!!this.screenContent)
+            {
+                this.screenContent.dispose();
+                this.screenContent.$el.remove();
+            }
+            this.screenContent = view;
+            this.screenContent.render();
+            this.$el.append(view.$el);
+            this.screenContent.postRender();
         }
         private createTabData(): void {
             let projectName: string = this.project.ProjectName;
