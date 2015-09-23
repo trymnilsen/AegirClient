@@ -1,21 +1,23 @@
-/// <reference path="../../module/BaseModule.ts" />
-/// <reference path="../../layout/ELayoutPosition.ts" />
+/// <reference path="../../AppView.ts" />
 /// <reference path="../../../rendering/RenderInstance.ts" />
 
 
-module App.View.Mod {
-    export class PreviewModule extends App.View.BaseModule {
+module App.View.Screen.Project {
+    export class PreviewView extends App.View.AppView {
         /**
          * The rendering instance backing this preview module
          */
         private renderer: App.Rendering.RenderInstance;
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.CENTER, "Simulation");
+             super({
+                 backboneOptions: {
+                     className: "preview-visualizaton"
+                 }
+             });
              this.renderer = new App.Rendering.RenderInstance(this.$el);
          }
-         public appReady(): void {
-         }
+
          public render(): App.View.AppView {
              return this;
          }

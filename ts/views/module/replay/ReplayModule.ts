@@ -7,7 +7,7 @@ module App.View.Mod {
     export class ReplayModule extends App.View.BaseModule {
 
          constructor(){
-             super(App.View.Layout.ELayoutPosition.LEFTUP, "Replay");
+             super(App.View.Layout.ELayoutPosition.LEFTUP, "Simulated Time");
              this.setTemplate(App.Template.ReplayModule.html);
          }
     }

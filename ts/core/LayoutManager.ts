@@ -144,8 +144,8 @@ module App.View.Layout {
                             //applyDefaultStyles: false
                         },
                         north: {
-                            minSize: 330,
-                            size: 350,
+                            minSize: 120,
+                            resizable: false,
                             paneSelector: '#left-ui-layout-north'
                         },
                         center: {

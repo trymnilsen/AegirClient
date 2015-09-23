@@ -54,7 +54,7 @@ module App.View.Mod {
         private AddNewProjectToScreens(project: App.Data.Model.Project.Project): void {
             let projectScreen = new App.View.Screen.Project.ProjectScreen(project);
             let projectScreenDetails = new App.View.Screen.OpenScreenDetails(projectScreen);
-            this.appendScreen(projectScreenDetails);
+            this.appendScreen(projectScreenDetails, true);
         }
         private appendScreen(screen: App.View.Screen.OpenScreenDetails, setAsActive: boolean = false):void {
             //Append tab to tabs

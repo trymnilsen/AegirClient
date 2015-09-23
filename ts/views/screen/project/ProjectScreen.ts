@@ -3,6 +3,7 @@
 /// <reference path="../../../data/model/project/Project.ts" />
 /// <reference path="../../module/screen/ScreenTabData.ts" />
 /// <reference path="InvalidProjectView.ts" />
+/// <reference path="PreviewView.ts" />
 
 
 module App.View.Screen.Project {
@@ -12,11 +13,15 @@ module App.View.Screen.Project {
         private tabData: App.View.Screen.ScreenTabData;
         private screenContent: App.View.AppView;
         constructor(project: App.Data.Model.Project.Project){
-            super({});
+            super({
+                backboneOptions: {
+                    className:"project-screen"
+                }
+            });
             this.project = project;
             this.createTabData();
             this.project.on("error", this.projectError, this);
-            this.project.on("reset", this.projectReset, this);
+            this.project.on("change", this.projectReset, this);
         }
 
         public getView(): App.View.AppView {
@@ -46,6 +51,9 @@ module App.View.Screen.Project {
         }
         private projectReset(): void {
             this.tabData.Title = this.project.ProjectName;
+
+            let previewView = new App.View.Screen.Project.PreviewView();
+            this.setContent(previewView);
         }
         private setContent(view: App.View.AppView) {
             if(!!this.screenContent)
@@ -68,7 +76,7 @@ module App.View.Screen.Project {
             }
 
             this.tabData = new App.View.Screen.ScreenTabData(projectName);
-            this.tabData.IsSimulating = isSimulating;
+            this.tabData.IsSimulating = false;
         }
     }
 }

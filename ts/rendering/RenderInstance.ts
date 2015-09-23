@@ -5,6 +5,7 @@
 /// <reference path="../typings/three-canvasrenderer.d.ts" />
 /// <reference path="../typings/detector.d.ts" />
 /// <reference path="../typings/dat-gui.d.ts" />
+/// <reference path="../typings/three-objloader.d.ts" />
 
 
 module App.Rendering {
@@ -55,6 +56,32 @@ module App.Rendering {
             var light = new THREE.PointLight(0xffffff);
             light.position.set(100,250,100);
             this.scene.add(light);
+            //OBJ File
+
+            var manager = new THREE.LoadingManager();
+            manager.onProgress = function ( item, loaded, total ) {
+
+                console.log( item, loaded, total );
+
+            };
+
+            var loader = new THREE.OBJLoader( manager );
+                loader.load( 'resource/cruiseship.obj', (object)=> {
+
+                    // object.traverse( function ( child ) {
+
+                    //     if ( child instanceof THREE.Mesh ) {
+
+                    //         child.material.map = texture;
+
+                    //     }
+
+                    // } );
+
+                    //object.position.y = - 80;
+                    this.scene.add( object );
+
+                });
             /*
             // FLOOR
             var floorTexture = new THREE.ImageUtils.loadTexture( 'images/checkerboard.jpg' );
@@ -77,29 +104,29 @@ module App.Rendering {
             // CUSTOM //
             ////////////
 
-            var geometry = new THREE.SphereGeometry( 30, 32, 16 );
-            var material = new THREE.MeshLambertMaterial( { color: 0x000088 } );
-            this.mesh = new THREE.Mesh( geometry, material );
-            this.mesh.position.set(40,40,40);
-            this.scene.add(this.mesh);
+            // var geometry = new THREE.SphereGeometry( 30, 32, 16 );
+            // var material = new THREE.MeshLambertMaterial( { color: 0x000088 } );
+            // this.mesh = new THREE.Mesh( geometry, material );
+            // this.mesh.position.set(40,40,40);
+            // this.scene.add(this.mesh);
 
-            var axes = new THREE.AxisHelper(50);
-            axes.position = this.mesh.position;
-            this.scene.add(axes);
+            // var axes = new THREE.AxisHelper(50);
+            // axes.position = this.mesh.position;
+            // this.scene.add(axes);
 
             var gridXZ = new THREE.GridHelper(100, 10);
             gridXZ.setColors( new THREE.Color(0x006600).getHex(), new THREE.Color(0x006600).getHex() );
-            gridXZ.position.set( 100,0,100 );
+            gridXZ.position.set( 0,0,0 );
             this.scene.add(gridXZ);
 
             var gridXY = new THREE.GridHelper(100, 10);
-            gridXY.position.set( 100,100,0 );
+            gridXY.position.set( 0,0,0 );
             gridXY.rotation.x = Math.PI/2;
             gridXY.setColors( new THREE.Color(0x000066).getHex(), new THREE.Color(0x000066).getHex() );
             this.scene.add(gridXY);
 
             var gridYZ = new THREE.GridHelper(100, 10);
-            gridYZ.position.set( 0,100,100 );
+            gridYZ.position.set( 0,0,0 );
             gridYZ.rotation.z = Math.PI/2;
             gridYZ.setColors( new THREE.Color(0x660000).getHex(), new THREE.Color(0x660000).getHex() );
             this.scene.add(gridYZ);
