@@ -48,7 +48,8 @@ module App.Editor {
             //TO be implemented
             project.fetch({
                 success: _.bind(this.fetchProjectSuccess, this),
-                error: _.bind(this.fetchProjectError, this)
+                error: _.bind(this.fetchProjectError, this),
+                reset: true
             });
         }
         private fetchProjectError(project: App.Data.Model.Project.Project, response: JQueryXHR): void {

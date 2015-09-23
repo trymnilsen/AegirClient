@@ -16,7 +16,7 @@ module App.View.Screen.Project {
             this.project = project;
             this.createTabData();
             this.project.on("error", this.projectError, this);
-            this.project.on("change", this.projectReset, this);
+            this.project.on("reset", this.projectReset, this);
         }
 
         public getView(): App.View.AppView {
@@ -44,7 +44,7 @@ module App.View.Screen.Project {
                 this.setContent(errorView);
             }
         }
-        private projectReset(foo,bar,baz,faz): void {
+        private projectReset(): void {
             this.tabData.Title = this.project.ProjectName;
         }
         private setContent(view: App.View.AppView) {
