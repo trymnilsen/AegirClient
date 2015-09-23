@@ -25,28 +25,32 @@ module App.View.Mod {
         }
 
         public postRender(): ScreenModule {
+            //Set up open projects listening
+            this.openProjects.on("add",(project: App.Data.Model.Project.Project) => {
+                this.AddNewProjectToScreens(project);
+            });
             //Create Startup button
             this.statupScreenButton = new App.View.Screen.ScreenStartupTabItem();
             this.statupScreenButton.render();
             this.statupScreenButton.postRender();
             $(".tabs-item", this.$el).append(this.statupScreenButton.$el);
 
-            //Add the startup screen
-            if(this.openProjects.length<1)
-            {
+
+            if(this.openProjects.length < 1) {
+                //Add the startup screen
                 let startupScreen = new App.View.Screen.Startup.StartupScreen();
                 let startupScreenDetails = new App.View.Screen.OpenScreenDetails(startupScreen);
+                //Append 
                 this.appendScreen(startupScreenDetails, true);
             } else {
-                for (let i:number = 0; i < this.openProjects.length; ++i) {
+                for (let i = 0; i < this.openProjects.length; ++i) {
                     this.AddNewProjectToScreens(this.openProjects.at(i));
                 }
             }
-            this.openProjects.on("add",(project: App.Data.Model.Project.Project) => {
-                this.AddNewProjectToScreens(project);
-            });
+
             return this;
         }
+
         private AddNewProjectToScreens(project: App.Data.Model.Project.Project): void {
             let projectScreen = new App.View.Screen.Project.ProjectScreen(project);
             let projectScreenDetails = new App.View.Screen.OpenScreenDetails(projectScreen);

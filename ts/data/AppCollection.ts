@@ -6,10 +6,12 @@
 module App.Data {
     export class AppCollection<TModel extends Backbone.Model> extends Backbone.Collection<TModel> {
 
+    	protected urlFragment: string;
+
         constructor() {
             super();
-            this.url = function() {
-                return App.config["HTTP"]["ApiRootUrl"];
+            this.url = () => {
+                return App.config["HTTP"]["ApiRootUrl"]+"/"+this.urlFragment+"/";
             }
         }
     }
